@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video-simprints"
+version = "0.1.0"
+description = "Granular video codes: image simprints on keyframes, a geometric vote per frame and a time vote per clip"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Joseph Sherrier", email = "jmsherrier@gmail.com" }]
+requires-python = ">=3.12"
+dependencies = [
+    "image-simprints @ git+https://github.com/jmsherrier/image-simprints@v0.3.0",
+    "numpy==2.5.1",
+    "opencv-python-headless==5.0.0.93",
+    "pillow==12.3.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.2.0"]
+
+[project.scripts]
+video-simprints = "video_simprints.testmode:main"
