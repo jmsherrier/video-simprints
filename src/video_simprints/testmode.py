@@ -191,9 +191,9 @@ def key(v: dict, size: int) -> str:
 _IDX = {}
 
 
-def _init(cands: dict):
-    for v in variants():
-        _IDX[key(v, 0)] = recipe.index({n: recipe.create(None, v, c) for n, c in cands.items()})
+def _init(cands: dict, vs: list):
+    for v in vs:
+        _IDX[key(v, 0)] = (v, recipe.index({n: recipe.create(None, v, c) for n, c in cands.items()}))
 
 
 def _query(c: dict) -> tuple[str, dict]:
@@ -209,24 +209,23 @@ def _query(c: dict) -> tuple[str, dict]:
         cache.parent.mkdir(parents=True, exist_ok=True)
         cache.write_bytes(pickle.dumps(sp))
     out = {}
-    for v in variants():
-        idx = _IDX[key(v, 0)]
+    for v, idx in _IDX.values():
         for size in SIZES:
             out[key(v, size)] = [[(d, {"time": k["time"], "same_as": k["same_as"]}, r) for d, k, r in recipe.frame_hits(q, idx)]
                                  for q in sp[size]]  # fmt: skip
     return c["id"], out
 
 
-def run(split: str, workers: int) -> dict:
+def run(split: str, workers: int, vs: list) -> dict:
     """Make the split's queries, decode and code everything, and match every query
-    against every swept setting. Returns the raw per-frame hits."""
+    against every creator setting in vs. Returns the raw per-frame hits."""
     queries = plan(split)
     src = {r["name"]: r["path"] for r in corpus()}
     todo = [c for c in queries if c["manipulation"] != "unrelated" and not Path(c["path"]).exists()]
     (CACHE / "clips" / split).mkdir(parents=True, exist_ok=True)
     with ThreadPoolExecutor(workers) as ex:  # each clip is an ffmpeg process
         list(ex.map(lambda c: make_clip(c, src[c["source"] or c["id"].split("__")[0]], src.get(c.get("background"))), todo))
-    cands, creator_time = {}, {}
+    cands = {}
     for r in corpus():
         if r["split"] == split and r["role"] == "original":
             cache = CACHE / "eval" / f"cands-{r['name']}.json"
@@ -237,7 +236,7 @@ def run(split: str, workers: int) -> dict:
                 cache.parent.mkdir(parents=True, exist_ok=True)
                 cache.write_text(json.dumps(c))
             cands[r["name"]] = json.loads(cache.read_text())
-    with Pool(workers, _init, (cands,)) as pool:
+    with Pool(workers, _init, (cands, vs)) as pool:
         hits = dict(pool.imap_unordered(_query, queries))
     return {"queries": queries, "cands": cands, "hits": hits}
 
@@ -330,15 +329,25 @@ def timing(split: str) -> dict:
     return out
 
 
+def setting(name: str, f: dict) -> dict:
+    """The creator settings of a fit named "codes=K;spread=S;size=..;fps=..", with its N."""
+    p = dict(x.split("=") for x in name.split(";"))
+    return {"codes": int(p["codes"]), "spread": p["spread"] == "1", "stop_after": f["stop_after"]}
+
+
 def test(split: str, out: Path, fits_from: Path | None, workers: int):
-    data = run(split, workers)
-    fits = json.loads((fits_from / "report.json").read_text())["fits"] if fits_from else fit(data)
+    if fits_from:  # only the fitted settings
+        fits = json.loads((fits_from / "report.json").read_text())["fits"]
+        vs = {key(v, 0): v for v in (setting(n, f) for n, f in fits.items() if f)}
+        data = run(split, workers, list(vs.values()))
+    else:
+        data = run(split, workers, variants())
+        fits = fit(data)
     rows = {}
     for name, f in fits.items():
         if f is None:
             continue
-        p = dict(x.split("=") for x in name.split(";"))
-        v = {"codes": int(p["codes"]), "spread": p["spread"] == "1", "stop_after": f["stop_after"]}
+        p, v = dict(x.split("=") for x in name.split(";")), setting(name, f)
         rows[name] = {**f, **score(data, key(v, int(p["size"])), int(p["fps"]), f["min_frames"]), "volume": volume(data["cands"], v)}
     report = {"split": split, "ffmpeg": video.version(), "recipe": recipe.RECIPE, "image_recipe": image_simprints.RECIPE,
               "fits": fits, "fitted_on": fits_from.name if fits_from else split, "results": rows, "timing": timing(split),
