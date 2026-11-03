@@ -66,8 +66,8 @@ range in each, in seconds), `slope`, `relationship` (`identical`,
 original's picture is inside the clip's, as in picture-in-picture, or
 `overlapping`) and `overlap_fraction`.
 
-Settings and defaults: creator `codes=10`, `spread=True`, `stop_after=3`;
-verifier `fps=1`, `prepared_size=512`, `min_frames=3`. [RECIPE.md](RECIPE.md)
+Settings and defaults: creator `codes=10`, `spread=False`, `stop_after=1000`
+(stop codes off); verifier `fps=2`, `prepared_size=1024`, `min_frames=1`. [RECIPE.md](RECIPE.md)
 specifies every step.
 
 The command line does the same: `video-simprints create film.mp4 > film.json`,
@@ -91,6 +91,26 @@ corner logo, and screenshots), sweeps `codes` over {5, 10, 20} with and without
 `spread`, `stop_after` (N), the verifier's `fps` {1, 2} and `prepared_size`
 {512, 1024}, and `min_frames` (M). N and M are fitted on the tuning split only.
 Output: `report.json` and `summary.md`.
+
+## Results
+
+On the test split (Big Buck Bunny, Tears of Steel and two NASA videos; five
+unrelated videos including Elephants Dream), at the defaults, with N and M fitted
+on the tuning split only
+([report](tests/corpus/report-test/summary.md), [tuning](tests/corpus/report-tuning/summary.md)):
+
+| excerpt 10 s | 30 s | 60 s | 9:16 crop | PiP 25% | PiP 40% | 240p | caption | logo | still |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 83% | 100% | 100% | 83% | 17% | 50% | 100% | 100% | 100% | 70% |
+
+No false match: 0 of 5 unrelated videos, 0 of 3,728 unrelated frames, 0 of 25
+unrelated stills, at any setting. That corpus is small; an index of many
+thousands of films will need a higher `min_frames` and the stop codes, refitted
+on it. Volume: about 16 keyframes and 155 codes per minute, about 14,000 codes
+per 90-minute film (K = 5: 7,000; K = 20: 27,000). Time per minute of video, one
+process on a laptop CPU: creator 4.6 s, verifier 19 s (6 s at 1 fps and 512 px).
+Small picture-in-picture insets (25% of the width, 6% of the area) are mostly
+missed, as image-simprints misses small collage inserts.
 
 ## Documents
 

@@ -1,0 +1,2299 @@
+{
+ "split": "test",
+ "ffmpeg": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+ "recipe": "video-simprints/0.1",
+ "image_recipe": "image-simprints/2.2",
+ "fits": {
+  "codes=5;spread=0;size=512;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=5;spread=0;size=512;fps=2": {
+   "stop_after": 1,
+   "min_frames": 1
+  },
+  "codes=5;spread=0;size=1024;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=5;spread=0;size=1024;fps=2": {
+   "stop_after": 1,
+   "min_frames": 1
+  },
+  "codes=5;spread=1;size=512;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=5;spread=1;size=512;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=5;spread=1;size=1024;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=5;spread=1;size=1024;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=10;spread=0;size=512;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=10;spread=0;size=512;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=10;spread=0;size=1024;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=10;spread=0;size=1024;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=10;spread=1;size=512;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=10;spread=1;size=512;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 2
+  },
+  "codes=10;spread=1;size=1024;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=10;spread=1;size=1024;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=20;spread=0;size=512;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=20;spread=0;size=512;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=20;spread=0;size=1024;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=20;spread=0;size=1024;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 2
+  },
+  "codes=20;spread=1;size=512;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=20;spread=1;size=512;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=20;spread=1;size=1024;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1
+  },
+  "codes=20;spread=1;size=1024;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 2
+  }
+ },
+ "fitted_on": "report-tuning",
+ "results": {
+  "codes=5;spread=0;size=512;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 9,
+     "relationship": 8,
+     "frames": 120,
+     "frames_found": 72
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 209
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 291
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 4,
+     "relationship": 3,
+     "frames": 360,
+     "frames_found": 5
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 0,
+     "relationship": 0,
+     "frames": 360,
+     "frames_found": 0
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 2,
+     "relationship": 2,
+     "frames": 360,
+     "frames_found": 2
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 9,
+     "frames": 360,
+     "frames_found": 141
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 112
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 154
+    },
+    "still": {
+     "clips": 20,
+     "found": 11,
+     "relationship": 7,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 1864,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.6759259259259259,
+   "volume": {
+    "keyframes_per_minute": 15.8,
+    "codes_per_minute": 78.2,
+    "codes_per_90min_film": 7039
+   }
+  },
+  "codes=5;spread=0;size=512;fps=2": {
+   "stop_after": 1,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 8,
+     "frames": 240,
+     "frames_found": 124
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 311
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 1440,
+     "frames_found": 517
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 6,
+     "relationship": 5,
+     "frames": 720,
+     "frames_found": 13
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 0,
+     "relationship": 0,
+     "frames": 720,
+     "frames_found": 0
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 3,
+     "relationship": 3,
+     "frames": 720,
+     "frames_found": 4
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 262
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 195
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 291
+    },
+    "still": {
+     "clips": 20,
+     "found": 8,
+     "relationship": 4,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 3728,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.7314814814814814,
+   "volume": {
+    "keyframes_per_minute": 15.7,
+    "codes_per_minute": 76.1,
+    "codes_per_90min_film": 6848
+   }
+  },
+  "codes=5;spread=0;size=1024;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 9,
+     "relationship": 8,
+     "frames": 120,
+     "frames_found": 57
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 195
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 288
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 5,
+     "relationship": 5,
+     "frames": 360,
+     "frames_found": 8
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 0,
+     "relationship": 0,
+     "frames": 360,
+     "frames_found": 0
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 0,
+     "relationship": 0,
+     "frames": 360,
+     "frames_found": 0
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 9,
+     "frames": 360,
+     "frames_found": 141
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 97
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 156
+    },
+    "still": {
+     "clips": 20,
+     "found": 11,
+     "relationship": 7,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 1864,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.6666666666666666,
+   "volume": {
+    "keyframes_per_minute": 15.8,
+    "codes_per_minute": 78.2,
+    "codes_per_90min_film": 7039
+   }
+  },
+  "codes=5;spread=0;size=1024;fps=2": {
+   "stop_after": 1,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 8,
+     "frames": 240,
+     "frames_found": 99
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 304
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 1440,
+     "frames_found": 514
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 6,
+     "relationship": 5,
+     "frames": 720,
+     "frames_found": 16
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 0,
+     "relationship": 0,
+     "frames": 720,
+     "frames_found": 0
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 3,
+     "relationship": 3,
+     "frames": 720,
+     "frames_found": 4
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 259
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 168
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 286
+    },
+    "still": {
+     "clips": 20,
+     "found": 7,
+     "relationship": 4,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 3728,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.7222222222222222,
+   "volume": {
+    "keyframes_per_minute": 15.7,
+    "codes_per_minute": 76.1,
+    "codes_per_90min_film": 6848
+   }
+  },
+  "codes=5;spread=1;size=512;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 9,
+     "relationship": 7,
+     "frames": 120,
+     "frames_found": 78
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 206
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 316
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 2,
+     "relationship": 2,
+     "frames": 360,
+     "frames_found": 4
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 0,
+     "relationship": 0,
+     "frames": 360,
+     "frames_found": 0
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 4,
+     "relationship": 4,
+     "frames": 360,
+     "frames_found": 5
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 10,
+     "frames": 360,
+     "frames_found": 166
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 105
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 151
+    },
+    "still": {
+     "clips": 20,
+     "found": 11,
+     "relationship": 9,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 1864,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.6851851851851852,
+   "volume": {
+    "keyframes_per_minute": 15.9,
+    "codes_per_minute": 78.4,
+    "codes_per_90min_film": 7057
+   }
+  },
+  "codes=5;spread=1;size=512;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 9,
+     "frames": 240,
+     "frames_found": 156
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 395
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 1440,
+     "frames_found": 645
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 5,
+     "relationship": 3,
+     "frames": 720,
+     "frames_found": 12
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 0,
+     "relationship": 0,
+     "frames": 720,
+     "frames_found": 0
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 4,
+     "relationship": 4,
+     "frames": 720,
+     "frames_found": 8
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 331
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 204
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 305
+    },
+    "still": {
+     "clips": 20,
+     "found": 11,
+     "relationship": 9,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 3728,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.7314814814814814,
+   "volume": {
+    "keyframes_per_minute": 15.9,
+    "codes_per_minute": 78.4,
+    "codes_per_90min_film": 7057
+   }
+  },
+  "codes=5;spread=1;size=1024;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 9,
+     "frames": 120,
+     "frames_found": 76
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 204
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 297
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 3,
+     "relationship": 3,
+     "frames": 360,
+     "frames_found": 5
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 0,
+     "relationship": 0,
+     "frames": 360,
+     "frames_found": 0
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 2,
+     "relationship": 2,
+     "frames": 360,
+     "frames_found": 2
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 10,
+     "frames": 360,
+     "frames_found": 163
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 101
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 153
+    },
+    "still": {
+     "clips": 20,
+     "found": 12,
+     "relationship": 10,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 1864,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.6759259259259259,
+   "volume": {
+    "keyframes_per_minute": 15.9,
+    "codes_per_minute": 78.4,
+    "codes_per_90min_film": 7057
+   }
+  },
+  "codes=5;spread=1;size=1024;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 9,
+     "frames": 240,
+     "frames_found": 153
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 399
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 1440,
+     "frames_found": 616
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 4,
+     "relationship": 3,
+     "frames": 720,
+     "frames_found": 9
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 0,
+     "relationship": 0,
+     "frames": 720,
+     "frames_found": 0
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 3,
+     "relationship": 3,
+     "frames": 720,
+     "frames_found": 4
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 327
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 193
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 305
+    },
+    "still": {
+     "clips": 20,
+     "found": 12,
+     "relationship": 10,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 3728,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.7037037037037037,
+   "volume": {
+    "keyframes_per_minute": 15.9,
+    "codes_per_minute": 78.4,
+    "codes_per_90min_film": 7057
+   }
+  },
+  "codes=10;spread=0;size=512;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 8,
+     "frames": 120,
+     "frames_found": 82
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 240
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 396
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 6,
+     "relationship": 4,
+     "frames": 360,
+     "frames_found": 24
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 1,
+     "relationship": 1,
+     "frames": 360,
+     "frames_found": 1
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 4,
+     "relationship": 4,
+     "frames": 360,
+     "frames_found": 6
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 10,
+     "frames": 360,
+     "frames_found": 179
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 176
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 195
+    },
+    "still": {
+     "clips": 20,
+     "found": 12,
+     "relationship": 8,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 1864,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.7314814814814814,
+   "volume": {
+    "keyframes_per_minute": 15.7,
+    "codes_per_minute": 154.1,
+    "codes_per_90min_film": 13866
+   }
+  },
+  "codes=10;spread=0;size=512;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 9,
+     "frames": 240,
+     "frames_found": 171
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 474
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 1440,
+     "frames_found": 795
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 7,
+     "relationship": 5,
+     "frames": 720,
+     "frames_found": 47
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 2,
+     "relationship": 2,
+     "frames": 720,
+     "frames_found": 2
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 5,
+     "relationship": 5,
+     "frames": 720,
+     "frames_found": 15
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 365
+    },
+    "caption": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 343
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 395
+    },
+    "still": {
+     "clips": 20,
+     "found": 12,
+     "relationship": 8,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 3728,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.787037037037037,
+   "volume": {
+    "keyframes_per_minute": 15.7,
+    "codes_per_minute": 154.1,
+    "codes_per_90min_film": 13866
+   }
+  },
+  "codes=10;spread=0;size=1024;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 8,
+     "frames": 120,
+     "frames_found": 79
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 238
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 390
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 9,
+     "relationship": 8,
+     "frames": 360,
+     "frames_found": 45
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 1,
+     "relationship": 1,
+     "frames": 360,
+     "frames_found": 1
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 1,
+     "relationship": 1,
+     "frames": 360,
+     "frames_found": 1
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 10,
+     "frames": 360,
+     "frames_found": 179
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 168
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 195
+    },
+    "still": {
+     "clips": 20,
+     "found": 14,
+     "relationship": 10,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 1864,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.7407407407407408,
+   "volume": {
+    "keyframes_per_minute": 15.7,
+    "codes_per_minute": 154.1,
+    "codes_per_90min_film": 13866
+   }
+  },
+  "codes=10;spread=0;size=1024;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 9,
+     "frames": 240,
+     "frames_found": 167
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 470
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 1440,
+     "frames_found": 792
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 8,
+     "frames": 720,
+     "frames_found": 86
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 2,
+     "relationship": 2,
+     "frames": 720,
+     "frames_found": 3
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 6,
+     "relationship": 6,
+     "frames": 720,
+     "frames_found": 10
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 364
+    },
+    "caption": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 333
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 387
+    },
+    "still": {
+     "clips": 20,
+     "found": 14,
+     "relationship": 10,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 3728,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.8148148148148148,
+   "volume": {
+    "keyframes_per_minute": 15.7,
+    "codes_per_minute": 154.1,
+    "codes_per_90min_film": 13866
+   }
+  },
+  "codes=10;spread=1;size=512;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 9,
+     "frames": 120,
+     "frames_found": 93
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 248
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 437
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 6,
+     "relationship": 4,
+     "frames": 360,
+     "frames_found": 25
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 1,
+     "relationship": 1,
+     "frames": 360,
+     "frames_found": 1
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 4,
+     "relationship": 4,
+     "frames": 360,
+     "frames_found": 7
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 10,
+     "frames": 360,
+     "frames_found": 205
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 166
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 189
+    },
+    "still": {
+     "clips": 20,
+     "found": 13,
+     "relationship": 10,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 1864,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.7407407407407408,
+   "volume": {
+    "keyframes_per_minute": 15.8,
+    "codes_per_minute": 154.9,
+    "codes_per_90min_film": 13937
+   }
+  },
+  "codes=10;spread=1;size=512;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 2,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 10,
+     "frames": 240,
+     "frames_found": 185
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 490
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 1440,
+     "frames_found": 869
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 6,
+     "relationship": 6,
+     "frames": 720,
+     "frames_found": 54
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 0,
+     "relationship": 0,
+     "frames": 720,
+     "frames_found": 2
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 4,
+     "relationship": 4,
+     "frames": 720,
+     "frames_found": 14
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 420
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 324
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 391
+    },
+    "still": {
+     "clips": 20,
+     "found": 13,
+     "relationship": 10,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 3728,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.7407407407407408,
+   "volume": {
+    "keyframes_per_minute": 15.8,
+    "codes_per_minute": 154.9,
+    "codes_per_90min_film": 13937
+   }
+  },
+  "codes=10;spread=1;size=1024;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 9,
+     "frames": 120,
+     "frames_found": 91
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 242
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 416
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 9,
+     "relationship": 8,
+     "frames": 360,
+     "frames_found": 51
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 1,
+     "relationship": 1,
+     "frames": 360,
+     "frames_found": 1
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 3,
+     "relationship": 3,
+     "frames": 360,
+     "frames_found": 3
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 199
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 167
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 195
+    },
+    "still": {
+     "clips": 20,
+     "found": 13,
+     "relationship": 11,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 1864,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.7592592592592592,
+   "volume": {
+    "keyframes_per_minute": 15.8,
+    "codes_per_minute": 154.9,
+    "codes_per_90min_film": 13937
+   }
+  },
+  "codes=10;spread=1;size=1024;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 240,
+     "frames_found": 181
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 487
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 1440,
+     "frames_found": 838
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 10,
+     "frames": 720,
+     "frames_found": 91
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 2,
+     "relationship": 2,
+     "frames": 720,
+     "frames_found": 3
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 4,
+     "relationship": 4,
+     "frames": 720,
+     "frames_found": 10
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 409
+    },
+    "caption": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 329
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 392
+    },
+    "still": {
+     "clips": 20,
+     "found": 13,
+     "relationship": 11,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 3728,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.8055555555555556,
+   "volume": {
+    "keyframes_per_minute": 15.8,
+    "codes_per_minute": 154.9,
+    "codes_per_90min_film": 13937
+   }
+  },
+  "codes=20;spread=0;size=512;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 7,
+     "frames": 120,
+     "frames_found": 95
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 260
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 474
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 9,
+     "relationship": 9,
+     "frames": 360,
+     "frames_found": 104
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 1,
+     "relationship": 1,
+     "frames": 360,
+     "frames_found": 4
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 7,
+     "relationship": 7,
+     "frames": 360,
+     "frames_found": 24
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 10,
+     "frames": 360,
+     "frames_found": 222
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 10,
+     "frames": 360,
+     "frames_found": 220
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 223
+    },
+    "still": {
+     "clips": 20,
+     "found": 15,
+     "relationship": 12,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 1864,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.7962962962962963,
+   "volume": {
+    "keyframes_per_minute": 15.9,
+    "codes_per_minute": 303.5,
+    "codes_per_90min_film": 27315
+   }
+  },
+  "codes=20;spread=0;size=512;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 8,
+     "frames": 240,
+     "frames_found": 190
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 525
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 1440,
+     "frames_found": 953
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 10,
+     "frames": 720,
+     "frames_found": 208
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 2,
+     "relationship": 2,
+     "frames": 720,
+     "frames_found": 9
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 8,
+     "relationship": 8,
+     "frames": 720,
+     "frames_found": 52
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 450
+    },
+    "caption": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 10,
+     "frames": 720,
+     "frames_found": 440
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 453
+    },
+    "still": {
+     "clips": 20,
+     "found": 15,
+     "relationship": 12,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 3728,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.8425925925925926,
+   "volume": {
+    "keyframes_per_minute": 15.9,
+    "codes_per_minute": 303.5,
+    "codes_per_90min_film": 27315
+   }
+  },
+  "codes=20;spread=0;size=1024;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 8,
+     "frames": 120,
+     "frames_found": 95
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 264
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 466
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 9,
+     "frames": 360,
+     "frames_found": 102
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 1,
+     "relationship": 1,
+     "frames": 360,
+     "frames_found": 2
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 6,
+     "relationship": 5,
+     "frames": 360,
+     "frames_found": 12
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 10,
+     "frames": 360,
+     "frames_found": 219
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 217
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 224
+    },
+    "still": {
+     "clips": 20,
+     "found": 15,
+     "relationship": 12,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 1864,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.7962962962962963,
+   "volume": {
+    "keyframes_per_minute": 15.9,
+    "codes_per_minute": 303.5,
+    "codes_per_90min_film": 27315
+   }
+  },
+  "codes=20;spread=0;size=1024;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 2,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 9,
+     "frames": 240,
+     "frames_found": 190
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 526
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 1440,
+     "frames_found": 938
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 206
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 1,
+     "relationship": 1,
+     "frames": 720,
+     "frames_found": 7
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 8,
+     "relationship": 7,
+     "frames": 720,
+     "frames_found": 33
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 443
+    },
+    "caption": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 433
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 454
+    },
+    "still": {
+     "clips": 20,
+     "found": 15,
+     "relationship": 12,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 3728,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.8425925925925926,
+   "volume": {
+    "keyframes_per_minute": 15.9,
+    "codes_per_minute": 303.5,
+    "codes_per_90min_film": 27315
+   }
+  },
+  "codes=20;spread=1;size=512;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 9,
+     "frames": 120,
+     "frames_found": 100
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 273
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 515
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 9,
+     "relationship": 9,
+     "frames": 360,
+     "frames_found": 97
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 1,
+     "relationship": 1,
+     "frames": 360,
+     "frames_found": 4
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 6,
+     "relationship": 6,
+     "frames": 360,
+     "frames_found": 18
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 10,
+     "frames": 360,
+     "frames_found": 237
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 208
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 226
+    },
+    "still": {
+     "clips": 20,
+     "found": 15,
+     "relationship": 13,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 1864,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.787037037037037,
+   "volume": {
+    "keyframes_per_minute": 16.0,
+    "codes_per_minute": 305.1,
+    "codes_per_90min_film": 27457
+   }
+  },
+  "codes=20;spread=1;size=512;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 10,
+     "frames": 240,
+     "frames_found": 199
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 548
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 1440,
+     "frames_found": 1033
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 198
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 2,
+     "relationship": 2,
+     "frames": 720,
+     "frames_found": 9
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 7,
+     "relationship": 7,
+     "frames": 720,
+     "frames_found": 45
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 484
+    },
+    "caption": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 409
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 455
+    },
+    "still": {
+     "clips": 20,
+     "found": 15,
+     "relationship": 13,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 3728,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.8425925925925926,
+   "volume": {
+    "keyframes_per_minute": 16.0,
+    "codes_per_minute": 305.1,
+    "codes_per_90min_film": 27457
+   }
+  },
+  "codes=20;spread=1;size=1024;fps=1": {
+   "stop_after": 1000,
+   "min_frames": 1,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 7,
+     "frames": 120,
+     "frames_found": 99
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 271
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 501
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 10,
+     "relationship": 9,
+     "frames": 360,
+     "frames_found": 107
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 1,
+     "relationship": 1,
+     "frames": 360,
+     "frames_found": 2
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 4,
+     "relationship": 4,
+     "frames": 360,
+     "frames_found": 7
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 10,
+     "frames": 360,
+     "frames_found": 235
+    },
+    "caption": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 360,
+     "frames_found": 207
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 360,
+     "frames_found": 226
+    },
+    "still": {
+     "clips": 20,
+     "found": 15,
+     "relationship": 13,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 1864,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.7777777777777778,
+   "volume": {
+    "keyframes_per_minute": 16.0,
+    "codes_per_minute": 305.1,
+    "codes_per_90min_film": 27457
+   }
+  },
+  "codes=20;spread=1;size=1024;fps=2": {
+   "stop_after": 1000,
+   "min_frames": 2,
+   "per_manipulation": {
+    "excerpt10": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 8,
+     "frames": 240,
+     "frames_found": 195
+    },
+    "excerpt30": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 540
+    },
+    "excerpt60": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 1440,
+     "frames_found": 1006
+    },
+    "vertical": {
+     "clips": 12,
+     "found": 11,
+     "relationship": 11,
+     "frames": 720,
+     "frames_found": 221
+    },
+    "pip25": {
+     "clips": 12,
+     "found": 1,
+     "relationship": 1,
+     "frames": 720,
+     "frames_found": 7
+    },
+    "pip40": {
+     "clips": 12,
+     "found": 5,
+     "relationship": 5,
+     "frames": 720,
+     "frames_found": 25
+    },
+    "lowres": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 476
+    },
+    "caption": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 409
+    },
+    "logo": {
+     "clips": 12,
+     "found": 12,
+     "relationship": 12,
+     "frames": 720,
+     "frames_found": 455
+    },
+    "still": {
+     "clips": 20,
+     "found": 15,
+     "relationship": 13,
+     "frames": 0,
+     "frames_found": 0
+    }
+   },
+   "false": {
+    "unrelated_videos": 0,
+    "unrelated_frames": 0,
+    "unrelated_frames_total": 3728,
+    "unrelated_stills": 0,
+    "wrong_video": 0,
+    "unrelated_still_total": 25,
+    "unrelated_video_total": 5
+   },
+   "video_match_rate": 0.8148148148148148,
+   "volume": {
+    "keyframes_per_minute": 16.0,
+    "codes_per_minute": 305.1,
+    "codes_per_90min_film": 27457
+   }
+  }
+ },
+ "timing": {
+  "creator": 4.58,
+  "verifier fps=1 size=512": 6.06,
+  "verifier fps=1 size=1024": 10.07,
+  "verifier fps=2 size=512": 11.4,
+  "verifier fps=2 size=1024": 19.09
+ },
+ "queries": 158
+}

@@ -11,16 +11,18 @@ checked against declarations (verifier side). The reference implementation is
 | setting | default | side | meaning |
 | --- | --- | --- | --- |
 | `codes` | 10 | creator | codes per keyframe (K) |
-| `spread` | 1 | creator | take an equal share of the codes from each horizontal third |
-| `stop_after` | 3 | creator | drop codes that agree with codes of more than N other keyframes |
-| `fps` | 1 | verifier | frames sampled per second of the checked clip |
-| `prepared_size` | 512 | verifier | image-simprints `prepared_size` of the sampled frames |
-| `min_frames` | 3 | verifier | frames on one time line needed to declare a match (M) |
+| `spread` | 0 | creator | take an equal share of the codes from each horizontal third |
+| `stop_after` | 1000 | creator | drop codes that agree with codes of more than N other keyframes (1000: off) |
+| `fps` | 2 | verifier | frames sampled per second of the checked clip |
+| `prepared_size` | 1024 | verifier | image-simprints `prepared_size` of the sampled frames |
+| `min_frames` | 1 | verifier | frames on one time line needed to declare a match (M) |
 
 The version string is `video-simprints/0.1`, with each creator setting that
 differs from its default appended as `;name=value` (booleans as 0 or 1), in the
 order of the table. Verifier settings do not change stored codes and are not in
-the string. Each keyframe also carries its image-simprints version, for example
+the string. The defaults were chosen on the tuning split
+([report](tests/corpus/report-tuning/summary.md)); N and M were fitted there for
+every setting. Each keyframe also carries its image-simprints version, for example
 `image-simprints/2.2;creator_codes=20`.
 
 Fixed constants:

@@ -13,15 +13,15 @@ from image_simprints.recipe import hamming, mark_stop_codes, parse, prepare, set
 from . import video
 
 RECIPE = "video-simprints/0.1"
-DEFAULTS = {
+DEFAULTS = {  # chosen on the tuning split (tests/corpus/report-tuning)
     "codes": 10,  # codes per keyframe
-    "spread": True,  # an equal share of the codes from each horizontal third
-    "stop_after": 3,  # drop codes that agree with codes of more than this many other keyframes
+    "spread": False,  # an equal share of the codes from each horizontal third (did not help)
+    "stop_after": 1000,  # drop codes that agree with codes of more than this many other keyframes (1000: off, as fitted)
 }
 VERIFY = {
-    "fps": 1,  # frames sampled per second of the checked clip
-    "prepared_size": 512,  # image-simprints verifier size
-    "min_frames": 3,  # frames that must agree with one time line
+    "fps": 2,  # frames sampled per second of the checked clip
+    "prepared_size": 1024,  # image-simprints verifier size
+    "min_frames": 1,  # frames that must agree with one time line (fitted; raise it for a large index)
 }
 SAMPLE_FPS = 5  # frames decoded per second (as iscc-sdk's scene detection)
 GRID = 3.0  # seconds between keyframes
