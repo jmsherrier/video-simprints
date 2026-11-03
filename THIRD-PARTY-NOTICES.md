@@ -14,11 +14,9 @@ Versions are the pins in [`pyproject.toml`](pyproject.toml).
 
 The wheels bundle other libraries under their own licences; image-simprints'
 [THIRD-PARTY-NOTICES](https://github.com/jmsherrier/image-simprints/blob/v0.3.0/THIRD-PARTY-NOTICES.md)
-lists them. One matters here: **the opencv-python-headless wheel ships an FFmpeg
-library** (`opencv_videoio_ffmpeg` on Windows, `libavcodec` and friends under
-`opencv_python_headless.libs` on Linux) for `cv2.VideoCapture`. video-simprints
-never calls it: every video is decoded by the system `ffmpeg`. The library is
-still installed, so a licence review of bundled decoders should know it is there.
+lists them.
+
+The opencv-python-headless wheel installs its own FFmpeg library (for `cv2.VideoCapture`), which video-simprints does not call: it decodes with the system `ffmpeg`.
 
 ## FFmpeg (external, not bundled)
 
