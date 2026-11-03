@@ -128,7 +128,7 @@ def make_clip(c: dict, src: Path, bg: Path | None):
     """Write one manipulated clip or still with ffmpeg."""
     out, s, n, m = Path(c["path"]), c["start"], c["end"] - c["start"], c["manipulation"]
     cut = ["-ss", f"{s:.3f}", "-t", f"{n:.3f}", "-i", src]
-    if m == "still":
+    if m.endswith("still"):
         ff("-ss", f"{s:.3f}", "-i", src, "-frames:v", 1, out)
     elif m.startswith("excerpt"):
         ff(*cut, *ENCODE, "-crf", 23, out)

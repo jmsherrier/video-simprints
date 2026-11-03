@@ -32,8 +32,8 @@ Fixed constants:
 | `CUT` | 0.4 | ffmpeg scene score at or above which a frame starts a new scene |
 | `CUT_MARGIN` | 0.5 s | grid points this close to a cut are skipped |
 | `WINDOW` | 0.4 s | a blurred grid frame is replaced by the sharpest frame this close |
-| `BLUR` | 100 | variance of the Laplacian below which a grid frame is blurred |
-| `UNIFORM` | 8 | standard deviation of grey below which a frame is black or uniform |
+| `BLUR` | 35 | variance of the Laplacian below which a grid frame is blurred (the 10th percentile of tuning grid frames) |
+| `UNIFORM` | 8 | standard deviation of grey below which a frame is black or uniform (no tuning grid frame below it had codes) |
 | `SLOPE` | 0.1 | time vote: slope 1 ± 0.1 |
 | `TIME_TOLERANCE` | 3 s | time vote: how far a frame may lie off the line |
 
