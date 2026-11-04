@@ -1,7 +1,6 @@
 """The video recipe: keyframes on a time grid, image simprints on each (creator); frames
 matched one by one, then a time vote (verifier). RECIPE.md describes every step."""
 
-import math
 from bisect import bisect_right
 from collections import Counter, deque
 
@@ -33,7 +32,7 @@ WINDOW = 0.4  # seconds: a blurred grid frame is replaced by the sharpest frame 
 BLUR = 35.0  # variance of the Laplacian below which a grid frame counts as blurred (10th percentile on tuning)
 UNIFORM = 8.0  # standard deviation of grey below which a frame counts as black or uniform
 ALL_CODES = 512  # image-simprints' CANDIDATES cap: the full ranked list
-SLOPE = 0.1  # time vote: slope 1 +/- this
+SLOPES = np.round(np.arange(0.9, 1.1001, 0.02), 2)  # time vote: slopes tried (1 +/- 10%)
 TIME_TOLERANCE = GRID  # time vote: seconds a frame may lie off the line
 
 
@@ -137,23 +136,28 @@ def index(declarations: dict, shared_after: int | None = None) -> dict:
     intro, a channel's lower thirds) are left out: index-level stop codes."""
     kfs = [(d, k) for d, decl in declarations.items() for k in decl["keyframes"]]
     if shared_after is not None:
-        kfs = [(d, k | {"codes": [c for c, ok in zip(k["codes"], keep) if ok]}) for (d, k), keep in zip(kfs, unshared(kfs, shared_after))]
+        kfs = unshared(kfs, shared_counts(kfs), shared_after)
+    return index_keyframes(kfs)
+
+
+def index_keyframes(kfs: list) -> dict:
     codes = [parse(k)[0] for _, k in kfs]
     return {"keyframes": kfs, "codes": np.concatenate(codes) if codes else np.zeros((0, 4), np.uint64),
             "owner": np.repeat(np.arange(len(kfs)), [len(c) for c in codes])}  # fmt: skip
 
 
-def unshared(kfs: list, n: int) -> list:
-    """Per keyframe, per code: whether it agrees with codes of at most n other declarations."""
+def shared_counts(kfs: list) -> list:
+    """Per keyframe, per code: how many other declarations have a code that agrees with it."""
     ids = {d: i for i, d in enumerate(dict.fromkeys(d for d, _ in kfs))}
     codes = [parse(k)[0] for _, k in kfs]
     every = np.concatenate(codes)
     decl = np.repeat([ids[d] for d, _ in kfs], [len(c) for c in codes])
-    out = []
-    for (d, _), mine in zip(kfs, codes):
-        near = hamming(mine, every) <= 24
-        out.append([len(set(decl[row].tolist()) - {ids[d]}) <= n for row in near])
-    return out
+    return [[len(set(decl[row].tolist()) - {ids[d]}) for row in hamming(mine, every) <= 24] for (d, _), mine in zip(kfs, codes)]
+
+
+def unshared(kfs: list, counts: list, n: int) -> list:
+    """The keyframes without codes shared with more than n other declarations."""
+    return [(d, k | {"codes": [c for c, m in zip(k["codes"], cs) if m <= n]}) for (d, k), cs in zip(kfs, counts)]
 
 
 def frame_hits(query: dict, idx: dict, near: np.ndarray | None = None) -> list:
@@ -231,19 +235,13 @@ def decide(hits: list, fps: float, min_frames: int) -> list:
 
 
 def time_vote(p: np.ndarray):
-    """The line t = a c + b (a within 1 +/- SLOPE) with the most distinct clip times
-    c within TIME_TOLERANCE of it: (a, b, count), or None. Lines through each point
-    with slope 1, and through each pair of points, are tried."""
+    """The line t = a c + b with the most distinct clip times c within TIME_TOLERANCE
+    of it: (a, b, count), or None. Tried: each slope in SLOPES through each point."""
     if not len(p):
         return None
     c, t = p[:, 0], p[:, 1]
-    i, j = np.triu_indices(len(p), 1)
-    ok = c[j] != c[i]
-    i, j = i[ok], j[ok]
-    a = (t[j] - t[i]) / (c[j] - c[i])
-    ok = np.abs(a - 1) <= SLOPE
-    a = np.concatenate([np.ones(len(p)), a[ok]])
-    b = np.concatenate([t - c, t[i[ok]] - a[len(p) :] * c[i[ok]]])
+    a = np.repeat(SLOPES, len(p))
+    b = np.tile(t, len(SLOPES)) - a * np.tile(c, len(SLOPES))
     res = np.abs(t[None, :] - (a[:, None] * c[None, :] + b[:, None]))
     inl = res <= TIME_TOLERANCE
     order = np.argsort(c, kind="stable")

@@ -80,7 +80,7 @@ def test_vertical_crop_and_excerpt(clip, tmp_path):
         top = verify(tmp_path / f"{name}.mp4", idx)[0]
         assert top["declaration"] == "synthetic" and top["relationship"] in rel, (name, top)
         assert 16 - 3 <= top["original"][0] < top["original"][1] <= 28 + 3, (name, top)  # inside the excerpt
-        assert abs(top["slope"] - 1) <= recipe.SLOPE
+        assert abs(top["slope"] - 1) <= 0.1
     ff("-ss", 22.6, "-i", clip, "-frames:v", 1, tmp_path / "still.png")
     hit = verify_still(tmp_path / "still.png", idx)[0]
     assert hit["declaration"] == "synthetic" and abs(hit["time"] - 22.6) <= 3
@@ -89,4 +89,4 @@ def test_vertical_crop_and_excerpt(clip, tmp_path):
 def test_time_vote():
     p = np.array([(0, 100), (1, 101), (2, 102.2), (3, 103), (4, 50), (5, 105)])
     a, b, n = recipe.time_vote(p)
-    assert n == 5 and abs(a - 1) <= recipe.SLOPE and abs(b - 100) <= 1
+    assert n == 5 and abs(a - 1) <= 0.1 and abs(b - 100) <= 1
