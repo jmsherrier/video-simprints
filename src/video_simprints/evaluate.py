@@ -72,38 +72,51 @@ _W = {}
 
 
 def _init(path):
-    """Every swept index, and the universe of codes they are drawn from (each candidate
-    keyframe's top max(CODES)), so a frame's distances are computed once."""
-    decls, cols, _W["U"] = pickle.loads(Path(path).read_bytes())
-    _W["idx"] = {}
+    """Every swept index of the originals, and the universe of codes they are drawn from
+    (each candidate keyframe's top max(CODES)), so a frame's distances are computed
+    once. Index-level stop codes count every other video of the split (the reference
+    collection): see _indexes."""
+    decls, _W["cols"], _W["U"], originals = pickle.loads(Path(path).read_bytes())
+    _W["base"] = {}
     for (k, n), ds in decls.items():
-        kfs = [(d, kf) for d, decl in ds.items() for kf in decl["keyframes"]]
-        counts = recipe.shared_counts(kfs)
+        kfs = [(d, kf) for d in originals for kf in ds[d]["keyframes"]]
+        _W["base"][(k, n)] = (kfs, recipe.sharers(kfs, {d: x for d, x in ds.items() if d not in originals}))
+    _W["idx"] = _indexes(None)
+
+
+def _indexes(ignore) -> dict:
+    """Every swept index; index-level stop codes leave the video `ignore` (the query's
+    own, so leave one out) out of the reference collection."""
+    out = {}
+    for (k, n), (kfs, sets) in _W["base"].items():
         for sh in SHARED_AFTER:
-            idx = recipe.index_keyframes(kfs if sh is None else recipe.unshared(kfs, counts, sh))
-            idx["cols"] = np.array([cols[(d, kf["time"], x["chunk_idx"])] for d, kf in idx["keyframes"] for x in kf["codes"]], int)
-            _W["idx"][vkey(k, n, sh)] = idx
+            idx = recipe.index_keyframes(kfs if sh is None else recipe.unshared(kfs, sets, sh, ignore))
+            idx["cols"] = np.array([_W["cols"][(d, kf["time"], x["chunk_idx"])] for d, kf in idx["keyframes"] for x in kf["codes"]], int)
+            out[vkey(k, n, sh)] = idx
+    return out
 
 
-def _hits(sps: list) -> dict:
+def _hits(sps: list, idxs: dict) -> dict:
     """Per swept index: per simprint, its frame_hits."""
     nears = [hamming(parse(sp)[0], _W["U"]) <= 24 for sp in sps]
-    return {vk: [recipe.frame_hits(sp, idx, nr[:, idx["cols"]]) for sp, nr in zip(sps, nears)] for vk, idx in _W["idx"].items()}
+    return {vk: [recipe.frame_hits(sp, idx, nr[:, idx["cols"]]) for sp, nr in zip(sps, nears)] for vk, idx in idxs.items()}
 
 
 def _query(c: dict):
     sets = codes_of(c)
+    own = c.get("background") if c["manipulation"].startswith("pip") else None if c["source"] else c["id"].split("__")[0]
+    idxs = _W["idx"] if own is None else _indexes(own)
     out = {}
     if c["manipulation"].endswith("still"):
         for size in STILL_SIZES:
             for n in STILL_CODES:
-                for vk, (h,) in _hits([sets[size] | {"codes": sets[size]["codes"][:n]}]).items():
+                for vk, (h,) in _hits([sets[size] | {"codes": sets[size]["codes"][:n]}], idxs).items():
                     b = max(h, key=lambda x: x[2]["agreeing_codes"], default=None)
                     out[(f"{size}/{n}", vk)] = b and (b[0], b[1]["time"], b[2]["relationship"], b[2]["agreeing_codes"])
         return c["id"], out
-    modes = {name: _hits(sets[name]) for name in ("512", "1024", "1920") if name in sets}
+    modes = {name: _hits(sets[name], idxs) for name in ("512", "1024", "1920") if name in sets}
     if "tiles" in sets:
-        flat = _hits([sp for four in sets["tiles"] for sp in four])
+        flat = _hits([sp for four in sets["tiles"] for sp in four], idxs)
         tiles = {vk: [sum(h[i : i + 4], []) for i in range(0, len(h), 4)] for vk, h in flat.items()}
         for name in ("1024", "1920"):
             modes[f"{name}+tiles"] = {vk: [a + b for a, b in zip(modes[name][vk], tiles[vk])] for vk in tiles}
@@ -142,11 +155,12 @@ def run(split: str, workers: int) -> dict:
     (CACHE / "clips" / split).mkdir(parents=True, exist_ok=True)
     with ThreadPoolExecutor(workers) as ex:  # each clip is an ffmpeg process
         list(ex.map(lambda c: make_clip(c, src[c["source"] or c["id"].split("__")[0]], src.get(c.get("background"))), todo))
-    originals = [r for r in corpus() if r["split"] == split and r["role"] == "original"]
+    videos = [r for r in corpus() if r["split"] == split]  # unrelated ones are the reference collection
+    originals = [r["name"] for r in videos if r["role"] == "original"]
     with Pool(workers) as pool:
-        cands = dict(pool.map(_cands, originals))
+        cands = {n: c for n, c in pool.map(_cands, videos) if n in originals}
         decls = {}
-        for (k, n, name), d in pool.map(_create, [(r["name"], k, n) for r in originals for k in CODES for n in STOP_AFTER]):
+        for (k, n, name), d in pool.map(_create, [(r["name"], k, n) for r in videos for k in CODES for n in STOP_AFTER]):
             decls.setdefault((k, n), {})[name] = d
     cols, codes = {}, []
     for name, c in cands.items():
@@ -155,11 +169,11 @@ def run(split: str, workers: int) -> dict:
                 cols[(name, kf["time"], x["chunk_idx"])] = len(codes)
                 codes.append(np.frombuffer(bytes.fromhex(x["code"]), ">u8"))
     path = CACHE / "eval" / f"decls-{split}.pkl"
-    path.write_bytes(pickle.dumps((decls, cols, np.array(codes, np.uint64).reshape(-1, 4))))
+    path.write_bytes(pickle.dumps((decls, cols, np.array(codes, np.uint64).reshape(-1, 4), originals)))
     order = sorted(queries, key=lambda c: -(c["end"] - c["start"]) * (5 if c["manipulation"] in TILED else 1))  # long first
     with Pool(workers, _init, (str(path),)) as pool:
         results = dict(pool.imap_unordered(_query, order))
-    return {"queries": queries, "results": results, "cands": cands, "decls": decls}
+    return {"queries": queries, "results": results, "cands": cands, "decls": {kn: {d: ds[d] for d in originals} for kn, ds in decls.items()}}
 
 
 # --- scoring ---------------------------------------------------------------------------
@@ -348,7 +362,8 @@ def summary(r: dict) -> str:
     L = [f"# video-simprints report: {r['split']} split", "",
          f"Recipe {r['recipe']} on {r['image_recipe']}; {r['ffmpeg']}. {r['queries']} queries. Thresholds fitted on "
          f"the {r['fitted_on']} split. N: per-video stop codes (`stop_after`, 1000 = off); N2: index-level stop codes "
-         f"(`shared_after`, None = off); M: `min_frames`.", "",
+         f"(`shared_after`, None = off), counted against every other video of the split (originals and unrelated, leaving out "
+         f"the queried video and a picture-in-picture background); M: `min_frames`.", "",
          f"**Recommended** (chosen on tuning): K = {rec['codes']}, verifier {rec['size']} px at {rec['fps']} fps, "
          f"N = {rec['stop_after']}, N2 = {rec['shared_after']}, M = {rec['min_frames']}.", "",
          "## Video-level match rate (right video, time range within 3 s) and false matches", "",

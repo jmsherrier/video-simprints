@@ -130,13 +130,15 @@ def duplicate_of(kf: dict, kfs: list) -> dict | None:
 # --- verifier --------------------------------------------------------------------------
 
 
-def index(declarations: dict, shared_after: int | None = None) -> dict:
+def index(declarations: dict, shared_after: int | None = None, against: dict | None = None) -> dict:
     """An in-memory index of every keyframe of {id: create() result}. With shared_after,
     codes that agree with codes of more than that many other declarations (a series
-    intro, a channel's lower thirds) are left out: index-level stop codes."""
+    intro, a channel's lower thirds) are left out: index-level stop codes. `against`
+    adds declarations that count as others without being indexed (a reference
+    collection, such as a channel's other videos)."""
     kfs = [(d, k) for d, decl in declarations.items() for k in decl["keyframes"]]
     if shared_after is not None:
-        kfs = unshared(kfs, shared_counts(kfs), shared_after)
+        kfs = unshared(kfs, sharers(kfs, against), shared_after)
     return index_keyframes(kfs)
 
 
@@ -146,18 +148,20 @@ def index_keyframes(kfs: list) -> dict:
             "owner": np.repeat(np.arange(len(kfs)), [len(c) for c in codes])}  # fmt: skip
 
 
-def shared_counts(kfs: list) -> list:
-    """Per keyframe, per code: how many other declarations have a code that agrees with it."""
-    ids = {d: i for i, d in enumerate(dict.fromkeys(d for d, _ in kfs))}
-    codes = [parse(k)[0] for _, k in kfs]
+def sharers(kfs: list, against: dict | None = None) -> list:
+    """Per keyframe, per code: the other declarations (in kfs or against) with a code
+    that agrees with it."""
+    every_kfs = kfs + [(d, k) for d, decl in (against or {}).items() for k in decl["keyframes"]]
+    codes = [parse(k)[0] for _, k in every_kfs]
     every = np.concatenate(codes)
-    decl = np.repeat([ids[d] for d, _ in kfs], [len(c) for c in codes])
-    return [[len(set(decl[row].tolist()) - {ids[d]}) for row in hamming(mine, every) <= 24] for (d, _), mine in zip(kfs, codes)]
+    owner = np.repeat(np.array([d for d, _ in every_kfs], object), [len(c) for c in codes])
+    return [[frozenset(owner[row]) - {d} for row in hamming(mine, every) <= 24] for (d, _), mine in zip(kfs, codes)]
 
 
-def unshared(kfs: list, counts: list, n: int) -> list:
-    """The keyframes without codes shared with more than n other declarations."""
-    return [(d, k | {"codes": [c for c, m in zip(k["codes"], cs) if m <= n]}) for (d, k), cs in zip(kfs, counts)]
+def unshared(kfs: list, sets: list, n: int, ignore=None) -> list:
+    """The keyframes without codes shared with more than n other declarations (not
+    counting `ignore`)."""
+    return [(d, k | {"codes": [c for c, s in zip(k["codes"], ss) if len(s - {ignore}) <= n]}) for (d, k), ss in zip(kfs, sets)]
 
 
 def frame_hits(query: dict, idx: dict, near: np.ndarray | None = None) -> list:
