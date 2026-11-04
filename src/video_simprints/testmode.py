@@ -185,6 +185,7 @@ def main(argv=None):
     t.add_argument("--out", type=Path)
     t.add_argument("--fits", type=Path, help="a tuning report directory whose fitted thresholds to use")
     t.add_argument("--workers", type=int, default=max(1, (os.cpu_count() or 2) // 2))
+    t.add_argument("--experiment", action="store_true", help="branding labels and overlapping tiles, after a test run")
     a = ap.parse_args(argv)
     if a.cmd == "create":
         json.dump(recipe.create(a.video, json.loads(a.settings)), sys.stdout)
@@ -197,8 +198,10 @@ def main(argv=None):
         fetch()
     else:
         from .evaluate import test
+        from .experiment import main as experiment
 
-        test(a.split, a.out or Path("tests") / "corpus" / f"report-{a.split}", a.fits, a.workers)
+        name = f"report-{'experiment-' if a.experiment else ''}{a.split}"
+        (experiment if a.experiment else test)(a.split, a.out or Path("tests") / "corpus" / name, a.fits, a.workers)
 
 
 if __name__ == "__main__":

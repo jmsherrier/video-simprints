@@ -69,10 +69,12 @@ original's picture is inside the clip's, as in picture-in-picture, or
 Settings and defaults, fitted on the tuning split: creator `codes=10`,
 `spread=False`, `stop_after=1000` (per-video stop codes off: they did not help);
 verifier `fps=1`, `prepared_size=1024`, `min_frames=10`, `still_votes=3`,
-`tiles=False` (set it for small picture-in-picture, at 3–4× the cost). The index
-takes `shared_after` (index-level stop codes, 0 fitted) and `against`, a
-reference collection such as the declaring channel's other videos: codes shared
-with other videos (series intros, studio sets, logo bugs) are left out.
+`tiles=0` (5 for small picture-in-picture: the quarters and a centre tile, at
+about 4× the cost). The index takes `shared_after` (index-level stop codes, 0
+fitted) and `against`, a reference collection such as the declaring channel's
+other videos: codes shared with other videos (series intros, studio sets, logo
+bugs) are left out, or with `label=True` kept and marked, so that a match made
+mostly of them (`branding=0.6`, fitted) is returned as `shared_branding`.
 [RECIPE.md](RECIPE.md) specifies every step.
 
 The command line does the same: `video-simprints create film.mp4 > film.json`,
@@ -126,6 +128,21 @@ centred 25% inset straddles the tiles and is missed). Stills: 54–58% found, wi
 150 codes per minute, 13,600 codes per 90-minute film (K = 5: 7,000; K = 20:
 26,000). Time per minute of video, one process: creator 1.5 s; verifier 4 s
 (17 s with tiles).
+
+**Branding labels and overlapping tiles**
+([report](tests/corpus/report-experiment-test/summary.md), [tuning](tests/corpus/report-experiment-tuning/summary.md);
+`video-simprints test --experiment` after `test`). With `index(..., label=True)`
+the shared codes stay in the index and a match whose agreeing codes are at least
+60% shared (fitted) is returned as `shared_branding`. At M = 3 on test: 73% of
+clips found (72% with the codes dropped), 103 branding matches labelled (100 to
+the same series as the query or its picture-in-picture background, 3 between
+NASA's two ISS series), 1 source lost to the label (a 10 s excerpt of an
+intro), and 1 unlabelled false match (two launch videos), against 3 and 6 with
+the codes dropped. For centred picture-in-picture, a fifth, centre tile
+(`tiles=5`) does what the 3×3 grid does at 20 s instead of 32 s per minute
+(quarters only: 17 s). It finds centred insets the quarters miss (25%: 2 of 2 at
+M = 1, against 0; 40%: 5 of 9 at M = 3, against 4), with one more false match
+than the quarters (3 against 2 at M = 3, labelled).
 
 ## Documents
 

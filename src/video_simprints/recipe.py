@@ -23,7 +23,8 @@ VERIFY = {  # fitted on the tuning split (tests/corpus/report-tuning)
     "min_frames": 10,  # frames that must agree with one time line (no false match on tuning; 3 finds more, see the report)
     "still_votes": 3,  # agreeing codes a single still needs
     "verifier_codes": 64,  # image-simprints verifier codes per frame
-    "tiles": False,  # also code the four quarters of each frame (small picture-in-picture)
+    "tiles": 0,  # also code this many half-size tiles of each frame (0, 4, 5 or 9: see TILES)
+    "branding": 0.6,  # with index(label=True): label a match "shared_branding" when this share of its codes is shared
 }
 SAMPLE_FPS = 5  # frames decoded per second (as iscc-sdk's scene detection)
 GRID = 3.0  # seconds between keyframes
@@ -35,6 +36,9 @@ UNIFORM = 8.0  # standard deviation of grey below which a frame counts as black 
 ALL_CODES = 512  # image-simprints' CANDIDATES cap: the full ranked list
 SLOPES = np.round(np.arange(0.9, 1.1001, 0.02), 2)  # time vote: slopes tried (1 +/- 10%)
 TIME_TOLERANCE = GRID  # time vote: seconds a frame may lie off the line
+TILES = {4: [(0, 0), (0, 2), (2, 0), (2, 2)]}  # half-size tiles, top left in quarters of the frame (y, x)
+TILES[5] = TILES[4] + [(1, 1)]  # the quarters and a centre tile
+TILES[9] = [(y, x) for y in range(3) for x in range(3)]  # 3x3, overlapping by half
 
 
 def version_string(s: dict) -> str:
@@ -131,16 +135,20 @@ def duplicate_of(kf: dict, kfs: list) -> dict | None:
 # --- verifier --------------------------------------------------------------------------
 
 
-def index(declarations: dict, shared_after: int | None = None, against: dict | None = None) -> dict:
+def index(declarations: dict, shared_after: int | None = None, against: dict | None = None, label: bool = False) -> dict:
     """An in-memory index of every keyframe of {id: create() result}. With shared_after,
     codes that agree with codes of more than that many other declarations (a series
-    intro, a channel's lower thirds) are left out: index-level stop codes. `against`
-    adds declarations that count as others without being indexed (a reference
-    collection, such as a channel's other videos)."""
+    intro, a channel's lower thirds) are left out: index-level stop codes; with label,
+    they are kept and marked shared instead (see decide). `against` adds declarations
+    that count as others without being indexed (a reference collection, such as a
+    channel's other videos)."""
     kfs = [(d, k) for d, decl in declarations.items() for k in decl["keyframes"]]
-    if shared_after is not None:
-        kfs = unshared(kfs, sharers(kfs, against), shared_after)
-    return index_keyframes(kfs)
+    if shared_after is None:
+        return index_keyframes(kfs)
+    sets = sharers(kfs, against)
+    if label:
+        return index_keyframes(kfs) | {"shared": shared_flags(sets, shared_after)}
+    return index_keyframes(unshared(kfs, sets, shared_after))
 
 
 def index_keyframes(kfs: list) -> dict:
@@ -165,9 +173,16 @@ def unshared(kfs: list, sets: list, n: int, ignore=None) -> list:
     return [(d, k | {"codes": [c for c, s in zip(k["codes"], ss) if len(s - {ignore}) <= n]}) for (d, k), ss in zip(kfs, sets)]
 
 
+def shared_flags(sets: list, n: int, ignore=None) -> np.ndarray:
+    """Per code of the index, in order: shared with more than n other declarations."""
+    return np.array([len(s - {ignore}) > n for ss in sets for s in ss], bool)
+
+
 def frame_hits(query: dict, idx: dict, near: np.ndarray | None = None) -> list:
     """(declaration id, keyframe, match result) for every keyframe the frame matches.
-    `near` (query codes x index codes within tolerance) may be passed in precomputed."""
+    `near` (query codes x index codes within tolerance) may be passed in precomputed.
+    With a labelled index, the result also has the share of the keyframe's codes near
+    the frame's that are shared ("shared_fraction")."""
     if near is None:
         q = parse(query)[0]
         if not len(q) or not len(idx["codes"]):
@@ -181,17 +196,23 @@ def frame_hits(query: dict, idx: dict, near: np.ndarray | None = None) -> list:
         d, k = idx["keyframes"][o]
         r = match(query, k)
         if r["relationship"] != "none":
+            if "shared" in idx:  # ponytail: codes within tolerance, not match()'s geometric inliers
+                r["shared_fraction"] = float(idx["shared"][np.unique(ci[idx["owner"][ci] == o])].mean())
             out.append((d, k, r))
     return out
 
 
-def frame_codes(frame: np.ndarray, s: dict) -> list:
-    """Verifier codes of a frame, and with tiles, also of its four quarters (a small
-    picture-in-picture inset fills more of a quarter)."""
-    opts = {"prepared_size": s["prepared_size"], "verifier_codes": s["verifier_codes"]}
+def tiles(frame: np.ndarray, positions: list) -> list:
+    """Half-size tiles of a frame, each at (y, x) quarters of the frame from the top left."""
     h, w = frame.shape[:2]
-    parts = [frame] + ([frame[y : y + h // 2, x : x + w // 2] for y in (0, h // 2) for x in (0, w // 2)] if s["tiles"] else [])
-    return [generate(p, "verifier", opts) for p in parts]
+    return [frame[y * h // 4 : y * h // 4 + h // 2, x * w // 4 : x * w // 4 + w // 2] for y, x in positions]
+
+
+def frame_codes(frame: np.ndarray, s: dict) -> list:
+    """Verifier codes of a frame, and of its tiles (a small picture-in-picture inset
+    fills more of a tile)."""
+    opts = {"prepared_size": s["prepared_size"], "verifier_codes": s["verifier_codes"]}
+    return [generate(p, "verifier", opts) for p in [frame, *tiles(frame, TILES.get(s["tiles"], []))]]
 
 
 def verify_still(source, idx: dict, settings: dict | None = None) -> list:
@@ -203,7 +224,8 @@ def verify_still(source, idx: dict, settings: dict | None = None) -> list:
             if r["agreeing_codes"] < s["still_votes"]:
                 continue
             if d not in best or r["agreeing_codes"] > best[d]["agreeing_codes"]:
-                best[d] = {"declaration": d, "time": k["time"], "relationship": r["relationship"],
+                branded = s["branding"] is not None and r.get("shared_fraction", 0) >= s["branding"]
+                best[d] = {"declaration": d, "time": k["time"], "relationship": "shared_branding" if branded else r["relationship"],
                            "overlap_fraction": r["overlap_fraction"], "agreeing_codes": r["agreeing_codes"]}  # fmt: skip
     return sorted(best.values(), key=lambda h: -h["agreeing_codes"])
 
@@ -213,11 +235,13 @@ def verify(path, idx: dict, settings: dict | None = None) -> list:
     line, the matched range in the original and the dominant relationship."""
     s = VERIFY | (settings or {})
     hits = [[h for sp in frame_codes(f, s) for h in frame_hits(sp, idx)] for f in video.frames(path, s["fps"])]
-    return decide(hits, s["fps"], s["min_frames"])
+    return decide(hits, s["fps"], s["min_frames"], s["branding"])
 
 
-def decide(hits: list, fps: float, min_frames: int) -> list:
-    """The time vote over per-frame hits (frame i at i / fps in the clip)."""
+def decide(hits: list, fps: float, min_frames: int, branding: float | None = None) -> list:
+    """The time vote over per-frame hits (frame i at i / fps in the clip). With a
+    labelled index, a match whose agreeing codes are mostly shared (their share at
+    least `branding`) is labelled "shared_branding": a series intro, a studio set."""
     out = []
     for d in sorted({h[0] for frame in hits for h in frame}):
         pts = [(i / fps, t, r) for i, frame in enumerate(hits) for dd, k, r in frame if dd == d
@@ -233,7 +257,10 @@ def decide(hits: list, fps: float, min_frames: int) -> list:
                 per_frame[c] = r
         rel = Counter(r["relationship"] for r in per_frame.values()).most_common(1)[0][0]
         c0, c1 = min(per_frame), max(per_frame)
-        out.append({"declaration": d, "frames": n, "relationship": rel,
+        rs = per_frame.values()
+        shared = sum(r.get("shared_fraction", 0) * r["agreeing_codes"] for r in rs) / sum(r["agreeing_codes"] for r in rs)
+        label = "shared_branding" if branding is not None and shared >= branding else rel
+        out.append({"declaration": d, "frames": n, "relationship": label, "shared_fraction": round(shared, 3),
                     "overlap_fraction": {side: round(float(np.median([r["overlap_fraction"][side] for r in per_frame.values()
                                                                       if r["relationship"] == rel])), 4)
                                          for side in ("verifier", "candidate")},

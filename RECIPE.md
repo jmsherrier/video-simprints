@@ -18,8 +18,10 @@ checked against declarations (verifier side). The reference implementation is
 | `min_frames` | 10 | verifier | frames on one time line needed to declare a match (M) |
 | `still_votes` | 3 | verifier | agreeing codes a single still needs |
 | `verifier_codes` | 64 | verifier | image-simprints `verifier_codes` per frame |
-| `tiles` | 0 | verifier | also code the four quarters of each frame |
+| `tiles` | 0 | verifier | also code this many half-size tiles of each frame: 0, 4 (quarters), 5 (quarters and centre) or 9 (3×3, overlapping by half) |
+| `branding` | 0.6 | verifier | with a labelled index: label a match `shared_branding` when this share of its codes is shared |
 | `shared_after` | none | index | drop codes shared with more than N2 other videos (none: off; 0 fitted, with a reference collection) |
+| `label` | false | index | keep the codes `shared_after` would drop, marked as shared, for `branding` |
 
 The version string is `video-simprints/0.1`, with each creator setting that
 differs from its default appended as `;name=value` (booleans as 0 or 1), in the
@@ -104,10 +106,13 @@ time, scene}]}]}`. Each keyframe is a valid image-simprints `generate()` result.
 
 1. **Frames**: decode the clip at `fps`; code each frame with
    `generate(frame, "verifier", {"prepared_size": prepared_size, "verifier_codes":
-   verifier_codes})`. With `tiles`, also code its four quarters (top-left,
-   top-right, bottom-left, bottom-right, each `w // 2` × `h // 2`) the same way;
-   steps 2 and 3 run on each, and the frame's matches are all of theirs. A
-   small picture-in-picture inset fills four times more of a quarter.
+   verifier_codes})`. With `tiles`, also code that many half-size tiles (`w // 2`
+   × `h // 2`) the same way, each with its top left at (`y h // 4`, `x w // 4`)
+   for (y, x) in `TILES[tiles]`: 4 is the quarters (0, 0), (0, 2), (2, 0),
+   (2, 2); 5 adds the centre (1, 1); 9 is every (y, x) in 0..2, a 3×3 grid
+   overlapping by half. Steps 2 and 3 run on each, and the frame's matches are
+   all of theirs. A small picture-in-picture inset fills four times more of a
+   tile; the centre tile catches a centred inset, which straddles the quarters.
 2. **Candidates**: every stored keyframe with at least 2 of its codes within
    Hamming distance 24 of the frame's codes (the reference keeps all codes in
    memory; see image-simprints INTEGRATION.md for a banded index).
@@ -125,6 +130,12 @@ time, scene}]}]}`. Each keyframe is a valid image-simprints `generate()` result.
    in the original (`a c + b` at its ends), the slope, the dominant
    relationship among the agreeing frames (each frame's strongest match) and the
    median overlap fractions of those. Results are sorted by count.
+6. **Branding label** (a labelled index only): per agreeing frame, the share of
+   the keyframe's codes within distance 24 of the frame's codes that are marked
+   shared; their mean, weighted by agreeing codes, is `shared_fraction`. At or
+   above `branding`, the relationship is `shared_branding`: the clip shows what
+   the declaration shares with other videos (a series intro, a studio set), not
+   the declaration's own content. Stills: the best keyframe's share, likewise.
 
 **Stills**: a single image is one frame: steps 1 to 3, with the best keyframe
 (most agreeing codes, at least `still_votes`) per declaration. Its time says
@@ -137,7 +148,9 @@ plus an optional reference collection (`against`), for example the other
 videos of the declaring channel. These codes are what a channel's videos share:
 a series intro, a title card, lower thirds, reused footage. Per-video stop codes
 (§4) cannot see them, because an intro appears once per video. Recompute them as
-declarations are added.
+declarations are added. With `label`, the codes stay in the index, marked
+shared, and matches made mostly of them are labelled (§5 step 6) instead of
+lost.
 
 ## 6. Test vectors
 

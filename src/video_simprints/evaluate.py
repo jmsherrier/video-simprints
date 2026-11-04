@@ -40,11 +40,6 @@ def gen(f, size, n=64):
     return generate(f, "verifier", {"prepared_size": size, "verifier_codes": n})
 
 
-def quarters(f):
-    h, w = f.shape[:2]
-    return [f[y : y + h // 2, x : x + w // 2] for y in (0, h // 2) for x in (0, w // 2)]
-
-
 def codes_of(c: dict) -> dict:
     """Verifier codes of one query, cached: per frame at 2 fps, or for a still."""
     cache = CACHE / "eval" / (c["id"] + ".pkl")
@@ -60,7 +55,7 @@ def codes_of(c: dict) -> dict:
             out["1024"].append(gen(f, 1024))
             if "tiles" in out:
                 out["1920"].append(gen(f, 1920))
-                out["tiles"].append([gen(q, 1024) for q in quarters(f)])
+                out["tiles"].append([gen(q, 1024) for q in recipe.tiles(f, recipe.TILES[4])])
     cache.parent.mkdir(parents=True, exist_ok=True)
     cache.write_bytes(pickle.dumps(out))
     return out
@@ -305,7 +300,7 @@ def timing(split: str, rec: dict) -> dict:
         path = CACHE / "clips" / split / f"{r['name']}__{clip}__0.mp4"
         for mode in modes:
             for fps in FPS if clip == "excerpt60" else (rec["fps"],):
-                size, tiles = int(mode.split("+")[0]), mode.endswith("tiles")
+                size, tiles = int(mode.split("+")[0]), 4 * mode.endswith("tiles")
                 t = time.perf_counter()
                 recipe.verify(path, idx, {"fps": fps, "prepared_size": size, "tiles": tiles})
                 out[f"verifier {mode} fps={fps} ({clip})"] = round((time.perf_counter() - t) / (probe(path)[0] / 60), 1)

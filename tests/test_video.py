@@ -90,3 +90,11 @@ def test_time_vote():
     p = np.array([(0, 100), (1, 101), (2, 102.2), (3, 103), (4, 50), (5, 105)])
     a, b, n = recipe.time_vote(p)
     assert n == 5 and abs(a - 1) <= 0.1 and abs(b - 100) <= 1
+
+
+def test_branding_label():
+    r = {"relationship": "identical", "agreeing_codes": 4, "overlap_fraction": {"verifier": 1.0, "candidate": 1.0}, "shared_fraction": 0.8}
+    hits = [[("a", {"time": 10.0 + i, "same_as": []}, r)] for i in range(5)]
+    assert recipe.decide(hits, 1, 3, 0.5)[0]["relationship"] == "shared_branding"
+    assert recipe.decide(hits, 1, 3, 0.9)[0]["relationship"] == "identical"
+    assert recipe.decide(hits, 1, 3)[0]["relationship"] == "identical"
