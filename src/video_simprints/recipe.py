@@ -8,7 +8,7 @@ from collections import Counter, deque
 import cv2
 import numpy as np
 from image_simprints import generate, match
-from image_simprints.recipe import hamming, mark_stop_codes, parse, prepare, settings_of, version_of
+from image_simprints.recipe import decode, hamming, mark_stop_codes, parse, prepare, settings_of, version_of
 
 from . import video
 
@@ -22,6 +22,8 @@ VERIFY = {
     "fps": 2,  # frames sampled per second of the checked clip
     "prepared_size": 1024,  # image-simprints verifier size
     "min_frames": 1,  # frames that must agree with one time line (fitted; raise it for a large index)
+    "verifier_codes": 64,  # image-simprints verifier codes per frame
+    "tiles": False,  # also code the four quarters of each frame (small picture-in-picture)
 }
 SAMPLE_FPS = 5  # frames decoded per second (as iscc-sdk's scene detection)
 GRID = 3.0  # seconds between keyframes
@@ -129,39 +131,69 @@ def duplicate_of(kf: dict, kfs: list) -> dict | None:
 # --- verifier --------------------------------------------------------------------------
 
 
-def index(declarations: dict) -> dict:
-    """An in-memory index of every keyframe of {id: create() result}."""
+def index(declarations: dict, shared_after: int | None = None) -> dict:
+    """An in-memory index of every keyframe of {id: create() result}. With shared_after,
+    codes that agree with codes of more than that many other declarations (a series
+    intro, a channel's lower thirds) are left out: index-level stop codes."""
     kfs = [(d, k) for d, decl in declarations.items() for k in decl["keyframes"]]
+    if shared_after is not None:
+        kfs = [(d, k | {"codes": [c for c, ok in zip(k["codes"], keep) if ok]}) for (d, k), keep in zip(kfs, unshared(kfs, shared_after))]
     codes = [parse(k)[0] for _, k in kfs]
     return {"keyframes": kfs, "codes": np.concatenate(codes) if codes else np.zeros((0, 4), np.uint64),
             "owner": np.repeat(np.arange(len(kfs)), [len(c) for c in codes])}  # fmt: skip
 
 
-def frame_hits(query: dict, idx: dict) -> list:
-    """(declaration id, keyframe, match result) for every keyframe the frame matches."""
-    q = parse(query)[0]
-    if not len(q) or not len(idx["codes"]):
-        return []
-    near = hamming(q, idx["codes"]) <= 24
-    hits = Counter(o for row in near for o in set(idx["owner"][row].tolist()))
+def unshared(kfs: list, n: int) -> list:
+    """Per keyframe, per code: whether it agrees with codes of at most n other declarations."""
+    ids = {d: i for i, d in enumerate(dict.fromkeys(d for d, _ in kfs))}
+    codes = [parse(k)[0] for _, k in kfs]
+    every = np.concatenate(codes)
+    decl = np.repeat([ids[d] for d, _ in kfs], [len(c) for c in codes])
     out = []
-    for o, n in hits.items():
-        if n >= 2:
-            d, k = idx["keyframes"][o]
-            r = match(query, k)
-            if r["relationship"] != "none":
-                out.append((d, k, r))
+    for (d, _), mine in zip(kfs, codes):
+        near = hamming(mine, every) <= 24
+        out.append([len(set(decl[row].tolist()) - {ids[d]}) <= n for row in near])
     return out
+
+
+def frame_hits(query: dict, idx: dict, near: np.ndarray | None = None) -> list:
+    """(declaration id, keyframe, match result) for every keyframe the frame matches.
+    `near` (query codes x index codes within tolerance) may be passed in precomputed."""
+    if near is None:
+        q = parse(query)[0]
+        if not len(q) or not len(idx["codes"]):
+            return []
+        near = hamming(q, idx["codes"]) <= 24
+    qi, ci = np.nonzero(near)
+    pairs = np.unique(qi * len(idx["keyframes"]) + idx["owner"][ci])  # distinct (query code, keyframe)
+    owners, n = np.unique(pairs % max(len(idx["keyframes"]), 1), return_counts=True)
+    out = []
+    for o in owners[n >= 2]:
+        d, k = idx["keyframes"][o]
+        r = match(query, k)
+        if r["relationship"] != "none":
+            out.append((d, k, r))
+    return out
+
+
+def frame_codes(frame: np.ndarray, s: dict) -> list:
+    """Verifier codes of a frame, and with tiles, also of its four quarters (a small
+    picture-in-picture inset fills more of a quarter)."""
+    opts = {"prepared_size": s["prepared_size"], "verifier_codes": s["verifier_codes"]}
+    h, w = frame.shape[:2]
+    parts = [frame] + ([frame[y : y + h // 2, x : x + w // 2] for y in (0, h // 2) for x in (0, w // 2)] if s["tiles"] else [])
+    return [generate(p, "verifier", opts) for p in parts]
 
 
 def verify_still(source, idx: dict, settings: dict | None = None) -> list:
     """A single image against the keyframes: the best keyframe per declaration."""
     s = VERIFY | (settings or {})
     best = {}
-    for d, k, r in frame_hits(generate(source, "verifier", {"prepared_size": s["prepared_size"]}), idx):
-        if d not in best or r["agreeing_codes"] > best[d]["agreeing_codes"]:
-            best[d] = {"declaration": d, "time": k["time"], "relationship": r["relationship"],
-                       "overlap_fraction": r["overlap_fraction"], "agreeing_codes": r["agreeing_codes"]}  # fmt: skip
+    for sp in frame_codes(decode(source), s):
+        for d, k, r in frame_hits(sp, idx):
+            if d not in best or r["agreeing_codes"] > best[d]["agreeing_codes"]:
+                best[d] = {"declaration": d, "time": k["time"], "relationship": r["relationship"],
+                           "overlap_fraction": r["overlap_fraction"], "agreeing_codes": r["agreeing_codes"]}  # fmt: skip
     return sorted(best.values(), key=lambda h: -h["agreeing_codes"])
 
 
@@ -169,8 +201,7 @@ def verify(path, idx: dict, settings: dict | None = None) -> list:
     """A clip against the keyframes: per declaration with enough frames on one time
     line, the matched range in the original and the dominant relationship."""
     s = VERIFY | (settings or {})
-    hits = [frame_hits(generate(f, "verifier", {"prepared_size": s["prepared_size"]}), idx)
-            for f in video.frames(path, s["fps"])]  # fmt: skip
+    hits = [[h for sp in frame_codes(f, s) for h in frame_hits(sp, idx)] for f in video.frames(path, s["fps"])]
     return decide(hits, s["fps"], s["min_frames"])
 
 
