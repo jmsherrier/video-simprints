@@ -17,10 +17,11 @@ DEFAULTS = {  # chosen on the tuning split (tests/corpus/report-tuning)
     "spread": False,  # an equal share of the codes from each horizontal third (did not help)
     "stop_after": 1000,  # drop codes that agree with codes of more than this many other keyframes (1000: off, as fitted)
 }
-VERIFY = {
-    "fps": 2,  # frames sampled per second of the checked clip
+VERIFY = {  # fitted on the tuning split (tests/corpus/report-tuning)
+    "fps": 1,  # frames sampled per second of the checked clip
     "prepared_size": 1024,  # image-simprints verifier size
-    "min_frames": 1,  # frames that must agree with one time line (fitted; raise it for a large index)
+    "min_frames": 10,  # frames that must agree with one time line (no false match on tuning; 3 finds more, see the report)
+    "still_votes": 3,  # agreeing codes a single still needs
     "verifier_codes": 64,  # image-simprints verifier codes per frame
     "tiles": False,  # also code the four quarters of each frame (small picture-in-picture)
 }
@@ -199,6 +200,8 @@ def verify_still(source, idx: dict, settings: dict | None = None) -> list:
     best = {}
     for sp in frame_codes(decode(source), s):
         for d, k, r in frame_hits(sp, idx):
+            if r["agreeing_codes"] < s["still_votes"]:
+                continue
             if d not in best or r["agreeing_codes"] > best[d]["agreeing_codes"]:
                 best[d] = {"declaration": d, "time": k["time"], "relationship": r["relationship"],
                            "overlap_fraction": r["overlap_fraction"], "agreeing_codes": r["agreeing_codes"]}  # fmt: skip

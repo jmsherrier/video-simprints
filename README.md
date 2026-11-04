@@ -47,7 +47,7 @@ from video_simprints import create, index, verify, verify_still
 declaration = create("film.mp4")
 
 # Verifier side: an index of declarations, then a clip or a still.
-idx = index({"film-123": declaration})
+idx = index({"film-123": declaration})   # or index(declarations, shared_after=0, against=channel_videos)
 for hit in verify("found_online.mp4", idx):
     print(hit["declaration"], hit["original"], hit["relationship"])
     # film-123 [750.4, 790.1] contained_in   (a vertical crop of 12:30-13:10)
@@ -66,9 +66,14 @@ range in each, in seconds), `slope`, `relationship` (`identical`,
 original's picture is inside the clip's, as in picture-in-picture, or
 `overlapping`) and `overlap_fraction`.
 
-Settings and defaults: creator `codes=10`, `spread=False`, `stop_after=1000`
-(stop codes off); verifier `fps=2`, `prepared_size=1024`, `min_frames=1`. [RECIPE.md](RECIPE.md)
-specifies every step.
+Settings and defaults, fitted on the tuning split: creator `codes=10`,
+`spread=False`, `stop_after=1000` (per-video stop codes off: they did not help);
+verifier `fps=1`, `prepared_size=1024`, `min_frames=10`, `still_votes=3`,
+`tiles=False` (set it for small picture-in-picture, at 3–4× the cost). The index
+takes `shared_after` (index-level stop codes, 0 fitted) and `against`, a
+reference collection such as the declaring channel's other videos: codes shared
+with other videos (series intros, studio sets, logo bugs) are left out.
+[RECIPE.md](RECIPE.md) specifies every step.
 
 The command line does the same: `video-simprints create film.mp4 > film.json`,
 `video-simprints verify clip.mp4 film.json`.
@@ -76,41 +81,51 @@ The command line does the same: `video-simprints create film.mp4 > film.json`,
 ## Test mode
 
 ```sh
-video-simprints fetch-corpus                 # 16 videos, ~1.9 GB, into .cache/corpus (gitignored)
-video-simprints test --split tuning          # fits N and M; tests/corpus/report-tuning
+video-simprints fetch-corpus                 # 88 videos, ~4 GB, into .cache/corpus (gitignored)
+video-simprints test --split tuning          # fits N, N2 and M; tests/corpus/report-tuning
 video-simprints test --split test --fits tests/corpus/report-tuning
 ```
 
-[`tests/corpus/manifest.csv`](tests/corpus/manifest.csv) lists the corpus with
-URL, licence and SHA-256: the Blender open movies (CC BY), NASA videos from
-Wikimedia Commons and a public-domain newsreel, split into tuning and test, each
-with unrelated videos. Test mode makes the manipulated clips with ffmpeg
-(excerpts of 10, 30 and 60 s, a 9:16 centre crop, picture-in-picture at 25% and
-40% of the width inside an unrelated video, 240p at 150 kbit/s, a caption bar, a
-corner logo, and screenshots), sweeps `codes` over {5, 10, 20} with and without
-`spread`, `stop_after` (N), the verifier's `fps` {1, 2} and `prepared_size`
-{512, 1024}, and `min_frames` (M). N and M are fitted on the tuning split only.
-Output: `report.json` and `summary.md`.
+[`tests/corpus/manifest.csv`](tests/corpus/manifest.csv) lists 29 originals and
+59 unrelated videos with URL, licence, SHA-256 and a `set`: Blender open movies
+(CC BY), public-domain NASA and White House videos from Wikimedia Commons, and a
+newsreel. Five sets share branding (NASA's *A Moment with…*, *This Week @NASA*,
+*Space to Ground*, JPL's *What's Up*, the White House's *West Wing Week*), and
+others look alike (launches, Earth visualisations, Blender films). Tuning: 11
+originals and 25 unrelated; test: 18 and 34. Test mode makes the manipulated
+clips with ffmpeg (excerpts of 10, 30 and 60 s, a 9:16 centre crop,
+picture-in-picture at 25% and 40% of the width inside a 1080p unrelated video at
+a random corner or the centre, 240p at 150 kbit/s, a caption bar, a corner logo,
+and screenshots). It sweeps `codes` {5, 10, 20}, `stop_after` (N), `shared_after`
+(N2, counted against every other video of the split, leaving the query out), the
+verifier's `fps` {1, 2} and size {512, 1024}, `min_frames` (M), picture-in-picture
+modes (1920 px, tiles) and still settings (size, verifier codes, votes). All
+thresholds are fitted on the tuning split only. Output: `report.json` and
+`summary.md`.
 
 ## Results
 
-On the test split (Big Buck Bunny, Tears of Steel and two NASA videos; five
-unrelated videos including Elephants Dream), at the defaults, with N and M fitted
-on the tuning split only
-([report](tests/corpus/report-test/summary.md), [tuning](tests/corpus/report-tuning/summary.md)):
+On the test split at the fitted settings
+([report](tests/corpus/report-test/summary.md), [tuning](tests/corpus/report-tuning/summary.md)),
+K = 10, verifier 1024 px at 1 fps, index-level stop codes against the other
+videos:
 
-| excerpt 10 s | 30 s | 60 s | 9:16 crop | PiP 25% | PiP 40% | 240p | caption | logo | still |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 83% | 100% | 100% | 83% | 17% | 50% | 100% | 100% | 100% | 70% |
+| M | 10 s | 30 s | 60 s | 9:16 | 240p | caption | logo | mean, all clips | false: unrelated videos | false: wrong video |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 10 (fitted) | 25% | 81% | 97% | 17% | 78% | 72% | 83% | 50% | 0 of 34 | 0 |
 
-No false match: 0 of 5 unrelated videos, 0 of 3,728 unrelated frames, 0 of 25
-unrelated stills, at any setting. That corpus is small; an index of many
-thousands of films will need a higher `min_frames` and the stop codes, refitted
-on it. Volume: about 16 keyframes and 155 codes per minute, about 14,000 codes
-per 90-minute film (K = 5: 7,000; K = 20: 27,000). Time per minute of video, one
-process on a laptop CPU: creator 4.6 s, verifier 19 s (6 s at 1 fps and 512 px).
-Small picture-in-picture insets (25% of the width, 6% of the area) are mostly
-missed, as image-simprints misses small collage inserts.
+Lower M finds far more, at the cost of false matches. Overall rate, then false
+matches against unrelated videos and wrong-video matches in manipulated clips:
+81% at M = 1 (6 and 12), 72% at M = 3 (3 and 6), 60% at M = 7 (0 and 6).
+Without stop codes M = 1 gives 53 and 88. Nearly all of these are series
+branding (intros, studio sets, logo bugs) shared between episodes; a few are
+real reused footage. Picture-in-picture needs tiles: at M = 1 they lift 25%
+insets from 19% to 64% and 40% insets from 47% to 81% (insets in a corner; a
+centred 25% inset straddles the tiles and is missed). Stills: 54–58% found, with
+1 to 3 false matches of 170, all series branding. Volume: about 16 keyframes and
+150 codes per minute, 13,600 codes per 90-minute film (K = 5: 7,000; K = 20:
+26,000). Time per minute of video, one process: creator 1.5 s; verifier 4 s
+(17 s with tiles).
 
 ## Documents
 

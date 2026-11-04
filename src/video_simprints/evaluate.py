@@ -332,18 +332,19 @@ def test(split: str, out: Path, fits_from: Path | None, workers: int):
         rows[name] = f | s | {"volume": volume(data["decls"], f["codes"], f["stop_after"])}
     by_m = {label: scores(data, rec["size"], vk, rec["fps"], MIN_FRAMES)
             for label, vk in (("recommended stop codes", rec_vk), ("no stop codes", vkey(rec["codes"], 1000, None)))}  # fmt: skip
-    pip = {mode: score(data, mode, rec_vk, rec["fps"], rec["min_frames"]) for mode in PIP_MODES}
-    pip_pos = {mode: {} for mode in PIP_MODES}
-    for mode in PIP_MODES:
+    pip_ms = sorted({1, 3, rec["min_frames"]})
+    pip = {f"{mode} M={m}": score(data, mode, rec_vk, rec["fps"], m) for mode in PIP_MODES for m in pip_ms}
+    pip_pos = {}
+    for key, _ in pip.items():
+        mode, m = key.split(" M=")
+        pos = pip_pos[key] = {}
         for c in data["queries"]:
             if c["manipulation"] in ("pip25", "pip40"):
-                res = [x for x in data["results"][c["id"]][(mode, rec_vk, rec["fps"])][0] if x[1] >= rec["min_frames"]]
+                res = [x for x in data["results"][c["id"]][(mode, rec_vk, rec["fps"])][0] if x[1] >= int(m)]
                 top = max(res, key=lambda x: x[1], default=None)
-                k = f"{c['manipulation']} {'centre' if c['position'] == 'centre' else 'corner'}"
                 hit = top is not None and top[0] == c["source"] and top[2] <= c["end"] + 3 and top[3] >= c["start"] - 3
-                pip_pos[mode].setdefault(k, [0, 0])
-                pip_pos[mode][k][0] += hit
-                pip_pos[mode][k][1] += 1
+                k = f"{c['manipulation']} {'centre' if c['position'] == 'centre' else 'corner'}"
+                pos[k] = [pos.get(k, [0, 0])[0] + hit, pos.get(k, [0, 0])[1] + 1]
     stills = {mode: score_stills(data, mode, rec_vk, f["votes"]) | f for mode, f in fits["stills"].items()}
     report = {"split": split, "ffmpeg": video.version(), "recipe": recipe.RECIPE, "image_recipe": image_simprints.RECIPE,
               "fitted_on": fits_from.name if fits_from else split, "fits": fits, "results": rows, "by_min_frames": by_m,
@@ -394,14 +395,15 @@ def summary(r: dict) -> str:
         if fs["videos"] or fs["wrong"]:
             L += ["", f"False matches at M = 1, {lab} (query, its set, matched declaration, frames on the line):", ""]
             L += [f"- {q} ({s}) -> {d}: {n}" for q, s, d, n in sorted(fs["videos"] + fs["wrong"], key=lambda x: -x[3])[:40]]
-    L += ["", f"## Picture-in-picture (K = {rec['codes']}, N = {rec['stop_after']}, N2 = {rec['shared_after']}, "
-          f"M = {rec['min_frames']}, {rec['fps']} fps)", "",
-          "| verifier | pip25 | pip40 | " + " | ".join(sorted(next(iter(r["pip_by_position"].values())))) + " | false (unrelated) |",
-          "|" + " --- |" * (4 + len(next(iter(r["pip_by_position"].values()))))]  # fmt: skip
-    for mode, s in r["pip"].items():
-        p, pos = s["per_manipulation"], r["pip_by_position"][mode]
-        L.append(f"| {mode} | {pct(p['pip25']['found'], p['pip25']['clips'])} | {pct(p['pip40']['found'], p['pip40']['clips'])} | "
-                 + " | ".join(pct(*pos[k]) for k in sorted(pos)) + f" | {len(s['false']['videos'])} of {s['false']['unrelated_videos']} |")  # fmt: skip
+    L += ["", f"## Picture-in-picture (K = {rec['codes']}, N = {rec['stop_after']}, N2 = {rec['shared_after']}, {rec['fps']} fps)", "",
+          "Insets at 25% and 40% of the width of a 1080p unrelated video, at a random corner or the centre.", "",
+          "| verifier | pip25 | pip40 | " + " | ".join(sorted(next(iter(r["pip_by_position"].values())))) + " | false (unrelated) | false (wrong video) |",
+          "|" + " --- |" * (5 + len(next(iter(r["pip_by_position"].values()))))]  # fmt: skip
+    for key, s in r["pip"].items():
+        p, pos = s["per_manipulation"], r["pip_by_position"][key]
+        L.append(f"| {key} | {pct(p['pip25']['found'], p['pip25']['clips'])} | {pct(p['pip40']['found'], p['pip40']['clips'])} | "
+                 + " | ".join(pct(*pos[k]) for k in sorted(pos))
+                 + f" | {len(s['false']['videos'])} of {s['false']['unrelated_videos']} | {len(s['false']['wrong'])} |")  # fmt: skip
     L += ["", f"## Stills (votes fitted on tuning; recommended: {r['fits']['recommended_still']})", "",
           "| verifier size / codes | votes | found | relationship identical | median time error (s) | false (unrelated stills) |",
           "| --- | --- | --- | --- | --- | --- |"]  # fmt: skip

@@ -77,12 +77,12 @@ def test_vertical_crop_and_excerpt(clip, tmp_path):
     ff("-ss", 16, "-t", 12, "-i", clip, "-c:v", "libx264", "-crf", 23, tmp_path / "excerpt.mp4")
     ff("-ss", 16, "-t", 12, "-i", clip, "-vf", "crop=404:720", "-c:v", "libx264", "-crf", 23, tmp_path / "vertical.mp4")
     for name, rel in (("excerpt", {"identical", "overlapping"}), ("vertical", {"contained_in"})):
-        top = verify(tmp_path / f"{name}.mp4", idx)[0]
+        top = verify(tmp_path / f"{name}.mp4", idx, {"min_frames": 2})[0]
         assert top["declaration"] == "synthetic" and top["relationship"] in rel, (name, top)
         assert 16 - 3 <= top["original"][0] < top["original"][1] <= 28 + 3, (name, top)  # inside the excerpt
         assert abs(top["slope"] - 1) <= 0.1
     ff("-ss", 22.6, "-i", clip, "-frames:v", 1, tmp_path / "still.png")
-    hit = verify_still(tmp_path / "still.png", idx)[0]
+    hit = verify_still(tmp_path / "still.png", idx, {"still_votes": 2})[0]
     assert hit["declaration"] == "synthetic" and abs(hit["time"] - 22.6) <= 3
 
 

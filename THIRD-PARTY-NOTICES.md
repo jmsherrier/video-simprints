@@ -42,11 +42,14 @@ URL, licence, credit and SHA-256; `fetch-corpus` downloads them.
   durian.blender.org), *Big Buck Bunny* (CC BY 3.0, © 2008 Blender Foundation,
   www.bigbuckbunny.org), *Tears of Steel* (CC BY 3.0, (CC) Blender Foundation,
   mango.blender.org) and *Elephants Dream* (CC BY 2.5, © 2006 Blender Foundation /
-  Netherlands Media Art Institute, www.elephantsdream.org). Downloaded from
-  download.blender.org.
-- **NASA** videos on Wikimedia Commons, public domain (works of the US
-  government): eleven clips from NASA Johnson, NASA Kennedy, NASA TV, NASA's
-  Goddard Space Flight Center and its Scientific Visualization Studio.
+  Netherlands Media Art Institute, www.elephantsdream.org), from
+  download.blender.org; *Coffee Run*, *WING IT!*, *HERO* and *Spring* (CC BY 4.0,
+  Blender Studio, studio.blender.org), from Wikimedia Commons.
+- **NASA** and **JPL** videos on Wikimedia Commons, public domain (works of the US
+  government), including the series *A Moment with…*, *This Week @NASA*, *Space
+  to Ground* and *What's Up*. Each row of the manifest names its source.
+- **The White House**: *West Wing Week* episodes on Wikimedia Commons, public
+  domain (works of the US government).
 - **Djawa Baharoe** (1940s newsreel, Nippon Eigasha di Djawa), public domain, on
   Wikimedia Commons.
 

@@ -126,14 +126,24 @@ False matches at M = 1, no stop codes (query, its set, matched declaration, fram
 - nasa-twan-2020-01-25__logo__1 (nasa-this-week) -> nasa-twan-2020-02-07: 4
 - nasa-twan-2020-02-07__excerpt10__0 (nasa-this-week) -> nasa-twan-2020-01-25: 4
 
-## Picture-in-picture (K = 10, N = 1000, N2 = 0, M = 10, 1 fps)
+## Picture-in-picture (K = 10, N = 1000, N2 = 0, 1 fps)
 
-| verifier | pip25 | pip40 | pip25 centre | pip25 corner | pip40 centre | pip40 corner | false (unrelated) |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 1024 | 0% | 0% | 0% | 0% | 0% | 0% | 0 of 25 |
-| 1920 | 0% | 0% | 0% | 0% | 0% | 0% | 0 of 25 |
-| 1024+tiles | 14% | 36% | 0% | 19% | 0% | 38% | 0 of 25 |
-| 1920+tiles | 14% | 36% | 0% | 19% | 0% | 38% | 0 of 25 |
+Insets at 25% and 40% of the width of a 1080p unrelated video, at a random corner or the centre.
+
+| verifier | pip25 | pip40 | pip25 centre | pip25 corner | pip40 centre | pip40 corner | false (unrelated) | false (wrong video) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1024 M=1 | 9% | 32% | 0% | 12% | 0% | 33% | 7 of 25 | 14 |
+| 1024 M=3 | 5% | 23% | 0% | 6% | 0% | 24% | 4 of 25 | 5 |
+| 1024 M=10 | 0% | 0% | 0% | 0% | 0% | 0% | 0 of 25 | 0 |
+| 1920 M=1 | 9% | 36% | 0% | 12% | 0% | 38% | 7 of 25 | 13 |
+| 1920 M=3 | 9% | 18% | 0% | 12% | 0% | 19% | 5 of 25 | 2 |
+| 1920 M=10 | 0% | 0% | 0% | 0% | 0% | 0% | 0 of 25 | 0 |
+| 1024+tiles M=1 | 45% | 77% | 0% | 62% | 100% | 76% | 7 of 25 | 13 |
+| 1024+tiles M=3 | 23% | 77% | 0% | 31% | 100% | 76% | 4 of 25 | 5 |
+| 1024+tiles M=10 | 14% | 36% | 0% | 19% | 0% | 38% | 0 of 25 | 0 |
+| 1920+tiles M=1 | 45% | 82% | 0% | 62% | 100% | 81% | 7 of 25 | 13 |
+| 1920+tiles M=3 | 23% | 82% | 0% | 31% | 100% | 81% | 5 of 25 | 2 |
+| 1920+tiles M=10 | 14% | 36% | 0% | 19% | 0% | 38% | 0 of 25 | 0 |
 
 ## Stills (votes fitted on tuning; recommended: 1024/64)
 
@@ -159,21 +169,21 @@ False matches at M = 1, no stop codes (query, its set, matched declaration, fram
 
 ## Timing (one process; seconds per minute of video unless stated)
 
-- creator: 1.5
+- creator: 1.3
 - verifier 512 fps=1 (excerpt60): 1.6
-- verifier 512 fps=2 (excerpt60): 3.3
-- verifier 1024 fps=1 (excerpt60): 3.2
-- verifier 1024 fps=2 (excerpt60): 6.0
-- verifier 1024 fps=1 (pip25): 5.5
-- verifier 1920 fps=1 (pip25): 9.8
-- verifier 1024+tiles fps=1 (pip25): 18.5
-- verifier 1920+tiles fps=1 (pip25): 22.5
-- still 512/64 (ms per still): 40
-- still 512/128 (ms per still): 37
+- verifier 512 fps=2 (excerpt60): 3.1
+- verifier 1024 fps=1 (excerpt60): 2.9
+- verifier 1024 fps=2 (excerpt60): 5.6
+- verifier 1024 fps=1 (pip25): 5.0
+- verifier 1920 fps=1 (pip25): 9.1
+- verifier 1024+tiles fps=1 (pip25): 18.3
+- verifier 1920+tiles fps=1 (pip25): 22.1
+- still 512/64 (ms per still): 37
+- still 512/128 (ms per still): 38
 - still 512/256 (ms per still): 36
 - still 1024/64 (ms per still): 57
 - still 1024/128 (ms per still): 59
-- still 1024/256 (ms per still): 61
-- still 1920/64 (ms per still): 75
+- still 1024/256 (ms per still): 59
+- still 1920/64 (ms per still): 73
 - still 1920/128 (ms per still): 75
 - still 1920/256 (ms per still): 75

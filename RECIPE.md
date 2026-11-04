@@ -13,12 +13,13 @@ checked against declarations (verifier side). The reference implementation is
 | `codes` | 10 | creator | codes per keyframe (K) |
 | `spread` | 0 | creator | take an equal share of the codes from each horizontal third |
 | `stop_after` | 1000 | creator | drop codes that agree with codes of more than N other keyframes (1000: off) |
-| `fps` | 2 | verifier | frames sampled per second of the checked clip |
+| `fps` | 1 | verifier | frames sampled per second of the checked clip |
 | `prepared_size` | 1024 | verifier | image-simprints `prepared_size` of the sampled frames |
-| `min_frames` | 1 | verifier | frames on one time line needed to declare a match (M) |
+| `min_frames` | 10 | verifier | frames on one time line needed to declare a match (M) |
+| `still_votes` | 3 | verifier | agreeing codes a single still needs |
 | `verifier_codes` | 64 | verifier | image-simprints `verifier_codes` per frame |
 | `tiles` | 0 | verifier | also code the four quarters of each frame |
-| `shared_after` | none | index | drop codes shared with more than N2 other videos (none: off) |
+| `shared_after` | none | index | drop codes shared with more than N2 other videos (none: off; 0 fitted, with a reference collection) |
 
 The version string is `video-simprints/0.1`, with each creator setting that
 differs from its default appended as `;name=value` (booleans as 0 or 1), in the
@@ -126,7 +127,8 @@ time, scene}]}]}`. Each keyframe is a valid image-simprints `generate()` result.
    median overlap fractions of those. Results are sorted by count.
 
 **Stills**: a single image is one frame: steps 1 to 3, with the best keyframe
-(most agreeing codes) per declaration. Its time says where in the video it is.
+(most agreeing codes, at least `still_votes`) per declaration. Its time says
+where in the video it is.
 
 **Index-level stop codes** (`shared_after` = N2): when the index is built, a
 code that agrees (Hamming distance ≤ 24) with codes of more than N2 *other*
