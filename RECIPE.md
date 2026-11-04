@@ -18,7 +18,7 @@ checked against declarations (verifier side). The reference implementation is
 | `min_frames` | 1 | verifier | frames on one time line needed to declare a match (M) |
 | `verifier_codes` | 64 | verifier | image-simprints `verifier_codes` per frame |
 | `tiles` | 0 | verifier | also code the four quarters of each frame |
-| `shared_after` | none | index | drop codes shared with more than N2 other declarations (none: off) |
+| `shared_after` | none | index | drop codes shared with more than N2 other videos (none: off) |
 
 The version string is `video-simprints/0.1`, with each creator setting that
 differs from its default appended as `;name=value` (booleans as 0 or 1), in the
@@ -130,10 +130,12 @@ time, scene}]}]}`. Each keyframe is a valid image-simprints `generate()` result.
 
 **Index-level stop codes** (`shared_after` = N2): when the index is built, a
 code that agrees (Hamming distance ≤ 24) with codes of more than N2 *other*
-declarations is left out of it. These are what a channel's videos share: a
-series intro, a title card, lower thirds. Per-video stop codes (§4) cannot see
-them, because an intro appears once per video. Recompute them as declarations
-are added.
+videos is left out of it. The other videos are the index's other declarations
+plus an optional reference collection (`against`), for example the other
+videos of the declaring channel. These codes are what a channel's videos share:
+a series intro, a title card, lower thirds, reused footage. Per-video stop codes
+(§4) cannot see them, because an intro appears once per video. Recompute them as
+declarations are added.
 
 ## 6. Test vectors
 

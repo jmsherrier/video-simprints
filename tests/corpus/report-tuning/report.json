@@ -11,9 +11,9 @@
     "size": "512",
     "fps": 1,
     "stop_after": 1000,
-    "shared_after": null,
-    "min_frames": 25,
-    "tuning_rate": 0.1263,
+    "shared_after": 0,
+    "min_frames": 10,
+    "tuning_rate": 0.3838,
     "tuning_false": 0
    },
    "codes=5;size=512;fps=2": {
@@ -22,18 +22,18 @@
     "fps": 2,
     "stop_after": 1000,
     "shared_after": 0,
-    "min_frames": 25,
-    "tuning_rate": 0.3384,
-    "tuning_false": 2
+    "min_frames": 20,
+    "tuning_rate": 0.3788,
+    "tuning_false": 0
    },
    "codes=5;size=1024;fps=1": {
     "codes": 5,
     "size": "1024",
     "fps": 1,
     "stop_after": 1000,
-    "shared_after": null,
-    "min_frames": 25,
-    "tuning_rate": 0.1162,
+    "shared_after": 0,
+    "min_frames": 11,
+    "tuning_rate": 0.3333,
     "tuning_false": 0
    },
    "codes=5;size=1024;fps=2": {
@@ -42,9 +42,9 @@
     "fps": 2,
     "stop_after": 1000,
     "shared_after": 0,
-    "min_frames": 30,
-    "tuning_rate": 0.2828,
-    "tuning_false": 2
+    "min_frames": 20,
+    "tuning_rate": 0.3586,
+    "tuning_false": 0
    },
    "codes=10;size=512;fps=1": {
     "codes": 10,
@@ -52,8 +52,8 @@
     "fps": 1,
     "stop_after": 1000,
     "shared_after": 0,
-    "min_frames": 25,
-    "tuning_rate": 0.197,
+    "min_frames": 15,
+    "tuning_rate": 0.3838,
     "tuning_false": 0
    },
    "codes=10;size=512;fps=2": {
@@ -62,18 +62,18 @@
     "fps": 2,
     "stop_after": 1000,
     "shared_after": 0,
-    "min_frames": 30,
-    "tuning_rate": 0.3788,
-    "tuning_false": 5
+    "min_frames": 25,
+    "tuning_rate": 0.4242,
+    "tuning_false": 0
    },
    "codes=10;size=1024;fps=1": {
     "codes": 10,
     "size": "1024",
     "fps": 1,
     "stop_after": 1000,
-    "shared_after": null,
-    "min_frames": 25,
-    "tuning_rate": 0.1818,
+    "shared_after": 0,
+    "min_frames": 10,
+    "tuning_rate": 0.5051,
     "tuning_false": 0
    },
    "codes=10;size=1024;fps=2": {
@@ -82,109 +82,109 @@
     "fps": 2,
     "stop_after": 1000,
     "shared_after": 0,
-    "min_frames": 25,
-    "tuning_rate": 0.4192,
-    "tuning_false": 5
+    "min_frames": 20,
+    "tuning_rate": 0.4899,
+    "tuning_false": 0
    },
    "codes=20;size=512;fps=1": {
     "codes": 20,
     "size": "512",
     "fps": 1,
-    "stop_after": 3,
-    "shared_after": null,
-    "min_frames": 25,
-    "tuning_rate": 0.2424,
-    "tuning_false": 1
+    "stop_after": 1000,
+    "shared_after": 0,
+    "min_frames": 15,
+    "tuning_rate": 0.4646,
+    "tuning_false": 0
    },
    "codes=20;size=512;fps=2": {
     "codes": 20,
     "size": "512",
     "fps": 2,
-    "stop_after": 3,
+    "stop_after": 1000,
     "shared_after": 0,
-    "min_frames": 25,
-    "tuning_rate": 0.5152,
-    "tuning_false": 5
+    "min_frames": 30,
+    "tuning_rate": 0.4596,
+    "tuning_false": 0
    },
    "codes=20;size=1024;fps=1": {
     "codes": 20,
     "size": "1024",
     "fps": 1,
-    "stop_after": 3,
-    "shared_after": null,
-    "min_frames": 25,
-    "tuning_rate": 0.2374,
+    "stop_after": 1000,
+    "shared_after": 1,
+    "min_frames": 20,
+    "tuning_rate": 0.3535,
     "tuning_false": 0
    },
    "codes=20;size=1024;fps=2": {
     "codes": 20,
     "size": "1024",
     "fps": 2,
-    "stop_after": 3,
+    "stop_after": 1000,
     "shared_after": 0,
-    "min_frames": 25,
-    "tuning_rate": 0.5051,
-    "tuning_false": 5
+    "min_frames": 30,
+    "tuning_rate": 0.4596,
+    "tuning_false": 0
    }
   },
   "recommended": {
    "codes": 10,
-   "size": "512",
+   "size": "1024",
    "fps": 1,
    "stop_after": 1000,
    "shared_after": 0,
-   "min_frames": 25,
-   "tuning_rate": 0.197,
+   "min_frames": 10,
+   "tuning_rate": 0.5051,
    "tuning_false": 0
   },
   "stills": {
    "512/64": {
-    "votes": 6,
-    "tuning_rate": 0.4909,
-    "tuning_false": 2
+    "votes": 3,
+    "tuning_rate": 0.6364,
+    "tuning_false": 0
    },
    "512/128": {
-    "votes": 6,
-    "tuning_rate": 0.4909,
-    "tuning_false": 2
+    "votes": 3,
+    "tuning_rate": 0.6364,
+    "tuning_false": 0
    },
    "512/256": {
-    "votes": 6,
-    "tuning_rate": 0.4909,
-    "tuning_false": 2
+    "votes": 3,
+    "tuning_rate": 0.6364,
+    "tuning_false": 0
    },
    "1024/64": {
-    "votes": 8,
-    "tuning_rate": 0.2182,
-    "tuning_false": 1
+    "votes": 3,
+    "tuning_rate": 0.6545,
+    "tuning_false": 0
    },
    "1024/128": {
-    "votes": 8,
-    "tuning_rate": 0.2182,
-    "tuning_false": 1
+    "votes": 3,
+    "tuning_rate": 0.6545,
+    "tuning_false": 0
    },
    "1024/256": {
-    "votes": 8,
-    "tuning_rate": 0.2182,
-    "tuning_false": 1
+    "votes": 3,
+    "tuning_rate": 0.6545,
+    "tuning_false": 0
    },
    "1920/64": {
-    "votes": 8,
-    "tuning_rate": 0.0909,
+    "votes": 2,
+    "tuning_rate": 0.5636,
     "tuning_false": 0
    },
    "1920/128": {
-    "votes": 8,
-    "tuning_rate": 0.0909,
+    "votes": 2,
+    "tuning_rate": 0.5636,
     "tuning_false": 0
    },
    "1920/256": {
-    "votes": 8,
-    "tuning_rate": 0.0909,
+    "votes": 2,
+    "tuning_rate": 0.5636,
     "tuning_false": 0
    }
   },
-  "recommended_still": "1920/64"
+  "recommended_still": "1024/64"
  },
  "results": {
   "codes=5;size=512;fps=1": {
@@ -192,38 +192,38 @@
    "size": "512",
    "fps": 1,
    "stop_after": 1000,
-   "shared_after": null,
-   "min_frames": 25,
-   "tuning_rate": 0.1263,
+   "shared_after": 0,
+   "min_frames": 10,
+   "tuning_rate": 0.3838,
    "tuning_false": 0,
    "per_manipulation": {
     "excerpt10": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 2,
+     "relationship": 2,
      "frames": 220,
-     "frames_found": 104
+     "frames_found": 100
     },
     "excerpt30": {
      "clips": 22,
-     "found": 4,
-     "relationship": 4,
+     "found": 15,
+     "relationship": 15,
      "frames": 660,
-     "frames_found": 358
+     "frames_found": 337
     },
     "excerpt60": {
      "clips": 22,
-     "found": 14,
-     "relationship": 14,
+     "found": 21,
+     "relationship": 21,
      "frames": 1320,
-     "frames_found": 724
+     "frames_found": 684
     },
     "vertical": {
      "clips": 22,
      "found": 0,
      "relationship": 0,
      "frames": 660,
-     "frames_found": 77
+     "frames_found": 66
     },
     "pip25": {
      "clips": 22,
@@ -241,34 +241,34 @@
     },
     "lowres": {
      "clips": 22,
-     "found": 3,
-     "relationship": 3,
+     "found": 12,
+     "relationship": 11,
      "frames": 660,
-     "frames_found": 328
+     "frames_found": 301
     },
     "caption": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 10,
+     "relationship": 8,
      "frames": 660,
-     "frames_found": 226
+     "frames_found": 204
     },
     "logo": {
      "clips": 22,
-     "found": 4,
-     "relationship": 4,
+     "found": 16,
+     "relationship": 16,
      "frames": 660,
-     "frames_found": 359
+     "frames_found": 330
     }
    },
    "false": {
     "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 195,
+    "unrelated_frames": 40,
     "unrelated_frames_total": 3497
    },
-   "video_match_rate": 0.12626262626262624,
+   "video_match_rate": 0.38383838383838387,
    "false_count": 0,
    "volume": {
     "keyframes_per_minute": 16.0,
@@ -282,37 +282,37 @@
    "fps": 2,
    "stop_after": 1000,
    "shared_after": 0,
-   "min_frames": 25,
-   "tuning_rate": 0.3384,
-   "tuning_false": 2,
+   "min_frames": 20,
+   "tuning_rate": 0.3788,
+   "tuning_false": 0,
    "per_manipulation": {
     "excerpt10": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 1,
+     "relationship": 1,
      "frames": 440,
-     "frames_found": 209
+     "frames_found": 208
     },
     "excerpt30": {
      "clips": 22,
-     "found": 13,
-     "relationship": 13,
+     "found": 14,
+     "relationship": 14,
      "frames": 1320,
-     "frames_found": 700
+     "frames_found": 673
     },
     "excerpt60": {
      "clips": 22,
      "found": 21,
      "relationship": 21,
      "frames": 2640,
-     "frames_found": 1409
+     "frames_found": 1355
     },
     "vertical": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 1,
+     "relationship": 1,
      "frames": 1320,
-     "frames_found": 142
+     "frames_found": 125
     },
     "pip25": {
      "clips": 22,
@@ -330,48 +330,35 @@
     },
     "lowres": {
      "clips": 22,
-     "found": 14,
-     "relationship": 12,
+     "found": 13,
+     "relationship": 11,
      "frames": 1320,
-     "frames_found": 661
+     "frames_found": 623
     },
     "caption": {
      "clips": 22,
-     "found": 8,
-     "relationship": 6,
+     "found": 9,
+     "relationship": 7,
      "frames": 1320,
-     "frames_found": 447
+     "frames_found": 412
     },
     "logo": {
      "clips": 22,
-     "found": 11,
-     "relationship": 11,
+     "found": 16,
+     "relationship": 16,
      "frames": 1320,
-     "frames_found": 696
+     "frames_found": 649
     }
    },
    "false": {
-    "videos": [
-     [
-      "jpl-whats-up-2026-01__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      43
-     ],
-     [
-      "nasa-s2g-2015-02-27__whole",
-      "nasa-space-to-ground",
-      "nasa-s2g-2015-03-06",
-      30
-     ]
-    ],
+    "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 310,
+    "unrelated_frames": 78,
     "unrelated_frames_total": 6981
    },
-   "video_match_rate": 0.3383838383838384,
-   "false_count": 2,
+   "video_match_rate": 0.3787878787878788,
+   "false_count": 0,
    "volume": {
     "keyframes_per_minute": 16.0,
     "codes_per_minute": 79.5,
@@ -383,9 +370,9 @@
    "size": "1024",
    "fps": 1,
    "stop_after": 1000,
-   "shared_after": null,
-   "min_frames": 25,
-   "tuning_rate": 0.1162,
+   "shared_after": 0,
+   "min_frames": 11,
+   "tuning_rate": 0.3333,
    "tuning_false": 0,
    "per_manipulation": {
     "excerpt10": {
@@ -393,28 +380,28 @@
      "found": 0,
      "relationship": 0,
      "frames": 220,
-     "frames_found": 103
+     "frames_found": 98
     },
     "excerpt30": {
      "clips": 22,
-     "found": 4,
-     "relationship": 4,
+     "found": 14,
+     "relationship": 14,
      "frames": 660,
-     "frames_found": 353
+     "frames_found": 336
     },
     "excerpt60": {
      "clips": 22,
-     "found": 14,
-     "relationship": 13,
+     "found": 21,
+     "relationship": 21,
      "frames": 1320,
-     "frames_found": 710
+     "frames_found": 667
     },
     "vertical": {
      "clips": 22,
      "found": 0,
      "relationship": 0,
      "frames": 660,
-     "frames_found": 79
+     "frames_found": 65
     },
     "pip25": {
      "clips": 22,
@@ -432,34 +419,34 @@
     },
     "lowres": {
      "clips": 22,
-     "found": 2,
-     "relationship": 2,
+     "found": 12,
+     "relationship": 10,
      "frames": 660,
-     "frames_found": 317
+     "frames_found": 290
     },
     "caption": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 7,
+     "relationship": 4,
      "frames": 660,
-     "frames_found": 226
+     "frames_found": 204
     },
     "logo": {
      "clips": 22,
-     "found": 3,
-     "relationship": 3,
+     "found": 12,
+     "relationship": 12,
      "frames": 660,
-     "frames_found": 340
+     "frames_found": 308
     }
    },
    "false": {
     "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 203,
+    "unrelated_frames": 44,
     "unrelated_frames_total": 3497
    },
-   "video_match_rate": 0.11616161616161616,
+   "video_match_rate": 0.3333333333333333,
    "false_count": 0,
    "volume": {
     "keyframes_per_minute": 16.0,
@@ -473,37 +460,37 @@
    "fps": 2,
    "stop_after": 1000,
    "shared_after": 0,
-   "min_frames": 30,
-   "tuning_rate": 0.2828,
-   "tuning_false": 2,
+   "min_frames": 20,
+   "tuning_rate": 0.3586,
+   "tuning_false": 0,
    "per_manipulation": {
     "excerpt10": {
      "clips": 22,
      "found": 0,
      "relationship": 0,
      "frames": 440,
-     "frames_found": 202
+     "frames_found": 200
     },
     "excerpt30": {
      "clips": 22,
-     "found": 11,
-     "relationship": 11,
+     "found": 13,
+     "relationship": 13,
      "frames": 1320,
-     "frames_found": 692
+     "frames_found": 667
     },
     "excerpt60": {
      "clips": 22,
-     "found": 19,
-     "relationship": 19,
+     "found": 21,
+     "relationship": 21,
      "frames": 2640,
-     "frames_found": 1383
+     "frames_found": 1326
     },
     "vertical": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 1,
+     "relationship": 1,
      "frames": 1320,
-     "frames_found": 151
+     "frames_found": 137
     },
     "pip25": {
      "clips": 22,
@@ -521,48 +508,35 @@
     },
     "lowres": {
      "clips": 22,
-     "found": 11,
-     "relationship": 10,
+     "found": 13,
+     "relationship": 12,
      "frames": 1320,
-     "frames_found": 638
+     "frames_found": 600
     },
     "caption": {
      "clips": 22,
-     "found": 6,
-     "relationship": 4,
+     "found": 9,
+     "relationship": 7,
      "frames": 1320,
-     "frames_found": 453
+     "frames_found": 417
     },
     "logo": {
      "clips": 22,
-     "found": 9,
-     "relationship": 9,
+     "found": 14,
+     "relationship": 14,
      "frames": 1320,
-     "frames_found": 672
+     "frames_found": 621
     }
    },
    "false": {
-    "videos": [
-     [
-      "jpl-whats-up-2026-01__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      43
-     ],
-     [
-      "nasa-s2g-2015-02-27__whole",
-      "nasa-space-to-ground",
-      "nasa-s2g-2015-03-06",
-      31
-     ]
-    ],
+    "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 311,
+    "unrelated_frames": 81,
     "unrelated_frames_total": 6981
    },
-   "video_match_rate": 0.2828282828282828,
-   "false_count": 2,
+   "video_match_rate": 0.3585858585858586,
+   "false_count": 0,
    "volume": {
     "keyframes_per_minute": 16.0,
     "codes_per_minute": 79.5,
@@ -575,8 +549,8 @@
    "fps": 1,
    "stop_after": 1000,
    "shared_after": 0,
-   "min_frames": 25,
-   "tuning_rate": 0.197,
+   "min_frames": 15,
+   "tuning_rate": 0.3838,
    "tuning_false": 0,
    "per_manipulation": {
     "excerpt10": {
@@ -584,28 +558,28 @@
      "found": 0,
      "relationship": 0,
      "frames": 220,
-     "frames_found": 130
+     "frames_found": 128
     },
     "excerpt30": {
      "clips": 22,
-     "found": 7,
-     "relationship": 7,
+     "found": 15,
+     "relationship": 15,
      "frames": 660,
-     "frames_found": 423
+     "frames_found": 401
     },
     "excerpt60": {
      "clips": 22,
-     "found": 20,
-     "relationship": 20,
+     "found": 21,
+     "relationship": 21,
      "frames": 1320,
-     "frames_found": 857
+     "frames_found": 819
     },
     "vertical": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 1,
+     "relationship": 1,
      "frames": 660,
-     "frames_found": 159
+     "frames_found": 151
     },
     "pip25": {
      "clips": 22,
@@ -623,34 +597,34 @@
     },
     "lowres": {
      "clips": 22,
-     "found": 5,
-     "relationship": 4,
+     "found": 14,
+     "relationship": 13,
      "frames": 660,
-     "frames_found": 414
+     "frames_found": 394
     },
     "caption": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 12,
+     "relationship": 9,
      "frames": 660,
-     "frames_found": 340
+     "frames_found": 321
     },
     "logo": {
      "clips": 22,
-     "found": 7,
-     "relationship": 5,
+     "found": 13,
+     "relationship": 10,
      "frames": 660,
-     "frames_found": 438
+     "frames_found": 408
     }
    },
    "false": {
     "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 203,
+    "unrelated_frames": 59,
     "unrelated_frames_total": 3497
    },
-   "video_match_rate": 0.19696969696969696,
+   "video_match_rate": 0.38383838383838387,
    "false_count": 0,
    "volume": {
     "keyframes_per_minute": 15.8,
@@ -664,37 +638,37 @@
    "fps": 2,
    "stop_after": 1000,
    "shared_after": 0,
-   "min_frames": 30,
-   "tuning_rate": 0.3788,
-   "tuning_false": 5,
+   "min_frames": 25,
+   "tuning_rate": 0.4242,
+   "tuning_false": 0,
    "per_manipulation": {
     "excerpt10": {
      "clips": 22,
      "found": 0,
      "relationship": 0,
      "frames": 440,
-     "frames_found": 257
+     "frames_found": 253
     },
     "excerpt30": {
      "clips": 22,
-     "found": 13,
-     "relationship": 13,
+     "found": 14,
+     "relationship": 14,
      "frames": 1320,
-     "frames_found": 837
+     "frames_found": 797
     },
     "excerpt60": {
      "clips": 22,
-     "found": 21,
+     "found": 22,
      "relationship": 21,
      "frames": 2640,
-     "frames_found": 1692
+     "frames_found": 1616
     },
     "vertical": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 4,
+     "relationship": 4,
      "frames": 1320,
-     "frames_found": 324
+     "frames_found": 302
     },
     "pip25": {
      "clips": 22,
@@ -715,63 +689,32 @@
      "found": 15,
      "relationship": 15,
      "frames": 1320,
-     "frames_found": 854
+     "frames_found": 803
     },
     "caption": {
      "clips": 22,
      "found": 13,
      "relationship": 10,
      "frames": 1320,
-     "frames_found": 681
+     "frames_found": 643
     },
     "logo": {
      "clips": 22,
-     "found": 13,
-     "relationship": 10,
+     "found": 16,
+     "relationship": 13,
      "frames": 1320,
-     "frames_found": 858
+     "frames_found": 797
     }
    },
    "false": {
-    "videos": [
-     [
-      "jpl-whats-up-2026-02__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      45
-     ],
-     [
-      "jpl-whats-up-2026-01__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      45
-     ],
-     [
-      "jpl-whats-up-2025-11__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      44
-     ],
-     [
-      "nasa-s2g-2015-02-27__whole",
-      "nasa-space-to-ground",
-      "nasa-s2g-2015-03-06",
-      42
-     ],
-     [
-      "nasa-s2g-2018-01-19__whole",
-      "nasa-space-to-ground",
-      "nasa-s2g-2015-03-06",
-      36
-     ]
-    ],
+    "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 401,
+    "unrelated_frames": 108,
     "unrelated_frames_total": 6981
    },
-   "video_match_rate": 0.3787878787878788,
-   "false_count": 5,
+   "video_match_rate": 0.42424242424242425,
+   "false_count": 0,
    "volume": {
     "keyframes_per_minute": 15.8,
     "codes_per_minute": 156.2,
@@ -783,38 +726,38 @@
    "size": "1024",
    "fps": 1,
    "stop_after": 1000,
-   "shared_after": null,
-   "min_frames": 25,
-   "tuning_rate": 0.1818,
+   "shared_after": 0,
+   "min_frames": 10,
+   "tuning_rate": 0.5051,
    "tuning_false": 0,
    "per_manipulation": {
     "excerpt10": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 4,
+     "relationship": 4,
      "frames": 220,
-     "frames_found": 135
+     "frames_found": 129
     },
     "excerpt30": {
      "clips": 22,
-     "found": 7,
-     "relationship": 7,
+     "found": 16,
+     "relationship": 16,
      "frames": 660,
-     "frames_found": 423
+     "frames_found": 397
     },
     "excerpt60": {
      "clips": 22,
-     "found": 17,
-     "relationship": 17,
+     "found": 21,
+     "relationship": 21,
      "frames": 1320,
-     "frames_found": 843
+     "frames_found": 800
     },
     "vertical": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 6,
+     "relationship": 6,
      "frames": 660,
-     "frames_found": 170
+     "frames_found": 156
     },
     "pip25": {
      "clips": 22,
@@ -832,34 +775,34 @@
     },
     "lowres": {
      "clips": 22,
-     "found": 6,
-     "relationship": 6,
+     "found": 17,
+     "relationship": 16,
      "frames": 660,
-     "frames_found": 413
+     "frames_found": 383
     },
     "caption": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 18,
+     "relationship": 14,
      "frames": 660,
-     "frames_found": 348
+     "frames_found": 326
     },
     "logo": {
      "clips": 22,
-     "found": 6,
-     "relationship": 5,
+     "found": 18,
+     "relationship": 16,
      "frames": 660,
-     "frames_found": 432
+     "frames_found": 398
     }
    },
    "false": {
     "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 245,
+    "unrelated_frames": 46,
     "unrelated_frames_total": 3497
    },
-   "video_match_rate": 0.1818181818181818,
+   "video_match_rate": 0.5050505050505051,
    "false_count": 0,
    "volume": {
     "keyframes_per_minute": 15.8,
@@ -873,37 +816,37 @@
    "fps": 2,
    "stop_after": 1000,
    "shared_after": 0,
-   "min_frames": 25,
-   "tuning_rate": 0.4192,
-   "tuning_false": 5,
+   "min_frames": 20,
+   "tuning_rate": 0.4899,
+   "tuning_false": 0,
    "per_manipulation": {
     "excerpt10": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 1,
+     "relationship": 1,
      "frames": 440,
-     "frames_found": 260
+     "frames_found": 256
     },
     "excerpt30": {
      "clips": 22,
-     "found": 14,
-     "relationship": 14,
+     "found": 15,
+     "relationship": 15,
      "frames": 1320,
-     "frames_found": 828
+     "frames_found": 792
     },
     "excerpt60": {
      "clips": 22,
-     "found": 21,
+     "found": 22,
      "relationship": 21,
      "frames": 2640,
-     "frames_found": 1670
+     "frames_found": 1602
     },
     "vertical": {
      "clips": 22,
-     "found": 2,
-     "relationship": 2,
+     "found": 6,
+     "relationship": 6,
      "frames": 1320,
-     "frames_found": 317
+     "frames_found": 309
     },
     "pip25": {
      "clips": 22,
@@ -921,66 +864,35 @@
     },
     "lowres": {
      "clips": 22,
-     "found": 15,
-     "relationship": 15,
+     "found": 17,
+     "relationship": 17,
      "frames": 1320,
-     "frames_found": 841
+     "frames_found": 790
     },
     "caption": {
      "clips": 22,
-     "found": 14,
-     "relationship": 12,
+     "found": 17,
+     "relationship": 14,
      "frames": 1320,
-     "frames_found": 683
+     "frames_found": 646
     },
     "logo": {
      "clips": 22,
-     "found": 17,
-     "relationship": 15,
+     "found": 19,
+     "relationship": 17,
      "frames": 1320,
-     "frames_found": 847
+     "frames_found": 785
     }
    },
    "false": {
-    "videos": [
-     [
-      "jpl-whats-up-2026-02__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      45
-     ],
-     [
-      "jpl-whats-up-2026-01__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      45
-     ],
-     [
-      "jpl-whats-up-2025-11__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      31
-     ],
-     [
-      "nasa-s2g-2015-02-27__whole",
-      "nasa-space-to-ground",
-      "nasa-s2g-2015-03-06",
-      39
-     ],
-     [
-      "nasa-s2g-2018-01-19__whole",
-      "nasa-space-to-ground",
-      "nasa-s2g-2015-03-06",
-      36
-     ]
-    ],
+    "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 374,
+    "unrelated_frames": 86,
     "unrelated_frames_total": 6981
    },
-   "video_match_rate": 0.41919191919191917,
-   "false_count": 5,
+   "video_match_rate": 0.4898989898989899,
+   "false_count": 0,
    "volume": {
     "keyframes_per_minute": 15.8,
     "codes_per_minute": 156.2,
@@ -991,107 +903,100 @@
    "codes": 20,
    "size": "512",
    "fps": 1,
-   "stop_after": 3,
-   "shared_after": null,
-   "min_frames": 25,
-   "tuning_rate": 0.2424,
-   "tuning_false": 1,
+   "stop_after": 1000,
+   "shared_after": 0,
+   "min_frames": 15,
+   "tuning_rate": 0.4646,
+   "tuning_false": 0,
    "per_manipulation": {
     "excerpt10": {
      "clips": 22,
      "found": 0,
      "relationship": 0,
      "frames": 220,
-     "frames_found": 152
+     "frames_found": 147
     },
     "excerpt30": {
      "clips": 22,
-     "found": 8,
-     "relationship": 7,
+     "found": 15,
+     "relationship": 14,
      "frames": 660,
-     "frames_found": 464
+     "frames_found": 441
     },
     "excerpt60": {
      "clips": 22,
-     "found": 20,
-     "relationship": 20,
+     "found": 21,
+     "relationship": 21,
      "frames": 1320,
-     "frames_found": 935
+     "frames_found": 907
     },
     "vertical": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 7,
+     "relationship": 7,
      "frames": 660,
-     "frames_found": 229
+     "frames_found": 222
     },
     "pip25": {
      "clips": 22,
      "found": 0,
      "relationship": 0,
      "frames": 660,
-     "frames_found": 5
+     "frames_found": 16
     },
     "pip40": {
      "clips": 22,
      "found": 0,
      "relationship": 0,
      "frames": 660,
-     "frames_found": 69
+     "frames_found": 72
     },
     "lowres": {
      "clips": 22,
-     "found": 9,
-     "relationship": 9,
+     "found": 16,
+     "relationship": 15,
      "frames": 660,
-     "frames_found": 464
+     "frames_found": 448
     },
     "caption": {
      "clips": 22,
-     "found": 3,
-     "relationship": 2,
+     "found": 16,
+     "relationship": 13,
      "frames": 660,
-     "frames_found": 416
+     "frames_found": 407
     },
     "logo": {
      "clips": 22,
-     "found": 8,
-     "relationship": 7,
+     "found": 17,
+     "relationship": 15,
      "frames": 660,
-     "frames_found": 481
+     "frames_found": 459
     }
    },
    "false": {
-    "videos": [
-     [
-      "jpl-whats-up-2026-01__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      30
-     ]
-    ],
+    "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 277,
+    "unrelated_frames": 86,
     "unrelated_frames_total": 3497
    },
-   "video_match_rate": 0.2424242424242424,
-   "false_count": 1,
+   "video_match_rate": 0.46464646464646464,
+   "false_count": 0,
    "volume": {
     "keyframes_per_minute": 15.8,
-    "codes_per_minute": 297.8,
-    "codes_per_90min_film": 26804
+    "codes_per_minute": 302.2,
+    "codes_per_90min_film": 27200
    }
   },
   "codes=20;size=512;fps=2": {
    "codes": 20,
    "size": "512",
    "fps": 2,
-   "stop_after": 3,
+   "stop_after": 1000,
    "shared_after": 0,
-   "min_frames": 25,
-   "tuning_rate": 0.5152,
-   "tuning_false": 5,
+   "min_frames": 30,
+   "tuning_rate": 0.4596,
+   "tuning_false": 0,
    "per_manipulation": {
     "excerpt10": {
      "clips": 22,
@@ -1102,115 +1007,84 @@
     },
     "excerpt30": {
      "clips": 22,
-     "found": 17,
-     "relationship": 17,
+     "found": 14,
+     "relationship": 14,
      "frames": 1320,
-     "frames_found": 919
+     "frames_found": 889
     },
     "excerpt60": {
      "clips": 22,
      "found": 22,
      "relationship": 21,
      "frames": 2640,
-     "frames_found": 1852
+     "frames_found": 1799
     },
     "vertical": {
      "clips": 22,
-     "found": 7,
-     "relationship": 7,
+     "found": 6,
+     "relationship": 6,
      "frames": 1320,
-     "frames_found": 436
+     "frames_found": 438
     },
     "pip25": {
      "clips": 22,
      "found": 0,
      "relationship": 0,
      "frames": 1320,
-     "frames_found": 11
+     "frames_found": 34
     },
     "pip40": {
      "clips": 22,
-     "found": 1,
-     "relationship": 1,
+     "found": 0,
+     "relationship": 0,
      "frames": 1320,
-     "frames_found": 148
+     "frames_found": 150
     },
     "lowres": {
      "clips": 22,
      "found": 17,
      "relationship": 17,
      "frames": 1320,
-     "frames_found": 936
+     "frames_found": 909
     },
     "caption": {
      "clips": 22,
-     "found": 17,
-     "relationship": 14,
+     "found": 15,
+     "relationship": 12,
      "frames": 1320,
-     "frames_found": 829
+     "frames_found": 820
     },
     "logo": {
      "clips": 22,
-     "found": 21,
-     "relationship": 19,
+     "found": 17,
+     "relationship": 15,
      "frames": 1320,
-     "frames_found": 952
+     "frames_found": 910
     }
    },
    "false": {
-    "videos": [
-     [
-      "jpl-whats-up-2026-02__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      45
-     ],
-     [
-      "jpl-whats-up-2026-01__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      58
-     ],
-     [
-      "jpl-whats-up-2025-11__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      45
-     ],
-     [
-      "nasa-s2g-2014-10-24__whole",
-      "nasa-space-to-ground",
-      "nasa-s2g-2015-03-06",
-      37
-     ],
-     [
-      "nasa-s2g-2015-02-27__whole",
-      "nasa-space-to-ground",
-      "nasa-s2g-2015-03-06",
-      35
-     ]
-    ],
+    "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 492,
+    "unrelated_frames": 165,
     "unrelated_frames_total": 6981
    },
-   "video_match_rate": 0.5151515151515151,
-   "false_count": 5,
+   "video_match_rate": 0.4595959595959596,
+   "false_count": 0,
    "volume": {
     "keyframes_per_minute": 15.8,
-    "codes_per_minute": 297.8,
-    "codes_per_90min_film": 26804
+    "codes_per_minute": 302.2,
+    "codes_per_90min_film": 27200
    }
   },
   "codes=20;size=1024;fps=1": {
    "codes": 20,
    "size": "1024",
    "fps": 1,
-   "stop_after": 3,
-   "shared_after": null,
-   "min_frames": 25,
-   "tuning_rate": 0.2374,
+   "stop_after": 1000,
+   "shared_after": 1,
+   "min_frames": 20,
+   "tuning_rate": 0.3535,
    "tuning_false": 0,
    "per_manipulation": {
     "excerpt10": {
@@ -1218,198 +1092,167 @@
      "found": 0,
      "relationship": 0,
      "frames": 220,
-     "frames_found": 153
+     "frames_found": 149
     },
     "excerpt30": {
      "clips": 22,
-     "found": 8,
-     "relationship": 8,
+     "found": 12,
+     "relationship": 11,
      "frames": 660,
-     "frames_found": 459
+     "frames_found": 448
     },
     "excerpt60": {
      "clips": 22,
-     "found": 20,
-     "relationship": 20,
+     "found": 21,
+     "relationship": 21,
      "frames": 1320,
-     "frames_found": 918
+     "frames_found": 901
     },
     "vertical": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 2,
+     "relationship": 2,
      "frames": 660,
-     "frames_found": 228
+     "frames_found": 227
     },
     "pip25": {
      "clips": 22,
      "found": 0,
      "relationship": 0,
      "frames": 660,
-     "frames_found": 6
+     "frames_found": 13
     },
     "pip40": {
      "clips": 22,
      "found": 0,
      "relationship": 0,
      "frames": 660,
-     "frames_found": 70
+     "frames_found": 71
     },
     "lowres": {
      "clips": 22,
-     "found": 9,
-     "relationship": 9,
+     "found": 13,
+     "relationship": 12,
      "frames": 660,
-     "frames_found": 460
+     "frames_found": 448
     },
     "caption": {
      "clips": 22,
-     "found": 3,
-     "relationship": 2,
+     "found": 12,
+     "relationship": 10,
      "frames": 660,
-     "frames_found": 419
+     "frames_found": 417
     },
     "logo": {
      "clips": 22,
-     "found": 7,
-     "relationship": 6,
+     "found": 10,
+     "relationship": 8,
      "frames": 660,
-     "frames_found": 470
+     "frames_found": 454
     }
    },
    "false": {
     "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 254,
+    "unrelated_frames": 161,
     "unrelated_frames_total": 3497
    },
-   "video_match_rate": 0.23737373737373735,
+   "video_match_rate": 0.35353535353535354,
    "false_count": 0,
    "volume": {
     "keyframes_per_minute": 15.8,
-    "codes_per_minute": 297.8,
-    "codes_per_90min_film": 26804
+    "codes_per_minute": 302.2,
+    "codes_per_90min_film": 27200
    }
   },
   "codes=20;size=1024;fps=2": {
    "codes": 20,
    "size": "1024",
    "fps": 2,
-   "stop_after": 3,
+   "stop_after": 1000,
    "shared_after": 0,
-   "min_frames": 25,
-   "tuning_rate": 0.5051,
-   "tuning_false": 5,
+   "min_frames": 30,
+   "tuning_rate": 0.4596,
+   "tuning_false": 0,
    "per_manipulation": {
     "excerpt10": {
      "clips": 22,
      "found": 0,
      "relationship": 0,
      "frames": 440,
-     "frames_found": 292
+     "frames_found": 291
     },
     "excerpt30": {
      "clips": 22,
-     "found": 17,
-     "relationship": 16,
+     "found": 14,
+     "relationship": 14,
      "frames": 1320,
-     "frames_found": 914
+     "frames_found": 892
     },
     "excerpt60": {
      "clips": 22,
      "found": 22,
      "relationship": 21,
      "frames": 2640,
-     "frames_found": 1826
+     "frames_found": 1777
     },
     "vertical": {
      "clips": 22,
      "found": 6,
      "relationship": 6,
      "frames": 1320,
-     "frames_found": 430
+     "frames_found": 432
     },
     "pip25": {
      "clips": 22,
      "found": 0,
      "relationship": 0,
      "frames": 1320,
-     "frames_found": 10
+     "frames_found": 24
     },
     "pip40": {
      "clips": 22,
-     "found": 1,
-     "relationship": 1,
+     "found": 0,
+     "relationship": 0,
      "frames": 1320,
-     "frames_found": 148
+     "frames_found": 147
     },
     "lowres": {
      "clips": 22,
-     "found": 17,
-     "relationship": 17,
+     "found": 16,
+     "relationship": 16,
      "frames": 1320,
-     "frames_found": 929
+     "frames_found": 902
     },
     "caption": {
      "clips": 22,
-     "found": 17,
-     "relationship": 14,
+     "found": 15,
+     "relationship": 12,
      "frames": 1320,
-     "frames_found": 829
+     "frames_found": 809
     },
     "logo": {
      "clips": 22,
-     "found": 20,
-     "relationship": 18,
+     "found": 18,
+     "relationship": 16,
      "frames": 1320,
-     "frames_found": 938
+     "frames_found": 897
     }
    },
    "false": {
-    "videos": [
-     [
-      "jpl-whats-up-2026-02__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      45
-     ],
-     [
-      "jpl-whats-up-2026-01__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      45
-     ],
-     [
-      "jpl-whats-up-2025-11__whole",
-      "jpl-whats-up",
-      "jpl-whats-up-2026-04",
-      32
-     ],
-     [
-      "nasa-s2g-2014-10-24__whole",
-      "nasa-space-to-ground",
-      "nasa-s2g-2015-03-06",
-      34
-     ],
-     [
-      "nasa-s2g-2015-02-27__whole",
-      "nasa-space-to-ground",
-      "nasa-s2g-2015-03-06",
-      35
-     ]
-    ],
+    "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 429,
+    "unrelated_frames": 153,
     "unrelated_frames_total": 6981
    },
-   "video_match_rate": 0.505050505050505,
-   "false_count": 5,
+   "video_match_rate": 0.4595959595959596,
+   "false_count": 0,
    "volume": {
     "keyframes_per_minute": 15.8,
-    "codes_per_minute": 297.8,
-    "codes_per_90min_film": 26804
+    "codes_per_minute": 302.2,
+    "codes_per_90min_film": 27200
    }
   }
  },
@@ -1419,88 +1262,70 @@
     "per_manipulation": {
      "excerpt10": {
       "clips": 22,
-      "found": 20,
-      "relationship": 15,
+      "found": 21,
+      "relationship": 16,
       "frames": 220,
-      "frames_found": 130
+      "frames_found": 129
      },
      "excerpt30": {
       "clips": 22,
-      "found": 21,
+      "found": 20,
       "relationship": 20,
       "frames": 660,
-      "frames_found": 423
+      "frames_found": 397
      },
      "excerpt60": {
       "clips": 22,
       "found": 22,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 857
+      "frames_found": 800
      },
      "vertical": {
       "clips": 22,
-      "found": 21,
-      "relationship": 20,
+      "found": 17,
+      "relationship": 17,
       "frames": 660,
-      "frames_found": 159
+      "frames_found": 156
      },
      "pip25": {
       "clips": 22,
       "found": 2,
       "relationship": 2,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
-      "found": 6,
-      "relationship": 6,
+      "found": 7,
+      "relationship": 7,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 21,
-      "relationship": 18,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 414
+      "frames_found": 383
      },
      "caption": {
       "clips": 22,
       "found": 22,
       "relationship": 18,
       "frames": 660,
-      "frames_found": 340
+      "frames_found": 326
      },
      "logo": {
       "clips": 22,
       "found": 22,
-      "relationship": 18,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 438
+      "frames_found": 398
      }
     },
     "false": {
      "videos": [
-      [
-       "nasa-twan-2020-01-31__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       5
-      ],
-      [
-       "nasa-twan-2020-01-18__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       7
-      ],
-      [
-       "nasa-twan-2020-02-14__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       6
-      ],
       [
        "nasa-twan-2017-08-18__whole",
        "nasa-this-week",
@@ -1511,43 +1336,31 @@
        "jpl-whats-up-2026-02__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       23
+       1
       ],
       [
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "nasa-crs7-countdown",
-       1
+       9
       ],
       [
        "jpl-whats-up-2025-11__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       22
+       1
       ],
       [
        "nasa-s2g-2014-10-24__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       12
+       3
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       21
-      ],
-      [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
+       9
       ],
       [
        "wh-west-wing-week-2015-04-10__whole",
@@ -1558,28 +1371,10 @@
      ],
      "wrong": [
       [
-       "sintel__pip40__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "sintel__pip40__1",
-       "blender",
-       "nasa-twan-2020-01-25",
-       2
-      ],
-      [
        "nasa-tim-kopra__pip40__1",
        "nasa-moment",
        "nasa-s2g-2015-03-06",
-       7
-      ],
-      [
-       "nasa-crs7-countdown__pip25__0",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       9
+       1
       ],
       [
        "nasa-crs7-countdown__pip25__1",
@@ -1591,7 +1386,7 @@
        "nasa-moment-shane-kimbrough__pip40__0",
        "nasa-moment",
        "nasa-s2g-2015-03-06",
-       10
+       8
       ],
       [
        "nasa-moment-shane-kimbrough__pip40__1",
@@ -1600,21 +1395,9 @@
        1
       ],
       [
-       "nasa-twan-2020-02-07__excerpt10__0",
+       "nasa-twan-2020-01-25__logo__0",
        "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       2
-      ],
-      [
-       "nasa-twan-2020-02-07__excerpt30__0",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       2
-      ],
-      [
-       "nasa-twan-2020-02-07__excerpt60__1",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
+       "nasa-twan-2020-02-07",
        1
       ],
       [
@@ -1624,28 +1407,16 @@
        1
       ],
       [
-       "nasa-twan-2020-02-07__caption__1",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       2
-      ],
-      [
        "jpl-whats-up-2026-04__pip40__1",
        "jpl-whats-up",
        "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "jpl-whats-up-2026-04__logo__0",
-       "jpl-whats-up",
-       "nasa-crs7-countdown",
-       2
+       7
       ],
       [
        "nasa-s2g-2015-03-06__pip25__0",
        "nasa-space-to-ground",
        "jpl-whats-up-2026-04",
-       3
+       2
       ],
       [
        "nasa-s2g-2015-03-06__pip40__1",
@@ -1663,132 +1434,102 @@
        "nasa-atlas-v-tdrs-m__pip40__1",
        "launch",
        "nasa-s2g-2015-03-06",
-       8
+       1
       ],
       [
        "coffee-run__pip25__0",
        "blender",
        "nasa-s2g-2015-03-06",
-       10
+       7
       ],
       [
        "coffee-run__pip25__1",
        "blender",
        "nasa-s2g-2015-03-06",
-       9
+       8
       ],
       [
        "coffee-run__pip40__0",
        "blender",
        "wh-west-wing-week-2015-06-05",
        3
-      ],
-      [
-       "coffee-run__pip40__1",
-       "blender",
-       "nasa-twan-2020-01-25",
-       2
-      ],
-      [
-       "wh-west-wing-week-2015-06-05__pip25__1",
-       "west-wing-week",
-       "nasa-twan-2020-01-25",
-       2
       ]
      ],
      "unrelated_videos": 25,
-     "unrelated_frames": 203,
+     "unrelated_frames": 46,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.7929292929292929,
-    "false_count": 35
+    "video_match_rate": 0.7777777777777778,
+    "false_count": 21
    },
    {
     "per_manipulation": {
      "excerpt10": {
       "clips": 22,
-      "found": 19,
-      "relationship": 14,
+      "found": 20,
+      "relationship": 16,
       "frames": 220,
-      "frames_found": 130
+      "frames_found": 129
      },
      "excerpt30": {
       "clips": 22,
-      "found": 21,
+      "found": 20,
       "relationship": 20,
       "frames": 660,
-      "frames_found": 423
+      "frames_found": 397
      },
      "excerpt60": {
       "clips": 22,
       "found": 22,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 857
+      "frames_found": 800
      },
      "vertical": {
       "clips": 22,
-      "found": 17,
-      "relationship": 17,
+      "found": 15,
+      "relationship": 15,
       "frames": 660,
-      "frames_found": 159
+      "frames_found": 156
      },
      "pip25": {
       "clips": 22,
       "found": 2,
       "relationship": 2,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
-      "found": 4,
-      "relationship": 4,
+      "found": 5,
+      "relationship": 5,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 21,
-      "relationship": 18,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 414
+      "frames_found": 383
      },
      "caption": {
       "clips": 22,
       "found": 22,
       "relationship": 18,
       "frames": 660,
-      "frames_found": 340
+      "frames_found": 326
      },
      "logo": {
       "clips": 22,
       "found": 22,
-      "relationship": 18,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 438
+      "frames_found": 398
      }
     },
     "false": {
      "videos": [
-      [
-       "nasa-twan-2020-01-31__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       5
-      ],
-      [
-       "nasa-twan-2020-01-18__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       7
-      ],
-      [
-       "nasa-twan-2020-02-14__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       6
-      ],
       [
        "nasa-twan-2017-08-18__whole",
        "nasa-this-week",
@@ -1796,40 +1537,22 @@
        2
       ],
       [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
+       9
       ],
       [
        "nasa-s2g-2014-10-24__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       12
+       3
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       21
-      ],
-      [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
+       9
       ],
       [
        "wh-west-wing-week-2015-04-10__whole",
@@ -1840,298 +1563,34 @@
      ],
      "wrong": [
       [
-       "sintel__pip40__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "sintel__pip40__1",
-       "blender",
-       "nasa-twan-2020-01-25",
-       2
-      ],
-      [
-       "nasa-tim-kopra__pip40__1",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       7
-      ],
-      [
-       "nasa-crs7-countdown__pip25__0",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
        "nasa-moment-shane-kimbrough__pip40__0",
        "nasa-moment",
        "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "nasa-twan-2020-02-07__excerpt10__0",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       2
-      ],
-      [
-       "nasa-twan-2020-02-07__excerpt30__0",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       2
-      ],
-      [
-       "nasa-twan-2020-02-07__caption__1",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       2
+       8
       ],
       [
        "jpl-whats-up-2026-04__pip40__1",
        "jpl-whats-up",
        "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "jpl-whats-up-2026-04__logo__0",
-       "jpl-whats-up",
-       "nasa-crs7-countdown",
-       2
+       7
       ],
       [
        "nasa-s2g-2015-03-06__pip25__0",
        "nasa-space-to-ground",
        "jpl-whats-up-2026-04",
-       3
-      ],
-      [
-       "nasa-atlas-v-tdrs-m__pip40__1",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       8
+       2
       ],
       [
        "coffee-run__pip25__0",
        "blender",
        "nasa-s2g-2015-03-06",
-       10
+       7
       ],
       [
        "coffee-run__pip25__1",
        "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "coffee-run__pip40__0",
-       "blender",
-       "wh-west-wing-week-2015-06-05",
-       3
-      ],
-      [
-       "coffee-run__pip40__1",
-       "blender",
-       "nasa-twan-2020-01-25",
-       2
-      ],
-      [
-       "wh-west-wing-week-2015-06-05__pip25__1",
-       "west-wing-week",
-       "nasa-twan-2020-01-25",
-       2
-      ]
-     ],
-     "unrelated_videos": 25,
-     "unrelated_frames": 203,
-     "unrelated_frames_total": 3497
-    },
-    "video_match_rate": 0.7575757575757576,
-    "false_count": 28
-   },
-   {
-    "per_manipulation": {
-     "excerpt10": {
-      "clips": 22,
-      "found": 18,
-      "relationship": 13,
-      "frames": 220,
-      "frames_found": 130
-     },
-     "excerpt30": {
-      "clips": 22,
-      "found": 21,
-      "relationship": 20,
-      "frames": 660,
-      "frames_found": 423
-     },
-     "excerpt60": {
-      "clips": 22,
-      "found": 22,
-      "relationship": 21,
-      "frames": 1320,
-      "frames_found": 857
-     },
-     "vertical": {
-      "clips": 22,
-      "found": 16,
-      "relationship": 16,
-      "frames": 660,
-      "frames_found": 159
-     },
-     "pip25": {
-      "clips": 22,
-      "found": 1,
-      "relationship": 1,
-      "frames": 660,
-      "frames_found": 9
-     },
-     "pip40": {
-      "clips": 22,
-      "found": 3,
-      "relationship": 3,
-      "frames": 660,
-      "frames_found": 34
-     },
-     "lowres": {
-      "clips": 22,
-      "found": 21,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 414
-     },
-     "caption": {
-      "clips": 22,
-      "found": 22,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 340
-     },
-     "logo": {
-      "clips": 22,
-      "found": 22,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 438
-     }
-    },
-    "false": {
-     "videos": [
-      [
-       "nasa-twan-2020-01-31__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       5
-      ],
-      [
-       "nasa-twan-2020-01-18__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       7
-      ],
-      [
-       "nasa-twan-2020-02-14__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       6
-      ],
-      [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
-      ],
-      [
-       "nasa-s2g-2014-10-24__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       12
-      ],
-      [
-       "nasa-s2g-2015-02-27__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       21
-      ],
-      [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
-      ],
-      [
-       "wh-west-wing-week-2015-04-10__whole",
-       "west-wing-week",
-       "wh-west-wing-week-2015-06-05",
-       5
-      ]
-     ],
-     "wrong": [
-      [
-       "sintel__pip40__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-tim-kopra__pip40__1",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       7
-      ],
-      [
-       "nasa-crs7-countdown__pip25__0",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-moment-shane-kimbrough__pip40__0",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "jpl-whats-up-2026-04__pip40__1",
-       "jpl-whats-up",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "nasa-s2g-2015-03-06__pip25__0",
-       "nasa-space-to-ground",
-       "jpl-whats-up-2026-04",
-       3
-      ],
-      [
-       "nasa-atlas-v-tdrs-m__pip40__1",
-       "launch",
        "nasa-s2g-2015-03-06",
        8
-      ],
-      [
-       "coffee-run__pip25__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "coffee-run__pip25__1",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
       ],
       [
        "coffee-run__pip40__0",
@@ -2141,1672 +1600,877 @@
       ]
      ],
      "unrelated_videos": 25,
-     "unrelated_frames": 203,
+     "unrelated_frames": 46,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.7373737373737375,
-    "false_count": 20
+    "video_match_rate": 0.7525252525252525,
+    "false_count": 11
    },
    {
     "per_manipulation": {
      "excerpt10": {
-      "clips": 22,
-      "found": 16,
-      "relationship": 12,
-      "frames": 220,
-      "frames_found": 130
-     },
-     "excerpt30": {
-      "clips": 22,
-      "found": 21,
-      "relationship": 20,
-      "frames": 660,
-      "frames_found": 423
-     },
-     "excerpt60": {
-      "clips": 22,
-      "found": 22,
-      "relationship": 21,
-      "frames": 1320,
-      "frames_found": 857
-     },
-     "vertical": {
-      "clips": 22,
-      "found": 14,
-      "relationship": 14,
-      "frames": 660,
-      "frames_found": 159
-     },
-     "pip25": {
-      "clips": 22,
-      "found": 1,
-      "relationship": 1,
-      "frames": 660,
-      "frames_found": 9
-     },
-     "pip40": {
-      "clips": 22,
-      "found": 3,
-      "relationship": 3,
-      "frames": 660,
-      "frames_found": 34
-     },
-     "lowres": {
-      "clips": 22,
-      "found": 21,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 414
-     },
-     "caption": {
-      "clips": 22,
-      "found": 22,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 340
-     },
-     "logo": {
-      "clips": 22,
-      "found": 22,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 438
-     }
-    },
-    "false": {
-     "videos": [
-      [
-       "nasa-twan-2020-01-31__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       5
-      ],
-      [
-       "nasa-twan-2020-01-18__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       7
-      ],
-      [
-       "nasa-twan-2020-02-14__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       6
-      ],
-      [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
-      ],
-      [
-       "nasa-s2g-2014-10-24__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       12
-      ],
-      [
-       "nasa-s2g-2015-02-27__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       21
-      ],
-      [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
-      ],
-      [
-       "wh-west-wing-week-2015-04-10__whole",
-       "west-wing-week",
-       "wh-west-wing-week-2015-06-05",
-       5
-      ]
-     ],
-     "wrong": [
-      [
-       "sintel__pip40__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-tim-kopra__pip40__1",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       7
-      ],
-      [
-       "nasa-crs7-countdown__pip25__0",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-moment-shane-kimbrough__pip40__0",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "jpl-whats-up-2026-04__pip40__1",
-       "jpl-whats-up",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "nasa-atlas-v-tdrs-m__pip40__1",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       8
-      ],
-      [
-       "coffee-run__pip25__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "coffee-run__pip25__1",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ]
-     ],
-     "unrelated_videos": 25,
-     "unrelated_frames": 203,
-     "unrelated_frames_total": 3497
-    },
-    "video_match_rate": 0.7171717171717172,
-    "false_count": 18
-   },
-   {
-    "per_manipulation": {
-     "excerpt10": {
-      "clips": 22,
-      "found": 14,
-      "relationship": 11,
-      "frames": 220,
-      "frames_found": 130
-     },
-     "excerpt30": {
-      "clips": 22,
-      "found": 20,
-      "relationship": 20,
-      "frames": 660,
-      "frames_found": 423
-     },
-     "excerpt60": {
-      "clips": 22,
-      "found": 22,
-      "relationship": 21,
-      "frames": 1320,
-      "frames_found": 857
-     },
-     "vertical": {
-      "clips": 22,
-      "found": 13,
-      "relationship": 13,
-      "frames": 660,
-      "frames_found": 159
-     },
-     "pip25": {
-      "clips": 22,
-      "found": 1,
-      "relationship": 1,
-      "frames": 660,
-      "frames_found": 9
-     },
-     "pip40": {
-      "clips": 22,
-      "found": 3,
-      "relationship": 3,
-      "frames": 660,
-      "frames_found": 34
-     },
-     "lowres": {
-      "clips": 22,
-      "found": 21,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 414
-     },
-     "caption": {
-      "clips": 22,
-      "found": 21,
-      "relationship": 17,
-      "frames": 660,
-      "frames_found": 340
-     },
-     "logo": {
-      "clips": 22,
-      "found": 22,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 438
-     }
-    },
-    "false": {
-     "videos": [
-      [
-       "nasa-twan-2020-01-31__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       5
-      ],
-      [
-       "nasa-twan-2020-01-18__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       7
-      ],
-      [
-       "nasa-twan-2020-02-14__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       6
-      ],
-      [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
-      ],
-      [
-       "nasa-s2g-2014-10-24__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       12
-      ],
-      [
-       "nasa-s2g-2015-02-27__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       21
-      ],
-      [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
-      ],
-      [
-       "wh-west-wing-week-2015-04-10__whole",
-       "west-wing-week",
-       "wh-west-wing-week-2015-06-05",
-       5
-      ]
-     ],
-     "wrong": [
-      [
-       "sintel__pip40__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-tim-kopra__pip40__1",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       7
-      ],
-      [
-       "nasa-crs7-countdown__pip25__0",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-moment-shane-kimbrough__pip40__0",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "jpl-whats-up-2026-04__pip40__1",
-       "jpl-whats-up",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "nasa-atlas-v-tdrs-m__pip40__1",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       8
-      ],
-      [
-       "coffee-run__pip25__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "coffee-run__pip25__1",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ]
-     ],
-     "unrelated_videos": 25,
-     "unrelated_frames": 203,
-     "unrelated_frames_total": 3497
-    },
-    "video_match_rate": 0.6919191919191919,
-    "false_count": 18
-   },
-   {
-    "per_manipulation": {
-     "excerpt10": {
-      "clips": 22,
-      "found": 13,
-      "relationship": 10,
-      "frames": 220,
-      "frames_found": 130
-     },
-     "excerpt30": {
-      "clips": 22,
-      "found": 20,
-      "relationship": 20,
-      "frames": 660,
-      "frames_found": 423
-     },
-     "excerpt60": {
-      "clips": 22,
-      "found": 22,
-      "relationship": 21,
-      "frames": 1320,
-      "frames_found": 857
-     },
-     "vertical": {
-      "clips": 22,
-      "found": 12,
-      "relationship": 12,
-      "frames": 660,
-      "frames_found": 159
-     },
-     "pip25": {
-      "clips": 22,
-      "found": 1,
-      "relationship": 1,
-      "frames": 660,
-      "frames_found": 9
-     },
-     "pip40": {
-      "clips": 22,
-      "found": 2,
-      "relationship": 2,
-      "frames": 660,
-      "frames_found": 34
-     },
-     "lowres": {
-      "clips": 22,
-      "found": 20,
-      "relationship": 17,
-      "frames": 660,
-      "frames_found": 414
-     },
-     "caption": {
-      "clips": 22,
-      "found": 21,
-      "relationship": 17,
-      "frames": 660,
-      "frames_found": 340
-     },
-     "logo": {
-      "clips": 22,
-      "found": 21,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 438
-     }
-    },
-    "false": {
-     "videos": [
-      [
-       "nasa-twan-2020-01-18__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       7
-      ],
-      [
-       "nasa-twan-2020-02-14__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       6
-      ],
-      [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
-      ],
-      [
-       "nasa-s2g-2014-10-24__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       12
-      ],
-      [
-       "nasa-s2g-2015-02-27__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       21
-      ],
-      [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
-      ]
-     ],
-     "wrong": [
-      [
-       "sintel__pip40__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-tim-kopra__pip40__1",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       7
-      ],
-      [
-       "nasa-crs7-countdown__pip25__0",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-moment-shane-kimbrough__pip40__0",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "jpl-whats-up-2026-04__pip40__1",
-       "jpl-whats-up",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "nasa-atlas-v-tdrs-m__pip40__1",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       8
-      ],
-      [
-       "coffee-run__pip25__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "coffee-run__pip25__1",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ]
-     ],
-     "unrelated_videos": 25,
-     "unrelated_frames": 203,
-     "unrelated_frames_total": 3497
-    },
-    "video_match_rate": 0.6666666666666666,
-    "false_count": 16
-   },
-   {
-    "per_manipulation": {
-     "excerpt10": {
-      "clips": 22,
-      "found": 10,
-      "relationship": 7,
-      "frames": 220,
-      "frames_found": 130
-     },
-     "excerpt30": {
       "clips": 22,
       "found": 19,
-      "relationship": 19,
+      "relationship": 15,
+      "frames": 220,
+      "frames_found": 129
+     },
+     "excerpt30": {
+      "clips": 22,
+      "found": 20,
+      "relationship": 20,
       "frames": 660,
-      "frames_found": 423
+      "frames_found": 397
      },
      "excerpt60": {
       "clips": 22,
       "found": 22,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 857
+      "frames_found": 800
      },
      "vertical": {
       "clips": 22,
-      "found": 8,
-      "relationship": 8,
+      "found": 13,
+      "relationship": 13,
       "frames": 660,
-      "frames_found": 159
+      "frames_found": 156
      },
      "pip25": {
       "clips": 22,
-      "found": 0,
-      "relationship": 0,
+      "found": 1,
+      "relationship": 1,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
-      "found": 2,
-      "relationship": 2,
-      "frames": 660,
-      "frames_found": 34
-     },
-     "lowres": {
-      "clips": 22,
-      "found": 20,
-      "relationship": 17,
-      "frames": 660,
-      "frames_found": 414
-     },
-     "caption": {
-      "clips": 22,
-      "found": 21,
-      "relationship": 17,
-      "frames": 660,
-      "frames_found": 340
-     },
-     "logo": {
-      "clips": 22,
-      "found": 21,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 438
-     }
-    },
-    "false": {
-     "videos": [
-      [
-       "nasa-twan-2020-01-18__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       7
-      ],
-      [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
-      ],
-      [
-       "nasa-s2g-2014-10-24__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       12
-      ],
-      [
-       "nasa-s2g-2015-02-27__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       21
-      ],
-      [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
-      ]
-     ],
-     "wrong": [
-      [
-       "sintel__pip40__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-tim-kopra__pip40__1",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       7
-      ],
-      [
-       "nasa-crs7-countdown__pip25__0",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-moment-shane-kimbrough__pip40__0",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "jpl-whats-up-2026-04__pip40__1",
-       "jpl-whats-up",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "nasa-atlas-v-tdrs-m__pip40__1",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       8
-      ],
-      [
-       "coffee-run__pip25__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "coffee-run__pip25__1",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ]
-     ],
-     "unrelated_videos": 25,
-     "unrelated_frames": 203,
-     "unrelated_frames_total": 3497
-    },
-    "video_match_rate": 0.6212121212121212,
-    "false_count": 15
-   },
-   {
-    "per_manipulation": {
-     "excerpt10": {
-      "clips": 22,
-      "found": 8,
+      "found": 5,
       "relationship": 5,
-      "frames": 220,
-      "frames_found": 130
-     },
-     "excerpt30": {
-      "clips": 22,
-      "found": 19,
-      "relationship": 19,
       "frames": 660,
-      "frames_found": 423
-     },
-     "excerpt60": {
-      "clips": 22,
-      "found": 22,
-      "relationship": 21,
-      "frames": 1320,
-      "frames_found": 857
-     },
-     "vertical": {
-      "clips": 22,
-      "found": 8,
-      "relationship": 8,
-      "frames": 660,
-      "frames_found": 159
-     },
-     "pip25": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 660,
-      "frames_found": 9
-     },
-     "pip40": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
-      "found": 19,
-      "relationship": 17,
+      "found": 21,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 414
+      "frames_found": 383
      },
      "caption": {
       "clips": 22,
-      "found": 20,
-      "relationship": 16,
+      "found": 22,
+      "relationship": 18,
       "frames": 660,
-      "frames_found": 340
+      "frames_found": 326
      },
      "logo": {
       "clips": 22,
-      "found": 21,
-      "relationship": 18,
+      "found": 22,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 438
+      "frames_found": 398
      }
     },
     "false": {
      "videos": [
       [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
+       9
       ],
       [
        "nasa-s2g-2014-10-24__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       12
+       3
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       21
+       9
       ],
       [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
+       "wh-west-wing-week-2015-04-10__whole",
+       "west-wing-week",
+       "wh-west-wing-week-2015-06-05",
+       5
       ]
      ],
      "wrong": [
       [
-       "sintel__pip40__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-crs7-countdown__pip25__0",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
        "nasa-moment-shane-kimbrough__pip40__0",
        "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "jpl-whats-up-2026-04__pip40__1",
-       "jpl-whats-up",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "nasa-atlas-v-tdrs-m__pip40__1",
-       "launch",
        "nasa-s2g-2015-03-06",
        8
       ],
       [
+       "jpl-whats-up-2026-04__pip40__1",
+       "jpl-whats-up",
+       "nasa-s2g-2015-03-06",
+       7
+      ],
+      [
        "coffee-run__pip25__0",
        "blender",
        "nasa-s2g-2015-03-06",
-       10
+       7
       ],
       [
        "coffee-run__pip25__1",
        "blender",
        "nasa-s2g-2015-03-06",
-       9
+       8
+      ],
+      [
+       "coffee-run__pip40__0",
+       "blender",
+       "wh-west-wing-week-2015-06-05",
+       3
       ]
      ],
      "unrelated_videos": 25,
-     "unrelated_frames": 203,
+     "unrelated_frames": 46,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.5909090909090909,
-    "false_count": 13
-   },
-   {
-    "per_manipulation": {
-     "excerpt10": {
-      "clips": 22,
-      "found": 4,
-      "relationship": 4,
-      "frames": 220,
-      "frames_found": 130
-     },
-     "excerpt30": {
-      "clips": 22,
-      "found": 18,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 423
-     },
-     "excerpt60": {
-      "clips": 22,
-      "found": 22,
-      "relationship": 21,
-      "frames": 1320,
-      "frames_found": 857
-     },
-     "vertical": {
-      "clips": 22,
-      "found": 8,
-      "relationship": 8,
-      "frames": 660,
-      "frames_found": 159
-     },
-     "pip25": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 660,
-      "frames_found": 9
-     },
-     "pip40": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 660,
-      "frames_found": 34
-     },
-     "lowres": {
-      "clips": 22,
-      "found": 18,
-      "relationship": 16,
-      "frames": 660,
-      "frames_found": 414
-     },
-     "caption": {
-      "clips": 22,
-      "found": 19,
-      "relationship": 15,
-      "frames": 660,
-      "frames_found": 340
-     },
-     "logo": {
-      "clips": 22,
-      "found": 21,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 438
-     }
-    },
-    "false": {
-     "videos": [
-      [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
-      ],
-      [
-       "nasa-s2g-2014-10-24__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       12
-      ],
-      [
-       "nasa-s2g-2015-02-27__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       21
-      ],
-      [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
-      ]
-     ],
-     "wrong": [
-      [
-       "sintel__pip40__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-crs7-countdown__pip25__0",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-moment-shane-kimbrough__pip40__0",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "jpl-whats-up-2026-04__pip40__1",
-       "jpl-whats-up",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "coffee-run__pip25__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "coffee-run__pip25__1",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ]
-     ],
-     "unrelated_videos": 25,
-     "unrelated_frames": 203,
-     "unrelated_frames_total": 3497
-    },
-    "video_match_rate": 0.5555555555555556,
-    "false_count": 12
-   },
-   {
-    "per_manipulation": {
-     "excerpt10": {
-      "clips": 22,
-      "found": 3,
-      "relationship": 3,
-      "frames": 220,
-      "frames_found": 130
-     },
-     "excerpt30": {
-      "clips": 22,
-      "found": 18,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 423
-     },
-     "excerpt60": {
-      "clips": 22,
-      "found": 21,
-      "relationship": 21,
-      "frames": 1320,
-      "frames_found": 857
-     },
-     "vertical": {
-      "clips": 22,
-      "found": 7,
-      "relationship": 7,
-      "frames": 660,
-      "frames_found": 159
-     },
-     "pip25": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 660,
-      "frames_found": 9
-     },
-     "pip40": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 660,
-      "frames_found": 34
-     },
-     "lowres": {
-      "clips": 22,
-      "found": 17,
-      "relationship": 15,
-      "frames": 660,
-      "frames_found": 414
-     },
-     "caption": {
-      "clips": 22,
-      "found": 17,
-      "relationship": 13,
-      "frames": 660,
-      "frames_found": 340
-     },
-     "logo": {
-      "clips": 22,
-      "found": 20,
-      "relationship": 17,
-      "frames": 660,
-      "frames_found": 438
-     }
-    },
-    "false": {
-     "videos": [
-      [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
-      ],
-      [
-       "nasa-s2g-2014-10-24__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       12
-      ],
-      [
-       "nasa-s2g-2015-02-27__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       21
-      ],
-      [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
-      ]
-     ],
-     "wrong": [
-      [
-       "nasa-moment-shane-kimbrough__pip40__0",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "jpl-whats-up-2026-04__pip40__1",
-       "jpl-whats-up",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "coffee-run__pip25__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       10
-      ]
-     ],
-     "unrelated_videos": 25,
-     "unrelated_frames": 203,
-     "unrelated_frames_total": 3497
-    },
-    "video_match_rate": 0.5202020202020202,
+    "video_match_rate": 0.7323232323232323,
     "false_count": 9
    },
    {
     "per_manipulation": {
      "excerpt10": {
       "clips": 22,
+      "found": 16,
+      "relationship": 13,
+      "frames": 220,
+      "frames_found": 129
+     },
+     "excerpt30": {
+      "clips": 22,
+      "found": 20,
+      "relationship": 20,
+      "frames": 660,
+      "frames_found": 397
+     },
+     "excerpt60": {
+      "clips": 22,
+      "found": 22,
+      "relationship": 21,
+      "frames": 1320,
+      "frames_found": 800
+     },
+     "vertical": {
+      "clips": 22,
+      "found": 11,
+      "relationship": 11,
+      "frames": 660,
+      "frames_found": 156
+     },
+     "pip25": {
+      "clips": 22,
+      "found": 1,
+      "relationship": 1,
+      "frames": 660,
+      "frames_found": 6
+     },
+     "pip40": {
+      "clips": 22,
+      "found": 4,
+      "relationship": 4,
+      "frames": 660,
+      "frames_found": 33
+     },
+     "lowres": {
+      "clips": 22,
+      "found": 21,
+      "relationship": 19,
+      "frames": 660,
+      "frames_found": 383
+     },
+     "caption": {
+      "clips": 22,
+      "found": 22,
+      "relationship": 18,
+      "frames": 660,
+      "frames_found": 326
+     },
+     "logo": {
+      "clips": 22,
+      "found": 22,
+      "relationship": 19,
+      "frames": 660,
+      "frames_found": 398
+     }
+    },
+    "false": {
+     "videos": [
+      [
+       "jpl-whats-up-2026-01__whole",
+       "jpl-whats-up",
+       "jpl-whats-up-2026-04",
+       9
+      ],
+      [
+       "nasa-s2g-2015-02-27__whole",
+       "nasa-space-to-ground",
+       "nasa-s2g-2015-03-06",
+       9
+      ],
+      [
+       "wh-west-wing-week-2015-04-10__whole",
+       "west-wing-week",
+       "wh-west-wing-week-2015-06-05",
+       5
+      ]
+     ],
+     "wrong": [
+      [
+       "nasa-moment-shane-kimbrough__pip40__0",
+       "nasa-moment",
+       "nasa-s2g-2015-03-06",
+       8
+      ],
+      [
+       "jpl-whats-up-2026-04__pip40__1",
+       "jpl-whats-up",
+       "nasa-s2g-2015-03-06",
+       7
+      ],
+      [
+       "coffee-run__pip25__0",
+       "blender",
+       "nasa-s2g-2015-03-06",
+       7
+      ],
+      [
+       "coffee-run__pip25__1",
+       "blender",
+       "nasa-s2g-2015-03-06",
+       8
+      ]
+     ],
+     "unrelated_videos": 25,
+     "unrelated_frames": 46,
+     "unrelated_frames_total": 3497
+    },
+    "video_match_rate": 0.702020202020202,
+    "false_count": 7
+   },
+   {
+    "per_manipulation": {
+     "excerpt10": {
+      "clips": 22,
+      "found": 14,
+      "relationship": 12,
+      "frames": 220,
+      "frames_found": 129
+     },
+     "excerpt30": {
+      "clips": 22,
+      "found": 20,
+      "relationship": 20,
+      "frames": 660,
+      "frames_found": 397
+     },
+     "excerpt60": {
+      "clips": 22,
+      "found": 22,
+      "relationship": 21,
+      "frames": 1320,
+      "frames_found": 800
+     },
+     "vertical": {
+      "clips": 22,
+      "found": 11,
+      "relationship": 11,
+      "frames": 660,
+      "frames_found": 156
+     },
+     "pip25": {
+      "clips": 22,
       "found": 0,
       "relationship": 0,
+      "frames": 660,
+      "frames_found": 6
+     },
+     "pip40": {
+      "clips": 22,
+      "found": 2,
+      "relationship": 2,
+      "frames": 660,
+      "frames_found": 33
+     },
+     "lowres": {
+      "clips": 22,
+      "found": 21,
+      "relationship": 19,
+      "frames": 660,
+      "frames_found": 383
+     },
+     "caption": {
+      "clips": 22,
+      "found": 21,
+      "relationship": 17,
+      "frames": 660,
+      "frames_found": 326
+     },
+     "logo": {
+      "clips": 22,
+      "found": 22,
+      "relationship": 19,
+      "frames": 660,
+      "frames_found": 398
+     }
+    },
+    "false": {
+     "videos": [
+      [
+       "jpl-whats-up-2026-01__whole",
+       "jpl-whats-up",
+       "jpl-whats-up-2026-04",
+       9
+      ],
+      [
+       "nasa-s2g-2015-02-27__whole",
+       "nasa-space-to-ground",
+       "nasa-s2g-2015-03-06",
+       9
+      ],
+      [
+       "wh-west-wing-week-2015-04-10__whole",
+       "west-wing-week",
+       "wh-west-wing-week-2015-06-05",
+       5
+      ]
+     ],
+     "wrong": [
+      [
+       "nasa-moment-shane-kimbrough__pip40__0",
+       "nasa-moment",
+       "nasa-s2g-2015-03-06",
+       8
+      ],
+      [
+       "jpl-whats-up-2026-04__pip40__1",
+       "jpl-whats-up",
+       "nasa-s2g-2015-03-06",
+       7
+      ],
+      [
+       "coffee-run__pip25__0",
+       "blender",
+       "nasa-s2g-2015-03-06",
+       7
+      ],
+      [
+       "coffee-run__pip25__1",
+       "blender",
+       "nasa-s2g-2015-03-06",
+       8
+      ]
+     ],
+     "unrelated_videos": 25,
+     "unrelated_frames": 46,
+     "unrelated_frames_total": 3497
+    },
+    "video_match_rate": 0.6717171717171717,
+    "false_count": 7
+   },
+   {
+    "per_manipulation": {
+     "excerpt10": {
+      "clips": 22,
+      "found": 12,
+      "relationship": 10,
       "frames": 220,
-      "frames_found": 130
+      "frames_found": 129
+     },
+     "excerpt30": {
+      "clips": 22,
+      "found": 20,
+      "relationship": 20,
+      "frames": 660,
+      "frames_found": 397
+     },
+     "excerpt60": {
+      "clips": 22,
+      "found": 22,
+      "relationship": 21,
+      "frames": 1320,
+      "frames_found": 800
+     },
+     "vertical": {
+      "clips": 22,
+      "found": 9,
+      "relationship": 9,
+      "frames": 660,
+      "frames_found": 156
+     },
+     "pip25": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 6
+     },
+     "pip40": {
+      "clips": 22,
+      "found": 2,
+      "relationship": 2,
+      "frames": 660,
+      "frames_found": 33
+     },
+     "lowres": {
+      "clips": 22,
+      "found": 20,
+      "relationship": 18,
+      "frames": 660,
+      "frames_found": 383
+     },
+     "caption": {
+      "clips": 22,
+      "found": 21,
+      "relationship": 17,
+      "frames": 660,
+      "frames_found": 326
+     },
+     "logo": {
+      "clips": 22,
+      "found": 22,
+      "relationship": 19,
+      "frames": 660,
+      "frames_found": 398
+     }
+    },
+    "false": {
+     "videos": [
+      [
+       "jpl-whats-up-2026-01__whole",
+       "jpl-whats-up",
+       "jpl-whats-up-2026-04",
+       9
+      ],
+      [
+       "nasa-s2g-2015-02-27__whole",
+       "nasa-space-to-ground",
+       "nasa-s2g-2015-03-06",
+       9
+      ]
+     ],
+     "wrong": [
+      [
+       "nasa-moment-shane-kimbrough__pip40__0",
+       "nasa-moment",
+       "nasa-s2g-2015-03-06",
+       8
+      ],
+      [
+       "jpl-whats-up-2026-04__pip40__1",
+       "jpl-whats-up",
+       "nasa-s2g-2015-03-06",
+       7
+      ],
+      [
+       "coffee-run__pip25__0",
+       "blender",
+       "nasa-s2g-2015-03-06",
+       7
+      ],
+      [
+       "coffee-run__pip25__1",
+       "blender",
+       "nasa-s2g-2015-03-06",
+       8
+      ]
+     ],
+     "unrelated_videos": 25,
+     "unrelated_frames": 46,
+     "unrelated_frames_total": 3497
+    },
+    "video_match_rate": 0.6464646464646465,
+    "false_count": 6
+   },
+   {
+    "per_manipulation": {
+     "excerpt10": {
+      "clips": 22,
+      "found": 9,
+      "relationship": 7,
+      "frames": 220,
+      "frames_found": 129
      },
      "excerpt30": {
       "clips": 22,
       "found": 18,
       "relationship": 18,
       "frames": 660,
-      "frames_found": 423
+      "frames_found": 397
      },
      "excerpt60": {
       "clips": 22,
-      "found": 21,
+      "found": 22,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 857
+      "frames_found": 800
      },
      "vertical": {
       "clips": 22,
-      "found": 6,
-      "relationship": 6,
+      "found": 7,
+      "relationship": 7,
       "frames": 660,
-      "frames_found": 159
+      "frames_found": 156
      },
      "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
-      "found": 0,
-      "relationship": 0,
+      "found": 2,
+      "relationship": 2,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
-      "found": 17,
-      "relationship": 15,
+      "found": 19,
+      "relationship": 18,
       "frames": 660,
-      "frames_found": 414
+      "frames_found": 383
      },
      "caption": {
       "clips": 22,
-      "found": 17,
-      "relationship": 13,
+      "found": 21,
+      "relationship": 17,
       "frames": 660,
-      "frames_found": 340
+      "frames_found": 326
      },
      "logo": {
       "clips": 22,
-      "found": 19,
-      "relationship": 16,
+      "found": 21,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 438
+      "frames_found": 398
      }
     },
     "false": {
      "videos": [
       [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
-      ],
-      [
-       "nasa-s2g-2014-10-24__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       12
+       9
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       21
-      ],
-      [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
+       9
       ]
      ],
-     "wrong": [],
+     "wrong": [
+      [
+       "nasa-moment-shane-kimbrough__pip40__0",
+       "nasa-moment",
+       "nasa-s2g-2015-03-06",
+       8
+      ],
+      [
+       "jpl-whats-up-2026-04__pip40__1",
+       "jpl-whats-up",
+       "nasa-s2g-2015-03-06",
+       7
+      ],
+      [
+       "coffee-run__pip25__0",
+       "blender",
+       "nasa-s2g-2015-03-06",
+       7
+      ],
+      [
+       "coffee-run__pip25__1",
+       "blender",
+       "nasa-s2g-2015-03-06",
+       8
+      ]
+     ],
      "unrelated_videos": 25,
-     "unrelated_frames": 203,
+     "unrelated_frames": 46,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.49494949494949503,
+    "video_match_rate": 0.601010101010101,
     "false_count": 6
    },
    {
     "per_manipulation": {
      "excerpt10": {
       "clips": 22,
-      "found": 0,
-      "relationship": 0,
+      "found": 7,
+      "relationship": 5,
       "frames": 220,
-      "frames_found": 130
+      "frames_found": 129
      },
      "excerpt30": {
       "clips": 22,
-      "found": 16,
-      "relationship": 16,
+      "found": 17,
+      "relationship": 17,
       "frames": 660,
-      "frames_found": 423
+      "frames_found": 397
      },
      "excerpt60": {
       "clips": 22,
       "found": 21,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 857
+      "frames_found": 800
      },
      "vertical": {
       "clips": 22,
-      "found": 4,
-      "relationship": 4,
+      "found": 7,
+      "relationship": 7,
       "frames": 660,
-      "frames_found": 159
+      "frames_found": 156
      },
      "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
-      "clips": 22,
-      "found": 16,
-      "relationship": 14,
-      "frames": 660,
-      "frames_found": 414
-     },
-     "caption": {
-      "clips": 22,
-      "found": 14,
-      "relationship": 10,
-      "frames": 660,
-      "frames_found": 340
-     },
-     "logo": {
       "clips": 22,
       "found": 19,
-      "relationship": 16,
+      "relationship": 18,
       "frames": 660,
-      "frames_found": 438
-     }
-    },
-    "false": {
-     "videos": [
-      [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
-      ],
-      [
-       "nasa-s2g-2014-10-24__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       12
-      ],
-      [
-       "nasa-s2g-2015-02-27__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       21
-      ],
-      [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
-      ]
-     ],
-     "wrong": [],
-     "unrelated_videos": 25,
-     "unrelated_frames": 203,
-     "unrelated_frames_total": 3497
-    },
-    "video_match_rate": 0.45454545454545453,
-    "false_count": 6
-   },
-   {
-    "per_manipulation": {
-     "excerpt10": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 220,
-      "frames_found": 130
-     },
-     "excerpt30": {
-      "clips": 22,
-      "found": 15,
-      "relationship": 15,
-      "frames": 660,
-      "frames_found": 423
-     },
-     "excerpt60": {
-      "clips": 22,
-      "found": 21,
-      "relationship": 21,
-      "frames": 1320,
-      "frames_found": 857
-     },
-     "vertical": {
-      "clips": 22,
-      "found": 1,
-      "relationship": 1,
-      "frames": 660,
-      "frames_found": 159
-     },
-     "pip25": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 660,
-      "frames_found": 9
-     },
-     "pip40": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 660,
-      "frames_found": 34
-     },
-     "lowres": {
-      "clips": 22,
-      "found": 15,
-      "relationship": 13,
-      "frames": 660,
-      "frames_found": 414
+      "frames_found": 383
      },
      "caption": {
-      "clips": 22,
-      "found": 13,
-      "relationship": 10,
-      "frames": 660,
-      "frames_found": 340
-     },
-     "logo": {
-      "clips": 22,
-      "found": 14,
-      "relationship": 11,
-      "frames": 660,
-      "frames_found": 438
-     }
-    },
-    "false": {
-     "videos": [
-      [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
-      ],
-      [
-       "nasa-s2g-2015-02-27__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       21
-      ],
-      [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
-      ]
-     ],
-     "wrong": [],
-     "unrelated_videos": 25,
-     "unrelated_frames": 203,
-     "unrelated_frames_total": 3497
-    },
-    "video_match_rate": 0.398989898989899,
-    "false_count": 5
-   },
-   {
-    "per_manipulation": {
-     "excerpt10": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 220,
-      "frames_found": 130
-     },
-     "excerpt30": {
-      "clips": 22,
-      "found": 12,
-      "relationship": 12,
-      "frames": 660,
-      "frames_found": 423
-     },
-     "excerpt60": {
       "clips": 22,
       "found": 20,
-      "relationship": 20,
-      "frames": 1320,
-      "frames_found": 857
-     },
-     "vertical": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
+      "relationship": 16,
       "frames": 660,
-      "frames_found": 159
-     },
-     "pip25": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 660,
-      "frames_found": 9
-     },
-     "pip40": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 660,
-      "frames_found": 34
-     },
-     "lowres": {
-      "clips": 22,
-      "found": 10,
-      "relationship": 8,
-      "frames": 660,
-      "frames_found": 414
-     },
-     "caption": {
-      "clips": 22,
-      "found": 6,
-      "relationship": 5,
-      "frames": 660,
-      "frames_found": 340
+      "frames_found": 326
      },
      "logo": {
       "clips": 22,
-      "found": 11,
-      "relationship": 8,
+      "found": 20,
+      "relationship": 18,
       "frames": 660,
-      "frames_found": 438
+      "frames_found": 398
      }
     },
     "false": {
      "videos": [
       [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
+       9
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       21
+       9
       ]
      ],
-     "wrong": [],
+     "wrong": [
+      [
+       "nasa-moment-shane-kimbrough__pip40__0",
+       "nasa-moment",
+       "nasa-s2g-2015-03-06",
+       8
+      ],
+      [
+       "coffee-run__pip25__1",
+       "blender",
+       "nasa-s2g-2015-03-06",
+       8
+      ]
+     ],
      "unrelated_videos": 25,
-     "unrelated_frames": 203,
+     "unrelated_frames": 46,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.29797979797979796,
+    "video_match_rate": 0.5606060606060606,
     "false_count": 4
    },
    {
     "per_manipulation": {
      "excerpt10": {
       "clips": 22,
-      "found": 0,
-      "relationship": 0,
+      "found": 6,
+      "relationship": 5,
       "frames": 220,
-      "frames_found": 130
+      "frames_found": 129
      },
      "excerpt30": {
+      "clips": 22,
+      "found": 17,
+      "relationship": 17,
+      "frames": 660,
+      "frames_found": 397
+     },
+     "excerpt60": {
+      "clips": 22,
+      "found": 21,
+      "relationship": 21,
+      "frames": 1320,
+      "frames_found": 800
+     },
+     "vertical": {
       "clips": 22,
       "found": 7,
       "relationship": 7,
       "frames": 660,
-      "frames_found": 423
-     },
-     "excerpt60": {
-      "clips": 22,
-      "found": 20,
-      "relationship": 20,
-      "frames": 1320,
-      "frames_found": 857
-     },
-     "vertical": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 660,
-      "frames_found": 159
+      "frames_found": 156
      },
      "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
-      "found": 5,
-      "relationship": 4,
+      "found": 18,
+      "relationship": 17,
       "frames": 660,
-      "frames_found": 414
+      "frames_found": 383
      },
      "caption": {
+      "clips": 22,
+      "found": 19,
+      "relationship": 15,
+      "frames": 660,
+      "frames_found": 326
+     },
+     "logo": {
+      "clips": 22,
+      "found": 20,
+      "relationship": 18,
+      "frames": 660,
+      "frames_found": 398
+     }
+    },
+    "false": {
+     "videos": [
+      [
+       "jpl-whats-up-2026-01__whole",
+       "jpl-whats-up",
+       "jpl-whats-up-2026-04",
+       9
+      ],
+      [
+       "nasa-s2g-2015-02-27__whole",
+       "nasa-space-to-ground",
+       "nasa-s2g-2015-03-06",
+       9
+      ]
+     ],
+     "wrong": [],
+     "unrelated_videos": 25,
+     "unrelated_frames": 46,
+     "unrelated_frames_total": 3497
+    },
+    "video_match_rate": 0.5454545454545454,
+    "false_count": 2
+   },
+   {
+    "per_manipulation": {
+     "excerpt10": {
+      "clips": 22,
+      "found": 4,
+      "relationship": 4,
+      "frames": 220,
+      "frames_found": 129
+     },
+     "excerpt30": {
+      "clips": 22,
+      "found": 16,
+      "relationship": 16,
+      "frames": 660,
+      "frames_found": 397
+     },
+     "excerpt60": {
+      "clips": 22,
+      "found": 21,
+      "relationship": 21,
+      "frames": 1320,
+      "frames_found": 800
+     },
+     "vertical": {
+      "clips": 22,
+      "found": 6,
+      "relationship": 6,
+      "frames": 660,
+      "frames_found": 156
+     },
+     "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 340
+      "frames_found": 6
+     },
+     "pip40": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 33
+     },
+     "lowres": {
+      "clips": 22,
+      "found": 17,
+      "relationship": 16,
+      "frames": 660,
+      "frames_found": 383
+     },
+     "caption": {
+      "clips": 22,
+      "found": 18,
+      "relationship": 14,
+      "frames": 660,
+      "frames_found": 326
      },
      "logo": {
       "clips": 22,
-      "found": 7,
-      "relationship": 5,
+      "found": 18,
+      "relationship": 16,
       "frames": 660,
-      "frames_found": 438
+      "frames_found": 398
      }
     },
     "false": {
      "videos": [],
      "wrong": [],
      "unrelated_videos": 25,
-     "unrelated_frames": 203,
+     "unrelated_frames": 46,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.19696969696969696,
+    "video_match_rate": 0.5050505050505051,
     "false_count": 0
    },
    {
@@ -3816,73 +2480,453 @@
       "found": 0,
       "relationship": 0,
       "frames": 220,
-      "frames_found": 130
+      "frames_found": 129
      },
      "excerpt30": {
       "clips": 22,
-      "found": 3,
-      "relationship": 3,
+      "found": 15,
+      "relationship": 15,
       "frames": 660,
-      "frames_found": 423
+      "frames_found": 397
      },
      "excerpt60": {
       "clips": 22,
-      "found": 14,
-      "relationship": 14,
+      "found": 21,
+      "relationship": 21,
       "frames": 1320,
-      "frames_found": 857
+      "frames_found": 800
      },
      "vertical": {
       "clips": 22,
-      "found": 0,
-      "relationship": 0,
+      "found": 6,
+      "relationship": 6,
       "frames": 660,
-      "frames_found": 159
+      "frames_found": 156
      },
      "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
-      "found": 0,
-      "relationship": 0,
+      "found": 16,
+      "relationship": 15,
       "frames": 660,
-      "frames_found": 414
+      "frames_found": 383
      },
      "caption": {
       "clips": 22,
-      "found": 0,
-      "relationship": 0,
+      "found": 15,
+      "relationship": 11,
       "frames": 660,
-      "frames_found": 340
+      "frames_found": 326
      },
      "logo": {
       "clips": 22,
-      "found": 2,
-      "relationship": 2,
+      "found": 18,
+      "relationship": 16,
       "frames": 660,
-      "frames_found": 438
+      "frames_found": 398
      }
     },
     "false": {
      "videos": [],
      "wrong": [],
      "unrelated_videos": 25,
-     "unrelated_frames": 203,
+     "unrelated_frames": 46,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.09595959595959597,
+    "video_match_rate": 0.4595959595959596,
+    "false_count": 0
+   },
+   {
+    "per_manipulation": {
+     "excerpt10": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 220,
+      "frames_found": 129
+     },
+     "excerpt30": {
+      "clips": 22,
+      "found": 15,
+      "relationship": 15,
+      "frames": 660,
+      "frames_found": 397
+     },
+     "excerpt60": {
+      "clips": 22,
+      "found": 21,
+      "relationship": 21,
+      "frames": 1320,
+      "frames_found": 800
+     },
+     "vertical": {
+      "clips": 22,
+      "found": 4,
+      "relationship": 4,
+      "frames": 660,
+      "frames_found": 156
+     },
+     "pip25": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 6
+     },
+     "pip40": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 33
+     },
+     "lowres": {
+      "clips": 22,
+      "found": 16,
+      "relationship": 15,
+      "frames": 660,
+      "frames_found": 383
+     },
+     "caption": {
+      "clips": 22,
+      "found": 13,
+      "relationship": 9,
+      "frames": 660,
+      "frames_found": 326
+     },
+     "logo": {
+      "clips": 22,
+      "found": 18,
+      "relationship": 16,
+      "frames": 660,
+      "frames_found": 398
+     }
+    },
+    "false": {
+     "videos": [],
+     "wrong": [],
+     "unrelated_videos": 25,
+     "unrelated_frames": 46,
+     "unrelated_frames_total": 3497
+    },
+    "video_match_rate": 0.4393939393939394,
+    "false_count": 0
+   },
+   {
+    "per_manipulation": {
+     "excerpt10": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 220,
+      "frames_found": 129
+     },
+     "excerpt30": {
+      "clips": 22,
+      "found": 15,
+      "relationship": 15,
+      "frames": 660,
+      "frames_found": 397
+     },
+     "excerpt60": {
+      "clips": 22,
+      "found": 21,
+      "relationship": 21,
+      "frames": 1320,
+      "frames_found": 800
+     },
+     "vertical": {
+      "clips": 22,
+      "found": 1,
+      "relationship": 1,
+      "frames": 660,
+      "frames_found": 156
+     },
+     "pip25": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 6
+     },
+     "pip40": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 33
+     },
+     "lowres": {
+      "clips": 22,
+      "found": 14,
+      "relationship": 13,
+      "frames": 660,
+      "frames_found": 383
+     },
+     "caption": {
+      "clips": 22,
+      "found": 11,
+      "relationship": 8,
+      "frames": 660,
+      "frames_found": 326
+     },
+     "logo": {
+      "clips": 22,
+      "found": 13,
+      "relationship": 11,
+      "frames": 660,
+      "frames_found": 398
+     }
+    },
+    "false": {
+     "videos": [],
+     "wrong": [],
+     "unrelated_videos": 25,
+     "unrelated_frames": 46,
+     "unrelated_frames_total": 3497
+    },
+    "video_match_rate": 0.3787878787878788,
+    "false_count": 0
+   },
+   {
+    "per_manipulation": {
+     "excerpt10": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 220,
+      "frames_found": 129
+     },
+     "excerpt30": {
+      "clips": 22,
+      "found": 11,
+      "relationship": 11,
+      "frames": 660,
+      "frames_found": 397
+     },
+     "excerpt60": {
+      "clips": 22,
+      "found": 20,
+      "relationship": 20,
+      "frames": 1320,
+      "frames_found": 800
+     },
+     "vertical": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 156
+     },
+     "pip25": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 6
+     },
+     "pip40": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 33
+     },
+     "lowres": {
+      "clips": 22,
+      "found": 9,
+      "relationship": 8,
+      "frames": 660,
+      "frames_found": 383
+     },
+     "caption": {
+      "clips": 22,
+      "found": 5,
+      "relationship": 3,
+      "frames": 660,
+      "frames_found": 326
+     },
+     "logo": {
+      "clips": 22,
+      "found": 7,
+      "relationship": 6,
+      "frames": 660,
+      "frames_found": 398
+     }
+    },
+    "false": {
+     "videos": [],
+     "wrong": [],
+     "unrelated_videos": 25,
+     "unrelated_frames": 46,
+     "unrelated_frames_total": 3497
+    },
+    "video_match_rate": 0.26262626262626265,
+    "false_count": 0
+   },
+   {
+    "per_manipulation": {
+     "excerpt10": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 220,
+      "frames_found": 129
+     },
+     "excerpt30": {
+      "clips": 22,
+      "found": 6,
+      "relationship": 6,
+      "frames": 660,
+      "frames_found": 397
+     },
+     "excerpt60": {
+      "clips": 22,
+      "found": 16,
+      "relationship": 16,
+      "frames": 1320,
+      "frames_found": 800
+     },
+     "vertical": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 156
+     },
+     "pip25": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 6
+     },
+     "pip40": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 33
+     },
+     "lowres": {
+      "clips": 22,
+      "found": 3,
+      "relationship": 3,
+      "frames": 660,
+      "frames_found": 383
+     },
+     "caption": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 326
+     },
+     "logo": {
+      "clips": 22,
+      "found": 6,
+      "relationship": 5,
+      "frames": 660,
+      "frames_found": 398
+     }
+    },
+    "false": {
+     "videos": [],
+     "wrong": [],
+     "unrelated_videos": 25,
+     "unrelated_frames": 46,
+     "unrelated_frames_total": 3497
+    },
+    "video_match_rate": 0.15656565656565657,
+    "false_count": 0
+   },
+   {
+    "per_manipulation": {
+     "excerpt10": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 220,
+      "frames_found": 129
+     },
+     "excerpt30": {
+      "clips": 22,
+      "found": 2,
+      "relationship": 2,
+      "frames": 660,
+      "frames_found": 397
+     },
+     "excerpt60": {
+      "clips": 22,
+      "found": 13,
+      "relationship": 13,
+      "frames": 1320,
+      "frames_found": 800
+     },
+     "vertical": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 156
+     },
+     "pip25": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 6
+     },
+     "pip40": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 33
+     },
+     "lowres": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 383
+     },
+     "caption": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 326
+     },
+     "logo": {
+      "clips": 22,
+      "found": 2,
+      "relationship": 2,
+      "frames": 660,
+      "frames_found": 398
+     }
+    },
+    "false": {
+     "videos": [],
+     "wrong": [],
+     "unrelated_videos": 25,
+     "unrelated_frames": 46,
+     "unrelated_frames_total": 3497
+    },
+    "video_match_rate": 0.08585858585858586,
     "false_count": 0
    }
   ],
@@ -3894,73 +2938,67 @@
       "found": 21,
       "relationship": 16,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
-      "found": 21,
+      "found": 20,
       "relationship": 20,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
       "found": 22,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
-      "found": 21,
-      "relationship": 20,
+      "found": 18,
+      "relationship": 17,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
       "found": 2,
       "relationship": 2,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
-      "found": 6,
-      "relationship": 6,
+      "found": 5,
+      "relationship": 5,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 21,
       "relationship": 19,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
       "found": 22,
       "relationship": 18,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
       "found": 22,
-      "relationship": 18,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
      "videos": [
-      [
-       "nasa-moment-peggy-whitson__whole",
-       "nasa-moment",
-       "nasa-moment-shane-kimbrough",
-       5
-      ],
       [
        "nasa-moment-peggy-whitson__whole",
        "nasa-moment",
@@ -3972,6 +3010,12 @@
        "nasa-moment",
        "nasa-tim-kopra",
        5
+      ],
+      [
+       "nasa-moment-peggy-whitson__whole",
+       "nasa-moment",
+       "nasa-moment-shane-kimbrough",
+       4
       ],
       [
        "nasa-moment-yuri-malenchenko__whole",
@@ -4055,13 +3099,13 @@
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-01-25",
-       11
+       12
       ],
       [
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-02-07",
-       11
+       12
       ],
       [
        "nasa-twan-2017-08-18__whole",
@@ -4079,31 +3123,25 @@
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       30
-      ],
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "nasa-crs7-countdown",
-       1
+       23
       ],
       [
        "jpl-whats-up-2025-11__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       22
+       15
       ],
       [
        "nasa-s2g-2014-10-24__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       12
+       10
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       23
+       22
       ],
       [
        "nasa-s2g-2015-02-27__whole",
@@ -4121,7 +3159,7 @@
        "nasa-s2g-2018-01-19__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       19
+       18
       ],
       [
        "wh-west-wing-week-2015-04-10__whole",
@@ -4228,6 +3266,12 @@
        4
       ],
       [
+       "nasa-twan-2020-01-25__logo__0",
+       "nasa-this-week",
+       "nasa-twan-2020-02-07",
+       1
+      ],
+      [
        "nasa-twan-2020-01-25__logo__1",
        "nasa-this-week",
        "nasa-twan-2020-02-07",
@@ -4276,16 +3320,10 @@
        10
       ],
       [
-       "jpl-whats-up-2026-04__logo__0",
-       "jpl-whats-up",
-       "nasa-crs7-countdown",
-       2
-      ],
-      [
        "nasa-s2g-2015-03-06__pip25__0",
        "nasa-space-to-ground",
        "jpl-whats-up-2026-04",
-       3
+       2
       ],
       [
        "nasa-s2g-2015-03-06__pip40__1",
@@ -4303,7 +3341,7 @@
        "nasa-atlas-v-tdrs-m__pip40__1",
        "launch",
        "nasa-s2g-2015-03-06",
-       8
+       7
       ],
       [
        "coffee-run__pip25__0",
@@ -4315,7 +3353,7 @@
        "coffee-run__pip25__1",
        "blender",
        "nasa-s2g-2015-03-06",
-       9
+       10
       ],
       [
        "coffee-run__pip40__0",
@@ -4349,86 +3387,80 @@
       ]
      ],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.797979797979798,
-    "false_count": 65
+    "video_match_rate": 0.7727272727272728,
+    "false_count": 64
    },
    {
     "per_manipulation": {
      "excerpt10": {
       "clips": 22,
       "found": 20,
-      "relationship": 15,
+      "relationship": 16,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
-      "found": 21,
+      "found": 20,
       "relationship": 20,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
       "found": 22,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
-      "found": 18,
-      "relationship": 18,
+      "found": 17,
+      "relationship": 16,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
       "found": 2,
       "relationship": 2,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 4,
       "relationship": 4,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 21,
       "relationship": 19,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
       "found": 22,
       "relationship": 18,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
       "found": 22,
-      "relationship": 18,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
      "videos": [
-      [
-       "nasa-moment-peggy-whitson__whole",
-       "nasa-moment",
-       "nasa-moment-shane-kimbrough",
-       5
-      ],
       [
        "nasa-moment-peggy-whitson__whole",
        "nasa-moment",
@@ -4440,6 +3472,12 @@
        "nasa-moment",
        "nasa-tim-kopra",
        5
+      ],
+      [
+       "nasa-moment-peggy-whitson__whole",
+       "nasa-moment",
+       "nasa-moment-shane-kimbrough",
+       4
       ],
       [
        "nasa-moment-yuri-malenchenko__whole",
@@ -4523,13 +3561,13 @@
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-01-25",
-       11
+       12
       ],
       [
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-02-07",
-       11
+       12
       ],
       [
        "nasa-twan-2017-08-18__whole",
@@ -4547,25 +3585,25 @@
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       30
+       23
       ],
       [
        "jpl-whats-up-2025-11__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       22
+       15
       ],
       [
        "nasa-s2g-2014-10-24__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       12
+       10
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       23
+       22
       ],
       [
        "nasa-s2g-2015-02-27__whole",
@@ -4583,7 +3621,7 @@
        "nasa-s2g-2018-01-19__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       19
+       18
       ],
       [
        "wh-west-wing-week-2015-04-10__whole",
@@ -4702,22 +3740,16 @@
        10
       ],
       [
-       "jpl-whats-up-2026-04__logo__0",
-       "jpl-whats-up",
-       "nasa-crs7-countdown",
-       2
-      ],
-      [
        "nasa-s2g-2015-03-06__pip25__0",
        "nasa-space-to-ground",
        "jpl-whats-up-2026-04",
-       3
+       2
       ],
       [
        "nasa-atlas-v-tdrs-m__pip40__1",
        "launch",
        "nasa-s2g-2015-03-06",
-       8
+       7
       ],
       [
        "coffee-run__pip25__0",
@@ -4729,7 +3761,7 @@
        "coffee-run__pip25__1",
        "blender",
        "nasa-s2g-2015-03-06",
-       9
+       10
       ],
       [
        "coffee-run__pip40__0",
@@ -4763,86 +3795,80 @@
       ]
      ],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.7676767676767677,
-    "false_count": 56
+    "video_match_rate": 0.7575757575757576,
+    "false_count": 55
    },
    {
     "per_manipulation": {
      "excerpt10": {
       "clips": 22,
-      "found": 19,
-      "relationship": 14,
+      "found": 20,
+      "relationship": 16,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
-      "found": 21,
+      "found": 20,
       "relationship": 20,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
       "found": 22,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
-      "found": 17,
-      "relationship": 17,
+      "found": 15,
+      "relationship": 15,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
       "found": 1,
       "relationship": 1,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
-      "found": 3,
-      "relationship": 3,
+      "found": 4,
+      "relationship": 4,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 21,
       "relationship": 19,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
       "found": 22,
       "relationship": 18,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
       "found": 22,
-      "relationship": 18,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
      "videos": [
-      [
-       "nasa-moment-peggy-whitson__whole",
-       "nasa-moment",
-       "nasa-moment-shane-kimbrough",
-       5
-      ],
       [
        "nasa-moment-peggy-whitson__whole",
        "nasa-moment",
@@ -4854,6 +3880,12 @@
        "nasa-moment",
        "nasa-tim-kopra",
        5
+      ],
+      [
+       "nasa-moment-peggy-whitson__whole",
+       "nasa-moment",
+       "nasa-moment-shane-kimbrough",
+       4
       ],
       [
        "nasa-moment-yuri-malenchenko__whole",
@@ -4937,13 +3969,13 @@
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-01-25",
-       11
+       12
       ],
       [
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-02-07",
-       11
+       12
       ],
       [
        "jpl-whats-up-2026-02__whole",
@@ -4955,25 +3987,25 @@
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       30
+       23
       ],
       [
        "jpl-whats-up-2025-11__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       22
+       15
       ],
       [
        "nasa-s2g-2014-10-24__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       12
+       10
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       23
+       22
       ],
       [
        "nasa-s2g-2015-02-27__whole",
@@ -4991,7 +4023,7 @@
        "nasa-s2g-2018-01-19__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       19
+       18
       ],
       [
        "wh-west-wing-week-2015-04-10__whole",
@@ -5104,16 +4136,10 @@
        10
       ],
       [
-       "nasa-s2g-2015-03-06__pip25__0",
-       "nasa-space-to-ground",
-       "jpl-whats-up-2026-04",
-       3
-      ],
-      [
        "nasa-atlas-v-tdrs-m__pip40__1",
        "launch",
        "nasa-s2g-2015-03-06",
-       8
+       7
       ],
       [
        "coffee-run__pip25__0",
@@ -5125,7 +4151,7 @@
        "coffee-run__pip25__1",
        "blender",
        "nasa-s2g-2015-03-06",
-       9
+       10
       ],
       [
        "coffee-run__pip40__0",
@@ -5159,86 +4185,80 @@
       ]
      ],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.7474747474747475,
-    "false_count": 53
+    "video_match_rate": 0.7424242424242424,
+    "false_count": 52
    },
    {
     "per_manipulation": {
      "excerpt10": {
       "clips": 22,
       "found": 17,
-      "relationship": 13,
+      "relationship": 14,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
-      "found": 21,
+      "found": 20,
       "relationship": 20,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
       "found": 22,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
-      "found": 15,
-      "relationship": 15,
+      "found": 12,
+      "relationship": 12,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
       "found": 1,
       "relationship": 1,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 3,
       "relationship": 3,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 21,
       "relationship": 19,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
       "found": 22,
       "relationship": 18,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
       "found": 22,
-      "relationship": 18,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
      "videos": [
-      [
-       "nasa-moment-peggy-whitson__whole",
-       "nasa-moment",
-       "nasa-moment-shane-kimbrough",
-       5
-      ],
       [
        "nasa-moment-peggy-whitson__whole",
        "nasa-moment",
@@ -5250,6 +4270,12 @@
        "nasa-moment",
        "nasa-tim-kopra",
        5
+      ],
+      [
+       "nasa-moment-peggy-whitson__whole",
+       "nasa-moment",
+       "nasa-moment-shane-kimbrough",
+       4
       ],
       [
        "nasa-moment-yuri-malenchenko__whole",
@@ -5333,13 +4359,13 @@
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-01-25",
-       11
+       12
       ],
       [
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-02-07",
-       11
+       12
       ],
       [
        "jpl-whats-up-2026-02__whole",
@@ -5351,31 +4377,31 @@
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       30
+       23
       ],
       [
        "jpl-whats-up-2025-11__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       22
+       15
       ],
       [
        "nasa-s2g-2014-10-24__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       12
+       10
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       23
+       22
       ],
       [
        "nasa-s2g-2018-01-19__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       19
+       18
       ],
       [
        "wh-west-wing-week-2015-04-10__whole",
@@ -5473,7 +4499,7 @@
        "nasa-atlas-v-tdrs-m__pip40__1",
        "launch",
        "nasa-s2g-2015-03-06",
-       8
+       7
       ],
       [
        "coffee-run__pip25__0",
@@ -5485,7 +4511,7 @@
        "coffee-run__pip25__1",
        "blender",
        "nasa-s2g-2015-03-06",
-       9
+       10
       ],
       [
        "coffee-run__pip40__1",
@@ -5513,10 +4539,10 @@
       ]
      ],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.7272727272727273,
+    "video_match_rate": 0.7070707070707071,
     "false_count": 46
    },
    {
@@ -5524,75 +4550,69 @@
      "excerpt10": {
       "clips": 22,
       "found": 15,
-      "relationship": 12,
+      "relationship": 13,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
-      "found": 21,
+      "found": 20,
       "relationship": 20,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
       "found": 22,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
-      "found": 14,
-      "relationship": 14,
+      "found": 12,
+      "relationship": 12,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
-      "found": 1,
-      "relationship": 1,
+      "found": 0,
+      "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
-      "found": 3,
-      "relationship": 3,
+      "found": 2,
+      "relationship": 2,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 21,
       "relationship": 19,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
       "found": 21,
       "relationship": 17,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
       "found": 22,
-      "relationship": 18,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
      "videos": [
-      [
-       "nasa-moment-peggy-whitson__whole",
-       "nasa-moment",
-       "nasa-moment-shane-kimbrough",
-       5
-      ],
       [
        "nasa-moment-peggy-whitson__whole",
        "nasa-moment",
@@ -5687,13 +4707,13 @@
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-01-25",
-       11
+       12
       ],
       [
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-02-07",
-       11
+       12
       ],
       [
        "jpl-whats-up-2026-02__whole",
@@ -5705,31 +4725,31 @@
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       30
+       23
       ],
       [
        "jpl-whats-up-2025-11__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       22
+       15
       ],
       [
        "nasa-s2g-2014-10-24__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       12
+       10
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       23
+       22
       ],
       [
        "nasa-s2g-2018-01-19__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       19
+       18
       ],
       [
        "wh-west-wing-week-2015-04-10__whole",
@@ -5785,7 +4805,7 @@
        "nasa-atlas-v-tdrs-m__pip40__1",
        "launch",
        "nasa-s2g-2015-03-06",
-       8
+       7
       ],
       [
        "coffee-run__pip25__0",
@@ -5797,80 +4817,80 @@
        "coffee-run__pip25__1",
        "blender",
        "nasa-s2g-2015-03-06",
-       9
+       10
       ]
      ],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.7070707070707071,
-    "false_count": 35
+    "video_match_rate": 0.6818181818181819,
+    "false_count": 34
    },
    {
     "per_manipulation": {
      "excerpt10": {
       "clips": 22,
-      "found": 14,
+      "found": 13,
       "relationship": 11,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
       "found": 20,
       "relationship": 20,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
       "found": 22,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
-      "found": 13,
-      "relationship": 13,
+      "found": 11,
+      "relationship": 11,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
-      "found": 1,
-      "relationship": 1,
+      "found": 0,
+      "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 2,
       "relationship": 2,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 20,
       "relationship": 18,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
       "found": 21,
       "relationship": 17,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
-      "found": 21,
-      "relationship": 18,
+      "found": 22,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
@@ -5921,13 +4941,13 @@
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-01-25",
-       11
+       12
       ],
       [
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-02-07",
-       11
+       12
       ],
       [
        "jpl-whats-up-2026-02__whole",
@@ -5939,31 +4959,31 @@
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       30
+       23
       ],
       [
        "jpl-whats-up-2025-11__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       22
+       15
       ],
       [
        "nasa-s2g-2014-10-24__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       12
+       10
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       23
+       22
       ],
       [
        "nasa-s2g-2018-01-19__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       19
+       18
       ]
      ],
      "wrong": [
@@ -6013,7 +5033,7 @@
        "nasa-atlas-v-tdrs-m__pip40__1",
        "launch",
        "nasa-s2g-2015-03-06",
-       8
+       7
       ],
       [
        "coffee-run__pip25__0",
@@ -6025,14 +5045,14 @@
        "coffee-run__pip25__1",
        "blender",
        "nasa-s2g-2015-03-06",
-       9
+       10
       ]
      ],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.6767676767676768,
+    "video_match_rate": 0.6616161616161615,
     "false_count": 25
    },
    {
@@ -6040,65 +5060,65 @@
      "excerpt10": {
       "clips": 22,
       "found": 10,
-      "relationship": 7,
+      "relationship": 8,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
       "found": 19,
       "relationship": 19,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
       "found": 22,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
-      "found": 9,
-      "relationship": 9,
+      "found": 8,
+      "relationship": 8,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 2,
       "relationship": 2,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 20,
       "relationship": 18,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
       "found": 21,
       "relationship": 17,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
       "found": 21,
-      "relationship": 18,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
@@ -6131,13 +5151,13 @@
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-01-25",
-       11
+       12
       ],
       [
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-02-07",
-       11
+       12
       ],
       [
        "jpl-whats-up-2026-02__whole",
@@ -6149,31 +5169,31 @@
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       30
+       23
       ],
       [
        "jpl-whats-up-2025-11__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       22
+       15
       ],
       [
        "nasa-s2g-2014-10-24__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       12
+       10
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       23
+       22
       ],
       [
        "nasa-s2g-2018-01-19__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       19
+       18
       ]
      ],
      "wrong": [
@@ -6211,7 +5231,7 @@
        "nasa-atlas-v-tdrs-m__pip40__1",
        "launch",
        "nasa-s2g-2015-03-06",
-       8
+       7
       ],
       [
        "coffee-run__pip25__0",
@@ -6223,14 +5243,14 @@
        "coffee-run__pip25__1",
        "blender",
        "nasa-s2g-2015-03-06",
-       9
+       10
       ]
      ],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.6262626262626263,
+    "video_match_rate": 0.6212121212121212,
     "false_count": 20
    },
    {
@@ -6238,257 +5258,65 @@
      "excerpt10": {
       "clips": 22,
       "found": 8,
-      "relationship": 5,
+      "relationship": 6,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
       "found": 19,
       "relationship": 19,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
-      "found": 22,
+      "found": 21,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
-      "found": 9,
-      "relationship": 9,
+      "found": 8,
+      "relationship": 8,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 20,
       "relationship": 18,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
-      "found": 20,
-      "relationship": 16,
-      "frames": 660,
-      "frames_found": 344
-     },
-     "logo": {
-      "clips": 22,
       "found": 21,
-      "relationship": 18,
-      "frames": 660,
-      "frames_found": 441
-     }
-    },
-    "false": {
-     "videos": [
-      [
-       "nasa-twan-2020-01-31__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-02-07",
-       15
-      ],
-      [
-       "nasa-twan-2020-01-31__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       12
-      ],
-      [
-       "nasa-twan-2020-01-18__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       16
-      ],
-      [
-       "nasa-twan-2020-01-18__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-02-07",
-       15
-      ],
-      [
-       "nasa-twan-2020-02-14__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-01-25",
-       11
-      ],
-      [
-       "nasa-twan-2020-02-14__whole",
-       "nasa-this-week",
-       "nasa-twan-2020-02-07",
-       11
-      ],
-      [
-       "jpl-whats-up-2026-02__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       23
-      ],
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       30
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
-      ],
-      [
-       "nasa-s2g-2014-10-24__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       12
-      ],
-      [
-       "nasa-s2g-2015-02-27__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       23
-      ],
-      [
-       "nasa-s2g-2018-01-19__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       19
-      ]
-     ],
-     "wrong": [
-      [
-       "sintel__pip40__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-crs7-countdown__pip25__0",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       9
-      ],
-      [
-       "nasa-moment-shane-kimbrough__pip40__0",
-       "nasa-moment",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "jpl-whats-up-2026-04__pip40__1",
-       "jpl-whats-up",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "nasa-atlas-v-tdrs-m__pip40__1",
-       "launch",
-       "nasa-s2g-2015-03-06",
-       8
-      ],
-      [
-       "coffee-run__pip25__0",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       10
-      ],
-      [
-       "coffee-run__pip25__1",
-       "blender",
-       "nasa-s2g-2015-03-06",
-       9
-      ]
-     ],
-     "unrelated_videos": 25,
-     "unrelated_frames": 249,
-     "unrelated_frames_total": 3497
-    },
-    "video_match_rate": 0.601010101010101,
-    "false_count": 19
-   },
-   {
-    "per_manipulation": {
-     "excerpt10": {
-      "clips": 22,
-      "found": 4,
-      "relationship": 4,
-      "frames": 220,
-      "frames_found": 134
-     },
-     "excerpt30": {
-      "clips": 22,
-      "found": 19,
-      "relationship": 19,
-      "frames": 660,
-      "frames_found": 429
-     },
-     "excerpt60": {
-      "clips": 22,
-      "found": 22,
-      "relationship": 21,
-      "frames": 1320,
-      "frames_found": 865
-     },
-     "vertical": {
-      "clips": 22,
-      "found": 9,
-      "relationship": 9,
-      "frames": 660,
-      "frames_found": 166
-     },
-     "pip25": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 660,
-      "frames_found": 9
-     },
-     "pip40": {
-      "clips": 22,
-      "found": 0,
-      "relationship": 0,
-      "frames": 660,
-      "frames_found": 34
-     },
-     "lowres": {
-      "clips": 22,
-      "found": 19,
       "relationship": 17,
       "frames": 660,
-      "frames_found": 424
-     },
-     "caption": {
-      "clips": 22,
-      "found": 20,
-      "relationship": 16,
-      "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
       "found": 21,
-      "relationship": 18,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
@@ -6521,13 +5349,13 @@
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-01-25",
-       11
+       12
       ],
       [
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-02-07",
-       11
+       12
       ],
       [
        "jpl-whats-up-2026-02__whole",
@@ -6539,31 +5367,31 @@
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       30
+       23
       ],
       [
        "jpl-whats-up-2025-11__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       22
+       15
       ],
       [
        "nasa-s2g-2014-10-24__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       12
+       10
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       23
+       22
       ],
       [
        "nasa-s2g-2018-01-19__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       19
+       18
       ]
      ],
      "wrong": [
@@ -6601,80 +5429,80 @@
        "coffee-run__pip25__1",
        "blender",
        "nasa-s2g-2015-03-06",
-       9
+       10
       ]
      ],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.5757575757575757,
+    "video_match_rate": 0.5959595959595959,
     "false_count": 18
    },
    {
     "per_manipulation": {
      "excerpt10": {
       "clips": 22,
-      "found": 3,
-      "relationship": 3,
+      "found": 6,
+      "relationship": 5,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
       "found": 19,
       "relationship": 19,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
       "found": 21,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
-      "found": 7,
-      "relationship": 7,
+      "found": 8,
+      "relationship": 8,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
-      "found": 18,
-      "relationship": 16,
+      "found": 19,
+      "relationship": 17,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
-      "found": 18,
-      "relationship": 14,
+      "found": 21,
+      "relationship": 17,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
-      "found": 20,
-      "relationship": 17,
+      "found": 21,
+      "relationship": 19,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
@@ -6707,13 +5535,13 @@
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-01-25",
-       11
+       12
       ],
       [
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-02-07",
-       11
+       12
       ],
       [
        "jpl-whats-up-2026-02__whole",
@@ -6725,31 +5553,217 @@
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       30
+       23
       ],
       [
        "jpl-whats-up-2025-11__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       22
+       15
       ],
       [
        "nasa-s2g-2014-10-24__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       12
+       10
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       23
+       22
       ],
       [
        "nasa-s2g-2018-01-19__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       19
+       18
+      ]
+     ],
+     "wrong": [
+      [
+       "sintel__pip40__0",
+       "blender",
+       "nasa-s2g-2015-03-06",
+       9
+      ],
+      [
+       "nasa-crs7-countdown__pip25__0",
+       "launch",
+       "nasa-s2g-2015-03-06",
+       9
+      ],
+      [
+       "nasa-moment-shane-kimbrough__pip40__0",
+       "nasa-moment",
+       "nasa-s2g-2015-03-06",
+       10
+      ],
+      [
+       "jpl-whats-up-2026-04__pip40__1",
+       "jpl-whats-up",
+       "nasa-s2g-2015-03-06",
+       10
+      ],
+      [
+       "coffee-run__pip25__0",
+       "blender",
+       "nasa-s2g-2015-03-06",
+       10
+      ],
+      [
+       "coffee-run__pip25__1",
+       "blender",
+       "nasa-s2g-2015-03-06",
+       10
+      ]
+     ],
+     "unrelated_videos": 25,
+     "unrelated_frames": 245,
+     "unrelated_frames_total": 3497
+    },
+    "video_match_rate": 0.5808080808080809,
+    "false_count": 18
+   },
+   {
+    "per_manipulation": {
+     "excerpt10": {
+      "clips": 22,
+      "found": 4,
+      "relationship": 4,
+      "frames": 220,
+      "frames_found": 135
+     },
+     "excerpt30": {
+      "clips": 22,
+      "found": 19,
+      "relationship": 19,
+      "frames": 660,
+      "frames_found": 423
+     },
+     "excerpt60": {
+      "clips": 22,
+      "found": 21,
+      "relationship": 21,
+      "frames": 1320,
+      "frames_found": 843
+     },
+     "vertical": {
+      "clips": 22,
+      "found": 6,
+      "relationship": 6,
+      "frames": 660,
+      "frames_found": 170
+     },
+     "pip25": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 6
+     },
+     "pip40": {
+      "clips": 22,
+      "found": 0,
+      "relationship": 0,
+      "frames": 660,
+      "frames_found": 33
+     },
+     "lowres": {
+      "clips": 22,
+      "found": 18,
+      "relationship": 16,
+      "frames": 660,
+      "frames_found": 413
+     },
+     "caption": {
+      "clips": 22,
+      "found": 20,
+      "relationship": 16,
+      "frames": 660,
+      "frames_found": 348
+     },
+     "logo": {
+      "clips": 22,
+      "found": 20,
+      "relationship": 18,
+      "frames": 660,
+      "frames_found": 432
+     }
+    },
+    "false": {
+     "videos": [
+      [
+       "nasa-twan-2020-01-31__whole",
+       "nasa-this-week",
+       "nasa-twan-2020-02-07",
+       15
+      ],
+      [
+       "nasa-twan-2020-01-31__whole",
+       "nasa-this-week",
+       "nasa-twan-2020-01-25",
+       12
+      ],
+      [
+       "nasa-twan-2020-01-18__whole",
+       "nasa-this-week",
+       "nasa-twan-2020-01-25",
+       16
+      ],
+      [
+       "nasa-twan-2020-01-18__whole",
+       "nasa-this-week",
+       "nasa-twan-2020-02-07",
+       15
+      ],
+      [
+       "nasa-twan-2020-02-14__whole",
+       "nasa-this-week",
+       "nasa-twan-2020-01-25",
+       12
+      ],
+      [
+       "nasa-twan-2020-02-14__whole",
+       "nasa-this-week",
+       "nasa-twan-2020-02-07",
+       12
+      ],
+      [
+       "jpl-whats-up-2026-02__whole",
+       "jpl-whats-up",
+       "jpl-whats-up-2026-04",
+       23
+      ],
+      [
+       "jpl-whats-up-2026-01__whole",
+       "jpl-whats-up",
+       "jpl-whats-up-2026-04",
+       23
+      ],
+      [
+       "jpl-whats-up-2025-11__whole",
+       "jpl-whats-up",
+       "jpl-whats-up-2026-04",
+       15
+      ],
+      [
+       "nasa-s2g-2014-10-24__whole",
+       "nasa-space-to-ground",
+       "nasa-s2g-2015-03-06",
+       10
+      ],
+      [
+       "nasa-s2g-2015-02-27__whole",
+       "nasa-space-to-ground",
+       "nasa-s2g-2015-03-06",
+       22
+      ],
+      [
+       "nasa-s2g-2018-01-19__whole",
+       "nasa-space-to-ground",
+       "nasa-s2g-2015-03-06",
+       18
       ]
      ],
      "wrong": [
@@ -6770,14 +5784,20 @@
        "blender",
        "nasa-s2g-2015-03-06",
        10
+      ],
+      [
+       "coffee-run__pip25__1",
+       "blender",
+       "nasa-s2g-2015-03-06",
+       10
       ]
      ],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.5353535353535354,
-    "false_count": 15
+    "video_match_rate": 0.5454545454545454,
+    "false_count": 16
    },
    {
     "per_manipulation": {
@@ -6786,63 +5806,63 @@
       "found": 0,
       "relationship": 0,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
-      "found": 19,
-      "relationship": 19,
+      "found": 17,
+      "relationship": 17,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
       "found": 21,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
       "found": 6,
       "relationship": 6,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
-      "found": 18,
-      "relationship": 16,
+      "found": 17,
+      "relationship": 15,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
-      "found": 18,
-      "relationship": 14,
+      "found": 17,
+      "relationship": 13,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
       "found": 19,
-      "relationship": 16,
+      "relationship": 17,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
@@ -6875,13 +5895,13 @@
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-01-25",
-       11
+       12
       ],
       [
        "nasa-twan-2020-02-14__whole",
        "nasa-this-week",
        "nasa-twan-2020-02-07",
-       11
+       12
       ],
       [
        "jpl-whats-up-2026-02__whole",
@@ -6893,40 +5913,34 @@
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       30
+       23
       ],
       [
        "jpl-whats-up-2025-11__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       22
-      ],
-      [
-       "nasa-s2g-2014-10-24__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       12
+       15
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       23
+       22
       ],
       [
        "nasa-s2g-2018-01-19__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       19
+       18
       ]
      ],
      "wrong": [],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.51010101010101,
-    "false_count": 12
+    "video_match_rate": 0.4898989898989899,
+    "false_count": 11
    },
    {
     "per_manipulation": {
@@ -6935,63 +5949,63 @@
       "found": 0,
       "relationship": 0,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
-      "found": 18,
-      "relationship": 18,
+      "found": 16,
+      "relationship": 16,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
       "found": 21,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
-      "found": 4,
-      "relationship": 4,
+      "found": 3,
+      "relationship": 3,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 16,
       "relationship": 15,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
-      "found": 15,
-      "relationship": 11,
+      "found": 14,
+      "relationship": 10,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
       "found": 19,
-      "relationship": 16,
+      "relationship": 17,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
@@ -7021,6 +6035,18 @@
        15
       ],
       [
+       "nasa-twan-2020-02-14__whole",
+       "nasa-this-week",
+       "nasa-twan-2020-01-25",
+       12
+      ],
+      [
+       "nasa-twan-2020-02-14__whole",
+       "nasa-this-week",
+       "nasa-twan-2020-02-07",
+       12
+      ],
+      [
        "jpl-whats-up-2026-02__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
@@ -7030,40 +6056,34 @@
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       30
+       23
       ],
       [
        "jpl-whats-up-2025-11__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       22
-      ],
-      [
-       "nasa-s2g-2014-10-24__whole",
-       "nasa-space-to-ground",
-       "nasa-s2g-2015-03-06",
-       12
+       15
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       23
+       22
       ],
       [
        "nasa-s2g-2018-01-19__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       19
+       18
       ]
      ],
      "wrong": [],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.4696969696969697,
-    "false_count": 10
+    "video_match_rate": 0.44949494949494956,
+    "false_count": 11
    },
    {
     "per_manipulation": {
@@ -7072,63 +6092,63 @@
       "found": 0,
       "relationship": 0,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
       "found": 15,
       "relationship": 15,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
       "found": 21,
       "relationship": 21,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
-      "found": 1,
-      "relationship": 1,
+      "found": 2,
+      "relationship": 2,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 15,
       "relationship": 14,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
-      "found": 13,
-      "relationship": 10,
+      "found": 12,
+      "relationship": 9,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
-      "found": 14,
-      "relationship": 11,
+      "found": 15,
+      "relationship": 13,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
@@ -7161,33 +6181,33 @@
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       30
+       23
       ],
       [
        "jpl-whats-up-2025-11__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       22
+       15
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       23
+       22
       ],
       [
        "nasa-s2g-2018-01-19__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       19
+       18
       ]
      ],
      "wrong": [],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.398989898989899,
+    "video_match_rate": 0.40404040404040403,
     "false_count": 8
    },
    {
@@ -7197,63 +6217,63 @@
       "found": 0,
       "relationship": 0,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
       "found": 12,
       "relationship": 12,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
       "found": 20,
       "relationship": 20,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 12,
       "relationship": 11,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
-      "found": 6,
+      "found": 7,
       "relationship": 5,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
       "found": 12,
-      "relationship": 9,
+      "relationship": 10,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
@@ -7268,28 +6288,22 @@
        "jpl-whats-up-2026-01__whole",
        "jpl-whats-up",
        "jpl-whats-up-2026-04",
-       30
-      ],
-      [
-       "jpl-whats-up-2025-11__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       22
+       23
       ],
       [
        "nasa-s2g-2015-02-27__whole",
        "nasa-space-to-ground",
        "nasa-s2g-2015-03-06",
-       23
+       22
       ]
      ],
      "wrong": [],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.3131313131313131,
-    "false_count": 4
+    "video_match_rate": 0.3181818181818181,
+    "false_count": 3
    },
    {
     "per_manipulation": {
@@ -7298,81 +6312,74 @@
       "found": 0,
       "relationship": 0,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
       "found": 7,
       "relationship": 7,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
-      "found": 20,
-      "relationship": 20,
+      "found": 17,
+      "relationship": 17,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 6,
       "relationship": 6,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
-      "found": 7,
+      "found": 6,
       "relationship": 5,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
-     "videos": [
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       30
-      ]
-     ],
+     "videos": [],
      "wrong": [],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.20202020202020202,
-    "false_count": 1
+    "video_match_rate": 0.1818181818181818,
+    "false_count": 0
    },
    {
     "per_manipulation": {
@@ -7381,81 +6388,74 @@
       "found": 0,
       "relationship": 0,
       "frames": 220,
-      "frames_found": 134
+      "frames_found": 135
      },
      "excerpt30": {
       "clips": 22,
-      "found": 3,
-      "relationship": 3,
+      "found": 2,
+      "relationship": 2,
       "frames": 660,
-      "frames_found": 429
+      "frames_found": 423
      },
      "excerpt60": {
       "clips": 22,
-      "found": 15,
-      "relationship": 15,
+      "found": 14,
+      "relationship": 14,
       "frames": 1320,
-      "frames_found": 865
+      "frames_found": 843
      },
      "vertical": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 166
+      "frames_found": 170
      },
      "pip25": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 9
+      "frames_found": 6
      },
      "pip40": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 34
+      "frames_found": 33
      },
      "lowres": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 424
+      "frames_found": 413
      },
      "caption": {
       "clips": 22,
       "found": 0,
       "relationship": 0,
       "frames": 660,
-      "frames_found": 344
+      "frames_found": 348
      },
      "logo": {
       "clips": 22,
       "found": 2,
       "relationship": 2,
       "frames": 660,
-      "frames_found": 441
+      "frames_found": 432
      }
     },
     "false": {
-     "videos": [
-      [
-       "jpl-whats-up-2026-01__whole",
-       "jpl-whats-up",
-       "jpl-whats-up-2026-04",
-       30
-      ]
-     ],
+     "videos": [],
      "wrong": [],
      "unrelated_videos": 25,
-     "unrelated_frames": 249,
+     "unrelated_frames": 245,
      "unrelated_frames_total": 3497
     },
-    "video_match_rate": 0.10101010101010101,
-    "false_count": 1
+    "video_match_rate": 0.0909090909090909,
+    "false_count": 0
    }
   ]
  },
@@ -7464,31 +6464,31 @@
    "per_manipulation": {
     "excerpt10": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 4,
+     "relationship": 4,
      "frames": 220,
-     "frames_found": 131
+     "frames_found": 129
     },
     "excerpt30": {
      "clips": 22,
-     "found": 7,
-     "relationship": 7,
+     "found": 16,
+     "relationship": 16,
      "frames": 660,
-     "frames_found": 417
+     "frames_found": 397
     },
     "excerpt60": {
      "clips": 22,
-     "found": 17,
-     "relationship": 17,
+     "found": 21,
+     "relationship": 21,
      "frames": 1320,
-     "frames_found": 831
+     "frames_found": 800
     },
     "vertical": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 6,
+     "relationship": 6,
      "frames": 660,
-     "frames_found": 160
+     "frames_found": 156
     },
     "pip25": {
      "clips": 22,
@@ -7506,34 +6506,34 @@
     },
     "lowres": {
      "clips": 22,
-     "found": 5,
-     "relationship": 4,
+     "found": 17,
+     "relationship": 16,
      "frames": 660,
-     "frames_found": 403
+     "frames_found": 383
     },
     "caption": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 18,
+     "relationship": 14,
      "frames": 660,
-     "frames_found": 344
+     "frames_found": 326
     },
     "logo": {
      "clips": 22,
-     "found": 6,
-     "relationship": 5,
+     "found": 18,
+     "relationship": 16,
      "frames": 660,
-     "frames_found": 428
+     "frames_found": 398
     }
    },
    "false": {
     "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 191,
+    "unrelated_frames": 46,
     "unrelated_frames_total": 3497
    },
-   "video_match_rate": 0.17676767676767677,
+   "video_match_rate": 0.5050505050505051,
    "false_count": 0
   },
   "1920": {
@@ -7606,7 +6606,7 @@
     "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 160,
+    "unrelated_frames": 30,
     "unrelated_frames_total": 3497
    },
    "video_match_rate": 0.0,
@@ -7644,17 +6644,17 @@
     },
     "pip25": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 3,
+     "relationship": 3,
      "frames": 660,
      "frames_found": 65
     },
     "pip40": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 8,
+     "relationship": 8,
      "frames": 660,
-     "frames_found": 184
+     "frames_found": 180
     },
     "lowres": {
      "clips": 0,
@@ -7682,10 +6682,10 @@
     "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 191,
+    "unrelated_frames": 46,
     "unrelated_frames_total": 3497
    },
-   "video_match_rate": 0.0,
+   "video_match_rate": 0.25,
    "false_count": 0
   },
   "1920+tiles": {
@@ -7720,17 +6720,17 @@
     },
     "pip25": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 3,
+     "relationship": 3,
      "frames": 660,
      "frames_found": 65
     },
     "pip40": {
      "clips": 22,
-     "found": 0,
-     "relationship": 0,
+     "found": 8,
+     "relationship": 8,
      "frames": 660,
-     "frames_found": 182
+     "frames_found": 178
     },
     "lowres": {
      "clips": 0,
@@ -7758,10 +6758,10 @@
     "videos": [],
     "wrong": [],
     "unrelated_videos": 25,
-    "unrelated_frames": 167,
+    "unrelated_frames": 31,
     "unrelated_frames_total": 3497
    },
-   "video_match_rate": 0.0,
+   "video_match_rate": 0.25,
    "false_count": 0
   }
  },
@@ -7808,11 +6808,11 @@
     6
    ],
    "pip40 corner": [
-    0,
+    8,
     21
    ],
    "pip25 corner": [
-    0,
+    3,
     16
    ],
    "pip40 centre": [
@@ -7826,11 +6826,11 @@
     6
    ],
    "pip40 corner": [
-    0,
+    8,
     21
    ],
    "pip25 corner": [
-    0,
+    3,
     16
    ],
    "pip40 centre": [
@@ -7842,192 +6842,132 @@
  "stills": {
   "512/64": {
    "stills": 55,
-   "found": 27,
-   "relationship": 24,
+   "found": 35,
+   "relationship": 32,
    "unrelated": 125,
-   "false": [
-    [
-     "jpl-whats-up-2025-11__still__2",
-     "jpl-whats-up",
-     "jpl-whats-up-2026-04",
-     10
-    ],
-    [
-     "jpl-whats-up-2025-11__still__3",
-     "jpl-whats-up",
-     "jpl-whats-up-2026-04",
-     8
-    ]
-   ],
-   "rate": 0.4909090909090909,
-   "median_time_error": 1.1,
-   "votes": 6,
-   "tuning_rate": 0.4909,
-   "tuning_false": 2
+   "false": [],
+   "rate": 0.6363636363636364,
+   "median_time_error": 1.0,
+   "votes": 3,
+   "tuning_rate": 0.6364,
+   "tuning_false": 0
   },
   "512/128": {
    "stills": 55,
-   "found": 27,
-   "relationship": 24,
+   "found": 35,
+   "relationship": 32,
    "unrelated": 125,
-   "false": [
-    [
-     "jpl-whats-up-2025-11__still__2",
-     "jpl-whats-up",
-     "jpl-whats-up-2026-04",
-     10
-    ],
-    [
-     "jpl-whats-up-2025-11__still__3",
-     "jpl-whats-up",
-     "jpl-whats-up-2026-04",
-     8
-    ]
-   ],
-   "rate": 0.4909090909090909,
-   "median_time_error": 1.1,
-   "votes": 6,
-   "tuning_rate": 0.4909,
-   "tuning_false": 2
+   "false": [],
+   "rate": 0.6363636363636364,
+   "median_time_error": 1.0,
+   "votes": 3,
+   "tuning_rate": 0.6364,
+   "tuning_false": 0
   },
   "512/256": {
    "stills": 55,
-   "found": 27,
-   "relationship": 24,
+   "found": 35,
+   "relationship": 32,
    "unrelated": 125,
-   "false": [
-    [
-     "jpl-whats-up-2025-11__still__2",
-     "jpl-whats-up",
-     "jpl-whats-up-2026-04",
-     10
-    ],
-    [
-     "jpl-whats-up-2025-11__still__3",
-     "jpl-whats-up",
-     "jpl-whats-up-2026-04",
-     8
-    ]
-   ],
-   "rate": 0.4909090909090909,
-   "median_time_error": 1.1,
-   "votes": 6,
-   "tuning_rate": 0.4909,
-   "tuning_false": 2
+   "false": [],
+   "rate": 0.6363636363636364,
+   "median_time_error": 1.0,
+   "votes": 3,
+   "tuning_rate": 0.6364,
+   "tuning_false": 0
   },
   "1024/64": {
    "stills": 55,
-   "found": 12,
-   "relationship": 11,
+   "found": 36,
+   "relationship": 27,
    "unrelated": 125,
-   "false": [
-    [
-     "jpl-whats-up-2025-11__still__2",
-     "jpl-whats-up",
-     "jpl-whats-up-2026-04",
-     8
-    ]
-   ],
-   "rate": 0.21818181818181817,
-   "median_time_error": 1.2,
-   "votes": 8,
-   "tuning_rate": 0.2182,
-   "tuning_false": 1
+   "false": [],
+   "rate": 0.6545454545454545,
+   "median_time_error": 1.4,
+   "votes": 3,
+   "tuning_rate": 0.6545,
+   "tuning_false": 0
   },
   "1024/128": {
    "stills": 55,
-   "found": 12,
-   "relationship": 11,
+   "found": 36,
+   "relationship": 27,
    "unrelated": 125,
-   "false": [
-    [
-     "jpl-whats-up-2025-11__still__2",
-     "jpl-whats-up",
-     "jpl-whats-up-2026-04",
-     8
-    ]
-   ],
-   "rate": 0.21818181818181817,
-   "median_time_error": 1.2,
-   "votes": 8,
-   "tuning_rate": 0.2182,
-   "tuning_false": 1
+   "false": [],
+   "rate": 0.6545454545454545,
+   "median_time_error": 1.4,
+   "votes": 3,
+   "tuning_rate": 0.6545,
+   "tuning_false": 0
   },
   "1024/256": {
    "stills": 55,
-   "found": 12,
-   "relationship": 11,
+   "found": 36,
+   "relationship": 27,
    "unrelated": 125,
-   "false": [
-    [
-     "jpl-whats-up-2025-11__still__2",
-     "jpl-whats-up",
-     "jpl-whats-up-2026-04",
-     8
-    ]
-   ],
-   "rate": 0.21818181818181817,
-   "median_time_error": 1.2,
-   "votes": 8,
-   "tuning_rate": 0.2182,
-   "tuning_false": 1
+   "false": [],
+   "rate": 0.6545454545454545,
+   "median_time_error": 1.4,
+   "votes": 3,
+   "tuning_rate": 0.6545,
+   "tuning_false": 0
   },
   "1920/64": {
    "stills": 55,
-   "found": 5,
-   "relationship": 4,
+   "found": 31,
+   "relationship": 23,
    "unrelated": 125,
    "false": [],
-   "rate": 0.09090909090909091,
-   "median_time_error": 2.9,
-   "votes": 8,
-   "tuning_rate": 0.0909,
+   "rate": 0.5636363636363636,
+   "median_time_error": 1.8,
+   "votes": 2,
+   "tuning_rate": 0.5636,
    "tuning_false": 0
   },
   "1920/128": {
    "stills": 55,
-   "found": 5,
-   "relationship": 4,
+   "found": 31,
+   "relationship": 23,
    "unrelated": 125,
    "false": [],
-   "rate": 0.09090909090909091,
-   "median_time_error": 2.9,
-   "votes": 8,
-   "tuning_rate": 0.0909,
+   "rate": 0.5636363636363636,
+   "median_time_error": 1.8,
+   "votes": 2,
+   "tuning_rate": 0.5636,
    "tuning_false": 0
   },
   "1920/256": {
    "stills": 55,
-   "found": 5,
-   "relationship": 4,
+   "found": 31,
+   "relationship": 23,
    "unrelated": 125,
    "false": [],
-   "rate": 0.09090909090909091,
-   "median_time_error": 2.9,
-   "votes": 8,
-   "tuning_rate": 0.0909,
+   "rate": 0.5636363636363636,
+   "median_time_error": 1.8,
+   "votes": 2,
+   "tuning_rate": 0.5636,
    "tuning_false": 0
   }
  },
  "timing": {
   "creator": 1.5,
-  "verifier 512 fps=1 (excerpt60)": 1.8,
+  "verifier 512 fps=1 (excerpt60)": 1.6,
   "verifier 512 fps=2 (excerpt60)": 3.3,
-  "verifier 1024 fps=1 (excerpt60)": 3.1,
-  "verifier 1024 fps=2 (excerpt60)": 6.1,
+  "verifier 1024 fps=1 (excerpt60)": 3.2,
+  "verifier 1024 fps=2 (excerpt60)": 6.0,
   "verifier 1024 fps=1 (pip25)": 5.5,
-  "verifier 1920 fps=1 (pip25)": 9.7,
+  "verifier 1920 fps=1 (pip25)": 9.8,
   "verifier 1024+tiles fps=1 (pip25)": 18.5,
   "verifier 1920+tiles fps=1 (pip25)": 22.5,
-  "still 512/64 (ms per still)": 38,
-  "still 512/128 (ms per still)": 36,
-  "still 512/256 (ms per still)": 37,
-  "still 1024/64 (ms per still)": 59,
-  "still 1024/128 (ms per still)": 67,
-  "still 1024/256 (ms per still)": 60,
+  "still 512/64 (ms per still)": 40,
+  "still 512/128 (ms per still)": 37,
+  "still 512/256 (ms per still)": 36,
+  "still 1024/64 (ms per still)": 57,
+  "still 1024/128 (ms per still)": 59,
+  "still 1024/256 (ms per still)": 61,
   "still 1920/64 (ms per still)": 75,
   "still 1920/128 (ms per still)": 75,
-  "still 1920/256 (ms per still)": 76
+  "still 1920/256 (ms per still)": 75
  },
  "queries": 403
 }
