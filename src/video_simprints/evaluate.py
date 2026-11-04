@@ -23,11 +23,11 @@ STOP_AFTER = (1, 2, 3, 5, 10, 1000)  # 1000: off
 SHARED_AFTER = (None, 0, 1, 2)  # None: off
 SIZES = ("512", "1024")
 FPS = (1, 2)
-MIN_FRAMES = range(1, 13)
+MIN_FRAMES = (*range(1, 13), 15, 20, 25, 30)
 PIP_MODES = ("1024", "1920", "1024+tiles", "1920+tiles")  # on picture-in-picture clips and unrelated videos
 STILL_SIZES = (512, 1024, 1920)
 STILL_CODES = (64, 128, 256)
-STILL_VOTES = (2, 3, 4, 5)  # agreeing codes a still needs
+STILL_VOTES = (2, 3, 4, 5, 6, 8)  # agreeing codes a still needs
 BUDGET = 10  # the design's 5-10 codes per keyframe: the recommended K is at most this
 TILED = ("pip25", "pip40", "unrelated")  # queries that also get the picture-in-picture modes
 
@@ -232,9 +232,10 @@ def score_stills(data: dict, mode: str, vk: str, votes: int) -> dict:
 def fit(data: dict) -> dict:
     """On tuning: per K, verifier size and fps, the N, N2 and M with the fewest false
     matches, then the highest video-level match rate (ties: larger M, no index-level
-    stop codes, larger N). The recommendation: the best fit with no false match and K
-    within BUDGET (ties: smaller K, size, fps). Stills: per still mode at the
-    recommended codes, the fewest votes with no false match; the best mode."""
+    stop codes, larger N). The recommendation: among fits with K within BUDGET, the
+    fewest false matches, then the best rate (ties: smaller K, size, fps). Stills, at
+    the recommended codes: per still mode the votes with the fewest false matches,
+    then the best rate (ties: fewer votes); the best mode likewise."""
     fits = {}
     for k in CODES:
         for size in SIZES:
@@ -247,19 +248,21 @@ def fit(data: dict) -> dict:
                             if best is None or rank > best[0]:
                                 best = (rank, {"codes": k, "size": size, "fps": fps, "stop_after": n, "shared_after": sh, "min_frames": m})
                 fits[f"codes={k};size={size};fps={fps}"] = best[1] | {"tuning_rate": round(best[0][1], 4), "tuning_false": -best[0][0]}
-    ok = [f for f in fits.values() if f["tuning_false"] == 0 and f["codes"] <= BUDGET]
-    rec = max(ok, key=lambda f: (f["tuning_rate"], -f["codes"], -int(f["size"]), -f["fps"]))
+    ok = [f for f in fits.values() if f["codes"] <= BUDGET]
+    rec = max(ok, key=lambda f: (-f["tuning_false"], f["tuning_rate"], -f["codes"], -int(f["size"]), -f["fps"]))
     vk = vkey(rec["codes"], rec["stop_after"], rec["shared_after"])
     stills = {}
     for size in STILL_SIZES:
         for n in STILL_CODES:
             mode = f"{size}/{n}"
+            best = None
             for votes in STILL_VOTES:
-                s = score_stills(data, mode, vk, votes)
-                if not s["false"]:
-                    stills[mode] = {"votes": votes, "tuning_rate": round(s["rate"], 4)}
-                    break
-    still = max(stills, key=lambda mo: (stills[mo]["tuning_rate"], -int(mo.split("/")[0]), -int(mo.split("/")[1])))
+                st = score_stills(data, mode, vk, votes)
+                rank = (-len(st["false"]), st["rate"], -votes)
+                if best is None or rank > best[0]:
+                    best = (rank, votes)
+            stills[mode] = {"votes": best[1], "tuning_rate": round(best[0][1], 4), "tuning_false": -best[0][0]}
+    still = max(stills, key=lambda mo: (-stills[mo]["tuning_false"], stills[mo]["tuning_rate"], -int(mo.split("/")[0]), -int(mo.split("/")[1])))
     return {"settings": fits, "recommended": rec, "stills": stills, "recommended_still": still}
 
 
@@ -303,7 +306,9 @@ def timing(split: str, rec: dict) -> dict:
 
 
 def test(split: str, out: Path, fits_from: Path | None, workers: int):
-    data = run(split, workers)
+    saved = CACHE / "eval" / f"results-{split}.pkl"  # delete it to rerun the matching
+    data = pickle.loads(saved.read_bytes()) if saved.exists() else run(split, workers)
+    saved.write_bytes(pickle.dumps(data))
     fits = json.loads((fits_from / "report.json").read_text())["fits"] if fits_from else fit(data)
     rec = fits["recommended"]
     rec_vk = vkey(rec["codes"], rec["stop_after"], rec["shared_after"])

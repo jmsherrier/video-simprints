@@ -16,6 +16,9 @@ checked against declarations (verifier side). The reference implementation is
 | `fps` | 2 | verifier | frames sampled per second of the checked clip |
 | `prepared_size` | 1024 | verifier | image-simprints `prepared_size` of the sampled frames |
 | `min_frames` | 1 | verifier | frames on one time line needed to declare a match (M) |
+| `verifier_codes` | 64 | verifier | image-simprints `verifier_codes` per frame |
+| `tiles` | 0 | verifier | also code the four quarters of each frame |
+| `shared_after` | none | index | drop codes shared with more than N2 other declarations (none: off) |
 
 The version string is `video-simprints/0.1`, with each creator setting that
 differs from its default appended as `;name=value` (booleans as 0 or 1), in the
@@ -36,7 +39,7 @@ Fixed constants:
 | `WINDOW` | 0.4 s | a blurred grid frame is replaced by the sharpest frame this close |
 | `BLUR` | 35 | variance of the Laplacian below which a grid frame is blurred (the 10th percentile of tuning grid frames) |
 | `UNIFORM` | 8 | standard deviation of grey below which a frame is black or uniform (no tuning grid frame below it had codes) |
-| `SLOPE` | 0.1 | time vote: slope 1 ± 0.1 |
+| `SLOPES` | 0.90, 0.92, …, 1.10 | time vote: slopes tried |
 | `TIME_TOLERANCE` | 3 s | time vote: how far a frame may lie off the line |
 
 ## 2. Decoding
@@ -99,7 +102,11 @@ time, scene}]}]}`. Each keyframe is a valid image-simprints `generate()` result.
 ## 5. Verifier
 
 1. **Frames**: decode the clip at `fps`; code each frame with
-   `generate(frame, "verifier", {"prepared_size": prepared_size})`.
+   `generate(frame, "verifier", {"prepared_size": prepared_size, "verifier_codes":
+   verifier_codes})`. With `tiles`, also code its four quarters (top-left,
+   top-right, bottom-left, bottom-right, each `w // 2` × `h // 2`) the same way;
+   steps 2 and 3 run on each, and the frame's matches are all of theirs. A
+   small picture-in-picture inset fills four times more of a quarter.
 2. **Candidates**: every stored keyframe with at least 2 of its codes within
    Hamming distance 24 of the frame's codes (the reference keeps all codes in
    memory; see image-simprints INTEGRATION.md for a banded index).
@@ -107,10 +114,11 @@ time, scene}]}]}`. Each keyframe is a valid image-simprints `generate()` result.
    those that are not `none`. This gives the spatial relationship per frame.
 4. **Time vote**, per declaration: each kept match is a point (clip time `c`,
    original time `t`), once for the keyframe's time and once for each time in
-   its `same_as`. Try the line `t = c + b` through each point and the line
-   through each pair of points whose slope `a` is within 1 ± `SLOPE`. Count the
-   distinct clip times with a point within `TIME_TOLERANCE` of the line. The
-   line with the highest count wins (ties: the smaller sum of distances).
+   its `same_as`. Try the line `t = a c + b` through each point for each slope
+   `a` in `SLOPES`. Count the distinct clip times with a point within
+   `TIME_TOLERANCE` of the line. The line with the highest count wins (ties: the
+   smaller sum of distances of the counted points, then the earlier line in the
+   order slope, then point).
 5. **Decision**: a declaration matches if its count is at least `min_frames`.
    Report the count, the clip range of the agreeing frames, the matching range
    in the original (`a c + b` at its ends), the slope, the dominant
@@ -119,6 +127,13 @@ time, scene}]}]}`. Each keyframe is a valid image-simprints `generate()` result.
 
 **Stills**: a single image is one frame: steps 1 to 3, with the best keyframe
 (most agreeing codes) per declaration. Its time says where in the video it is.
+
+**Index-level stop codes** (`shared_after` = N2): when the index is built, a
+code that agrees (Hamming distance ≤ 24) with codes of more than N2 *other*
+declarations is left out of it. These are what a channel's videos share: a
+series intro, a title card, lower thirds. Per-video stop codes (§4) cannot see
+them, because an intro appears once per video. Recompute them as declarations
+are added.
 
 ## 6. Test vectors
 
