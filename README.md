@@ -136,8 +136,9 @@ the shared codes stay in the index and a match whose agreeing codes are at least
 60% shared (fitted) is returned as `shared_branding`. At M = 3 on test: 73% of
 clips found (72% with the codes dropped), 103 branding matches labelled (100 to
 the same series as the query or its picture-in-picture background, 3 between
-NASA's two ISS series), 1 source lost to the label (a 10 s excerpt of an
-intro), and 1 unlabelled false match (two launch videos), against 3 and 6 with
+NASA's two ISS series), 1 source lost to the label (a 10 s excerpt whose
+matched codes are all shared), and 1 unlabelled false match (two launch
+videos), against 3 and 6 with
 the codes dropped. For centred picture-in-picture, a fifth, centre tile
 (`tiles=5`) does what the 3×3 grid does at 20 s instead of 32 s per minute
 (quarters only: 17 s). It finds centred insets the quarters miss (25%: 2 of 2 at
