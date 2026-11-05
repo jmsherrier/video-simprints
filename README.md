@@ -1,8 +1,11 @@
 # video-simprints
 
+[![CI](https://github.com/jmsherrier/video-simprints/actions/workflows/ci.yml/badge.svg)](https://github.com/jmsherrier/video-simprints/actions/workflows/ci.yml)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue)](pyproject.toml)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
-[![Status: proof of concept](https://img.shields.io/badge/status-proof%20of%20concept-orange)](#status)
+[![image-simprints 0.3.0](https://img.shields.io/badge/image--simprints-0.3.0-blue)](https://github.com/jmsherrier/image-simprints/tree/v0.3.0)
+[![FFmpeg: system, not bundled](https://img.shields.io/badge/ffmpeg-system%2C%20not%20bundled-lightgrey)](THIRD-PARTY-NOTICES.md#ffmpeg-external-not-bundled)
+[![Status: proof of concept](https://img.shields.io/badge/status-proof%20of%20concept-orange)](#results)
 
 Granular video codes. A video gets one keyframe every 3 seconds, and each keyframe
 gets a few [image simprints](https://github.com/jmsherrier/image-simprints):
