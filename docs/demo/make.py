@@ -17,6 +17,8 @@ OUT = Path(__file__).parent
 SRC = ROOT / ".cache/corpus/nasa-atlas-v-tdrs-m.webm"
 CLIP = ROOT / ".cache/clips/tuning/nasa-atlas-v-tdrs-m__caption__0.mp4"  # 136.8-166.8 s with a caption bar
 PIP = ROOT / ".cache/clips/tuning/nasa-atlas-v-tdrs-m__pip25__1.mp4"  # 25% inset, bottom left, of 135-165 s
+SERIES = [ROOT / f".cache/corpus/jpl-whats-up-{m}.webm" for m in ("2025-08", "2025-09", "2025-11", "2026-01", "2026-02", "2026-04", "2026-05", "2026-11")]
+EPISODE, OTHER = ROOT / ".cache/corpus/jpl-whats-up-2026-10.webm", ROOT / ".cache/corpus/jpl-whats-up-2025-12.webm"  # declared; checked
 GREEN, GREY, ORANGE, WHITE = (80, 200, 80), (170, 170, 170), (40, 150, 255), (255, 255, 255)
 
 
@@ -139,6 +141,45 @@ def main():
     whole = max((r["agreeing_codes"] for _, _, r in hits[0]), default=0)
     label(pic, f"whole frame: {whole} agreeing codes; tile {j}: {r['agreeing_codes']}, {r['relationship']}")
     cv2.imwrite(str(OUT / "5-pip-tiles.jpg"), pic)
+
+    # what the verifier codes with tiles=5: the whole frame and five half-size tiles, each as its own image
+    f = f[:, :, ::-1]
+    parts = [f, *recipe.tiles(f, recipe.TILES[5])]
+    names = ["whole frame", "1 top left", "2 top right", "3 bottom left", "4 bottom right", "5 centre"]
+    cells = []
+    for n, (part, name) in enumerate(zip(parts, names)):
+        cell = fit(part.copy(), 200)
+        agree = max((r["agreeing_codes"] for _, _, r in hits[n]), default=0)
+        cv2.rectangle(cell, (0, 0), (cell.shape[1] - 1, cell.shape[0] - 1), GREEN if n == j else GREY, 8 if n == j else 2)
+        cells.append(label(cell, f"{name}: {agree} agreeing", 24, 0.55))
+    cv2.imwrite(str(OUT / "5-tiles.jpg"), np.vstack([np.hstack(cells[:3]), np.hstack(cells[3:])]))
+
+    # 8. shared branding: one episode of a series checked against another episode's declaration
+    ep = recipe.create(EPISODE)
+    others = {str(x): recipe.create(x) for x in SERIES}  # the reference collection: the series' other episodes
+    s = recipe.VERIFY | {"min_frames": 3}
+    for name, ix in (("no stop codes", recipe.index({"whats-up-2026-10": ep})),
+                     ("shared codes dropped", recipe.index({"whats-up-2026-10": ep}, 0, others)),
+                     ("shared codes labelled", recipe.index({"whats-up-2026-10": ep}, 0, others, label=True))):  # fmt: skip
+        print(name, json.dumps([{k: v for k, v in x.items() if k in ("frames", "relationship", "shared_fraction", "clip", "original")}
+                                for x in recipe.verify(OTHER, ix, s)]))  # fmt: skip
+    ix = recipe.index({"whats-up-2026-10": ep}, 0, others, label=True)
+    frames = list(video.frames(OTHER, 1))
+    hits = [[h for sp in recipe.frame_codes(f, s) for h in recipe.frame_hits(sp, ix)] for f in frames]
+    i = max(range(len(hits)), key=lambda i: max((r["agreeing_codes"] for _, _, r in hits[i]), default=0))
+    _, kf, r = max(hits[i], key=lambda h: h[2]["agreeing_codes"])
+    o = next(n for n, (_, k) in enumerate(ix["keyframes"]) if k is kf)
+    shared = ix["shared"][ix["owner"] == o]
+    sp = recipe.frame_codes(frames[i], s)[0]
+    q, kimg = frames[i][:, :, ::-1].copy(), grab(EPISODE, kf["time"])
+    pic, fq, ox, fk = side_by_side(q, kimg)
+    hq, wq, hk, wk = q.shape[0] * fq, q.shape[1] * fq, kimg.shape[0] * fk, kimg.shape[1] * fk
+    for a_, b_ in pairs(sp, kf):
+        colour = ORANGE if shared[b_] else GREEN
+        cv2.circle(pic, xy(sp["codes"][a_], wq, hq), 6, colour, -1, cv2.LINE_AA)
+        cv2.line(pic, xy(sp["codes"][a_], wq, hq), xy(kf["codes"][b_], wk, hk, ox), colour, 2, cv2.LINE_AA)
+    label(pic, f"Dec 2025 episode at {i}s  ->  Oct 2026 episode at {kf['time']:.1f}s: shared share {r['shared_fraction']:.2f}")
+    cv2.imwrite(str(OUT / "6-branding.jpg"), pic)
 
 
 if __name__ == "__main__":
