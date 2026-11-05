@@ -147,6 +147,7 @@ than the quarters (3 against 2 at M = 3, labelled).
 
 ## Documents
 
+- [DEMO.md](DEMO.md): the matching process step by step, with figures.
 - [RECIPE.md](RECIPE.md): the recipe, precisely enough to reimplement.
 - [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md): dependencies, FFmpeg, and
   the test corpus credits.
